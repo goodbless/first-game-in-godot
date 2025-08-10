@@ -14,7 +14,7 @@ func become_host():
 
 	_player_spawn_node = get_tree().current_scene.get_node("Players")
 
-	host_mode_enabled = true
+	host_mode_enabled = !OS.has_feature("dedicated_server")
 	multiplayer_mode_enabled = true
 
 	var server_peer = ENetMultiplayerPeer.new()
@@ -26,8 +26,8 @@ func become_host():
 	multiplayer.peer_disconnected.connect(_del_player)
 
 	_remove_single_player()
-
-	_add_player_to_game(1)
+	if host_mode_enabled:
+		_add_player_to_game(1)
 
 func join_as_player_2():
 	print("Player 2 join")
