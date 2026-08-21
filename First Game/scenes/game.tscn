@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 [ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="11_goals"]
-[ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="12_box"]
+[ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="12_box"]
+[ext_resource type="PackedScene" path="res://scenes/objects/vase.tscn" id="13_vase"]
+[ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="14_switch"]
+[ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="15_door"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashvg"]
 texture = ExtResource("2_r1crl")
@@ -258,6 +261,15 @@ shape = SubResource("WorldBoundaryShape2D_cn5tm")
 [node name="Box" parent="Objects" unique_id=1757781263 instance=ExtResource("12_box")]
 position = Vector2(120, 20)
 
+[node name="Vase" parent="Objects" unique_id=963501404 instance=ExtResource("13_vase")]
+position = Vector2(200, 20)
+
+[node name="Switch" parent="Objects" unique_id=50843433 instance=ExtResource("14_switch")]
+position = Vector2(300, 20)
+
+[node name="Door" parent="Objects" unique_id=1282013233 instance=ExtResource("15_door")]
+position = Vector2(400, 10)
+
 [node name="Platforms" type="Node" parent="." unique_id=965775456]
 
 [node name="Platform" parent="Platforms" unique_id=602685749 instance=ExtResource("3_cmfc3")]
@@ -331,8 +343,6 @@ goal_era = 2
 position = Vector2(553, -131)
 shape = SubResource("RectangleShape2D_0tnpc")
 
-[connection signal="pressed" from="MultiplayerHUD/Panel/VBoxContainer/HostGame" to="GameManager" method="become_host"]
-[connection signal="pressed" from="MultiplayerHUD/Panel/VBoxContainer/JoinAsPlayer2" to="GameManager" method="join_as_player_2"]
 [connection signal="body_entered" from="PastGoal" to="PastGoal" method="_on_body_entered"]
 [connection signal="body_exited" from="PastGoal" to="PastGoal" method="_on_body_exited"]
 [connection signal="body_entered" from="FutureGoal" to="FutureGoal" method="_on_body_entered"]

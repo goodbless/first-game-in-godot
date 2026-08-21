@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://cm130kmm1322o"]
+
+[ext_resource type="Script" uid="uid://clw81guyetrjo" path="res://scripts/game_manager.gd" id="1_gm"]
+[ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="3_goal"]
+[ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="4_kz"]
+[ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="5_box"]
+[ext_resource type="PackedScene" path="res://scenes/objects/vase.tscn" id="6_vase"]
+[ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="7_switch"]
+[ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="8_door"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_fontb"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="10_font"]
+
+[sub_resource type="RectangleShape2D" id="FloorAShape"]
+size = Vector2(416, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="FloorATex"]
+size = Vector2(416, 16)
+
+[sub_resource type="RectangleShape2D" id="FloorBShape"]
+size = Vector2(186, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="FloorBTex"]
+size = Vector2(186, 16)
+
+[sub_resource type="RectangleShape2D" id="WallShape"]
+size = Vector2(16, 232)
+
+[sub_resource type="PlaceholderTexture2D" id="WallTex"]
+size = Vector2(16, 232)
+
+[sub_resource type="RectangleShape2D" id="CeilingShape"]
+size = Vector2(672, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="CeilingTex"]
+size = Vector2(672, 16)
+
+[sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
+
+[sub_resource type="RectangleShape2D" id="GoalShape"]
+size = Vector2(20, 70)
+
+[node name="TestRoom" type="Node2D" unique_id=1611006981]
+script = ExtResource("1_gm")
+
+[node name="Level" type="Node2D" parent="." unique_id=1271458255]
+
+[node name="GroundA" type="StaticBody2D" parent="Level" unique_id=776659089]
+position = Vector2(192, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/GroundA" unique_id=2041111902]
+shape = SubResource("FloorAShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/GroundA" unique_id=28387924]
+modulate = Color(0.24, 0.27, 0.3, 1)
+texture = SubResource("FloorATex")
+
+[node name="GroundB" type="StaticBody2D" parent="Level" unique_id=885874680]
+position = Vector2(563, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/GroundB" unique_id=1047158771]
+shape = SubResource("FloorBShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/GroundB" unique_id=699725217]
+modulate = Color(0.24, 0.27, 0.3, 1)
+texture = SubResource("FloorBTex")
+
+[node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LeftWall" unique_id=2044048087]
+shape = SubResource("WallShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/LeftWall" unique_id=259123960]
+modulate = Color(0.2, 0.22, 0.25, 1)
+texture = SubResource("WallTex")
+
+[node name="RightWall" type="StaticBody2D" parent="Level" unique_id=610959921]
+position = Vector2(648, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/RightWall" unique_id=953928271]
+shape = SubResource("WallShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/RightWall" unique_id=1574029593]
+modulate = Color(0.2, 0.22, 0.25, 1)
+texture = SubResource("WallTex")
+
+[node name="Ceiling" type="StaticBody2D" parent="Level" unique_id=970822897]
+position = Vector2(320, -108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ceiling" unique_id=224563774]
+shape = SubResource("CeilingShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Ceiling" unique_id=1487537355]
+modulate = Color(0.2, 0.22, 0.25, 1)
+texture = SubResource("CeilingTex")
+
+[node name="Objects" type="Node2D" parent="." unique_id=2077598514]
+
+[node name="Box" parent="Objects" unique_id=1349724052 instance=ExtResource("5_box")]
+position = Vector2(150, 40)
+
+[node name="Vase" parent="Objects" unique_id=1386730635 instance=ExtResource("6_vase")]
+position = Vector2(220, 40)
+
+[node name="Switch" parent="Objects" unique_id=707042492 instance=ExtResource("7_switch")]
+position = Vector2(290, 40)
+
+[node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
+position = Vector2(350, 20)
+
+[node name="Player" parent="." unique_id=1149967040 instance=ExtResource("2_player")]
+position = Vector2(60, 40)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1744037603]
+position = Vector2(0, -7)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Players" type="Node2D" parent="." unique_id=779539851]
+position = Vector2(60, 40)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2098103311]
+_spawnable_scenes = PackedStringArray("uid://u6e7d34la27u")
+spawn_path = NodePath("../Players")
+spawn_limit = 2
+
+[node name="Killzone" parent="." unique_id=975202292 instance=ExtResource("4_kz")]
+position = Vector2(320, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1786211310]
+shape = SubResource("KillzoneShape")
+
+[node name="PastGoal" type="Area2D" parent="." unique_id=954575886]
+position = Vector2(560, 65)
+collision_mask = 2
+script = ExtResource("3_goal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PastGoal" unique_id=284546454]
+shape = SubResource("GoalShape")
+
+[node name="FutureGoal" type="Area2D" parent="." unique_id=246416478]
+position = Vector2(615, 65)
+collision_mask = 4
+script = ExtResource("3_goal")
+goal_era = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FutureGoal" unique_id=1339981108]
+shape = SubResource("GoalShape")
+
+[node name="HUDLayer" type="CanvasLayer" parent="." unique_id=47053609]
+
+[node name="MultiplayerHUD" type="Control" parent="HUDLayer" unique_id=1734410826]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 120.0
+
+[node name="Panel" type="Panel" parent="HUDLayer/MultiplayerHUD" unique_id=1974426622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDLayer/MultiplayerHUD/Panel" unique_id=1668508809]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostGame" type="Button" parent="HUDLayer/MultiplayerHUD/Panel/VBoxContainer" unique_id=1469227203]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_fontb")
+theme_override_font_sizes/font_size = 8
+text = "Start Game (Past)"
+
+[node name="JoinAsPlayer2" type="Button" parent="HUDLayer/MultiplayerHUD/Panel/VBoxContainer" unique_id=160362513]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_font")
+theme_override_font_sizes/font_size = 8
+text = "Join Game (Future)"
+
+[connection signal="body_entered" from="PastGoal" to="PastGoal" method="_on_body_entered"]
+[connection signal="body_exited" from="PastGoal" to="PastGoal" method="_on_body_exited"]
+[connection signal="body_entered" from="FutureGoal" to="FutureGoal" method="_on_body_entered"]
+[connection signal="body_exited" from="FutureGoal" to="FutureGoal" method="_on_body_exited"]
