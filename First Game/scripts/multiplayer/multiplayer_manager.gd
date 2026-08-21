@@ -15,6 +15,11 @@ var my_era: Era = Era.NONE
 var _current_level := 0
 
 
+func _refresh_era_visuals():
+	for node in get_tree().get_nodes_in_group("interactables"):
+		node.apply_era_visibility()
+
+
 func is_past() -> bool:
 	return my_era == Era.PAST
 
@@ -23,10 +28,17 @@ func is_future() -> bool:
 	return my_era == Era.FUTURE
 
 
+## Host (peer 1) is always the past player; joined peers are future players.
+## Client peer ids are random in Godot 4, so "id == 2" is never a valid check.
+static func era_of(peer_id: int) -> Era:
+	return Era.PAST if peer_id == 1 else Era.FUTURE
+
+
 func become_host():
 	print("Starting host (PAST era)")
 
 	my_era = Era.PAST
+	_refresh_era_visuals()
 	host_mode_enabled = !OS.has_feature("dedicated_server")
 	multiplayer_mode_enabled = true
 
@@ -49,6 +61,7 @@ func join_as_player_2():
 	print("Player 2 join (FUTURE era)")
 
 	my_era = Era.FUTURE
+	_refresh_era_visuals()
 	multiplayer_mode_enabled = true
 	var client_peer = ENetMultiplayerPeer.new()
 	client_peer.create_client(SERVER_IP, SERVER_PORT)

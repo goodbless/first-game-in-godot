@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 [ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="11_goals"]
+[ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="12_box"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashvg"]
 texture = ExtResource("2_r1crl")
@@ -251,6 +252,11 @@ position = Vector2(74, 141)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1240029325]
 shape = SubResource("WorldBoundaryShape2D_cn5tm")
+
+[node name="Objects" type="Node2D" parent="." unique_id=1474603628]
+
+[node name="Box" parent="Objects" unique_id=1757781263 instance=ExtResource("12_box")]
+position = Vector2(120, 20)
 
 [node name="Platforms" type="Node" parent="." unique_id=965775456]
 
