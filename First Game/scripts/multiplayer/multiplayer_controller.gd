@@ -21,11 +21,10 @@ var alive := true
 
 func _ready() -> void:
 	add_to_group("players")
-	var is_own := multiplayer.get_unique_id() == player_id
-	if is_own:
+	_apply_era_skin()
+	_apply_era_collision()
+	if multiplayer.get_unique_id() == player_id:
 		$Camera2D.make_current()
-		_apply_era_skin()
-		_apply_era_collision()
 	else:
 		$Camera2D.enabled = false
 		$AnimatedSprite2D.visible = false

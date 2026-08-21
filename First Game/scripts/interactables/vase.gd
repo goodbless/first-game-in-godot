@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 		return
 	for body in sensor.get_overlapping_bodies():
 		if _can_interact(body) and Input.is_action_just_pressed("attack"):
-			print("vase: break requested by ", body.name)
 			request_break.rpc()
 			return
 

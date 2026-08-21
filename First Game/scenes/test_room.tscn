@@ -38,7 +38,10 @@ size = Vector2(672, 16)
 [sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
 
 [sub_resource type="RectangleShape2D" id="GoalShape"]
-size = Vector2(20, 70)
+size = Vector2(40, 70)
+
+[sub_resource type="PlaceholderTexture2D" id="GoalFlagTex"]
+size = Vector2(40, 70)
 
 [node name="TestRoom" type="Node2D" unique_id=1611006981]
 script = ExtResource("1_gm")
@@ -139,6 +142,10 @@ script = ExtResource("3_goal")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PastGoal" unique_id=284546454]
 shape = SubResource("GoalShape")
 
+[node name="Flag" type="Sprite2D" parent="PastGoal"]
+texture = SubResource("GoalFlagTex")
+modulate = Color(1, 0.85, 0.3, 0.75)
+
 [node name="FutureGoal" type="Area2D" parent="." unique_id=246416478]
 position = Vector2(615, 65)
 collision_mask = 4
@@ -147,6 +154,10 @@ goal_era = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FutureGoal" unique_id=1339981108]
 shape = SubResource("GoalShape")
+
+[node name="Flag" type="Sprite2D" parent="FutureGoal"]
+texture = SubResource("GoalFlagTex")
+modulate = Color(0.3, 0.9, 1, 0.75)
 
 [node name="HUDLayer" type="CanvasLayer" parent="." unique_id=47053609]
 
@@ -187,7 +198,3 @@ theme_override_fonts/font = ExtResource("10_font")
 theme_override_font_sizes/font_size = 8
 text = "Join Game (Future)"
 
-[connection signal="body_entered" from="PastGoal" to="PastGoal" method="_on_body_entered"]
-[connection signal="body_exited" from="PastGoal" to="PastGoal" method="_on_body_exited"]
-[connection signal="body_entered" from="FutureGoal" to="FutureGoal" method="_on_body_entered"]
-[connection signal="body_exited" from="FutureGoal" to="FutureGoal" method="_on_body_exited"]

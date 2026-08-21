@@ -220,7 +220,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
-size = Vector2(20, 70)
+size = Vector2(40, 70)
 
 [node name="Game" type="Node2D" unique_id=320076128]
 
@@ -343,7 +343,3 @@ goal_era = 2
 position = Vector2(553, -131)
 shape = SubResource("RectangleShape2D_0tnpc")
 
-[connection signal="body_entered" from="PastGoal" to="PastGoal" method="_on_body_entered"]
-[connection signal="body_exited" from="PastGoal" to="PastGoal" method="_on_body_exited"]
-[connection signal="body_entered" from="FutureGoal" to="FutureGoal" method="_on_body_entered"]
-[connection signal="body_exited" from="FutureGoal" to="FutureGoal" method="_on_body_exited"]
