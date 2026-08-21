@@ -25,6 +25,9 @@ func _ready() -> void:
 	_apply_era_collision()
 	if multiplayer.get_unique_id() == player_id:
 		$Camera2D.make_current()
+		var loading := get_tree().get_first_node_in_group("loading_screen")
+		if loading != null:
+			loading.hide()
 	else:
 		$Camera2D.enabled = false
 		$AnimatedSprite2D.visible = false
