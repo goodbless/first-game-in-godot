@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactables/vase.gd" id="1_vase"]
+
+[sub_resource type="PlaceholderTexture2D" id="VaseTex"]
+size = Vector2(12, 14)
+
+[sub_resource type="RectangleShape2D" id="VaseShape"]
+size = Vector2(12, 14)
+
+[sub_resource type="CircleShape2D" id="SensorShape"]
+radius = 22.0
+
+[sub_resource type="SceneReplicationConfig" id="VaseSync"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:broken")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[node name="Vase" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("1_vase")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("VaseShape")
+
+[node name="PastVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual"]
+texture = SubResource("VaseTex")
+modulate = Color(0.35, 0.65, 0.7, 1)
+
+[node name="FutureVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
+texture = SubResource("VaseTex")
+modulate = Color(0.5, 0.45, 0.4, 1)
+
+[node name="Sensor" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+shape = SubResource("SensorShape")
+
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("VaseSync")

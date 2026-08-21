@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-## Physics-body variant of the era-aware interactable base (for pushable/
-## falling objects). Area2D/StaticBody2D objects use interactable.gd instead.
+## Physics-body base for era-aware interactables: dual visuals, era ownership
+## checks, level reset and server-side gravity helpers.
 
 @export var owner_era := 1  ## 1 = past player, 2 = future player
 
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var _initial_position: Vector2
 
 
@@ -13,6 +14,21 @@ func _ready() -> void:
 	add_to_group("interactables")
 	_initial_position = position
 	apply_era_visibility()
+
+
+## Server-side gravity (velocity only — caller decides when to slide).
+func _apply_gravity(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	else:
+		velocity.y = 0.0
+
+
+## Server-side gravity + move, for static objects that just settle on the
+## floor. Clients never call this (position syncs instead).
+func _settle(delta: float) -> void:
+	_apply_gravity(delta)
+	move_and_slide()
 
 
 func apply_era_visibility() -> void:
