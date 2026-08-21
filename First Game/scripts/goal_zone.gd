@@ -20,7 +20,8 @@ func _on_body_exited(body):
 		_occupied = false
 
 func _is_era_player(body) -> bool:
-	return body is CharacterBody2D and "player_id" in body and body.player_id == goal_era
+	return body is CharacterBody2D and "player_id" in body \
+		and MultiplayerManager.era_of(body.player_id) == goal_era
 
 func _check_win():
 	if not multiplayer.is_server():

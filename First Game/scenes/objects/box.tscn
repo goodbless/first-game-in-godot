@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactables/box.gd" id="1_box"]
+
+[sub_resource type="PlaceholderTexture2D" id="BoxTex"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="BoxShape"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="SensorShape"]
+size = Vector2(6, 12)
+
+[sub_resource type="SceneReplicationConfig" id="BoxSync"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Box" type="CharacterBody2D"]
+script = ExtResource("1_box")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("BoxShape")
+
+[node name="PastVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual"]
+texture = SubResource("BoxTex")
+modulate = Color(0.72, 0.5, 0.28, 1)
+
+[node name="FutureVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
+texture = SubResource("BoxTex")
+modulate = Color(0.45, 0.4, 0.35, 1)
+
+[node name="PushLeft" type="Area2D" parent="."]
+position = Vector2(-11, 0)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushLeft"]
+shape = SubResource("SensorShape")
+
+[node name="PushRight" type="Area2D" parent="."]
+position = Vector2(11, 0)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushRight"]
+shape = SubResource("SensorShape")
+
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("BoxSync")

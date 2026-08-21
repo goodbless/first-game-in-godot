@@ -37,7 +37,7 @@ func reset_level() -> void:
 
 
 func _apply_era_skin() -> void:
-	if player_id == MultiplayerManager.Era.PAST:
+	if MultiplayerManager.era_of(player_id) == MultiplayerManager.Era.PAST:
 		animated_sprite.modulate = Color(1.0, 0.83, 0.62)
 	else:
 		animated_sprite.modulate = Color(0.65, 0.78, 1.0)
@@ -47,7 +47,7 @@ func _apply_era_collision() -> void:
 	# L1=shared world, L2=past player, L3=future player,
 	# L4=past-only objects, L5=future-only objects. Players never collide
 	# with each other or with the other era's exclusive objects.
-	if player_id == MultiplayerManager.Era.PAST:
+	if MultiplayerManager.era_of(player_id) == MultiplayerManager.Era.PAST:
 		collision_layer = 0b00010
 		collision_mask = 0b01001
 	else:
