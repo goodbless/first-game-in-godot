@@ -4,7 +4,7 @@ enum Era { NONE = 0, PAST = 1, FUTURE = 2 }
 
 const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"
-const LEVELS := ["res://scenes/game.tscn"]
+const LEVELS := ["res://scenes/test_room.tscn"]
 
 var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
 
@@ -53,7 +53,6 @@ func become_host():
 	multiplayer.peer_connected.connect(_add_player_to_game)
 	multiplayer.peer_disconnected.connect(_del_player)
 
-	_remove_single_player()
 	respawn_all_players()
 
 
@@ -67,8 +66,6 @@ func join_as_player_2():
 	client_peer.create_client(SERVER_IP, SERVER_PORT)
 
 	multiplayer.multiplayer_peer = client_peer
-
-	_remove_single_player()
 
 
 func respawn_all_players():
@@ -93,6 +90,10 @@ func respawn_all_players():
 
 func _add_player_to_game(id):
 	print("Player joined: " + str(id))
+	# Lobby / mid-scene-switch: no Players node yet — respawn_all_players()
+	# spawns everyone when the level scene is ready.
+	if _player_spawn_node == null or not is_instance_valid(_player_spawn_node):
+		return
 
 	var player_to_add = multiplayer_scene.instantiate()
 	player_to_add.player_id = id
@@ -111,14 +112,14 @@ func _del_player(id):
 			break
 
 
-func _remove_single_player():
-	var scene := get_tree().current_scene
-	if scene != null and scene.has_node("Player"):
-		print("remove single player")
-		scene.get_node("Player").queue_free()
-
-
 ## --- Level flow (server-authoritative) ---
+
+## Lobby entry point: the server calls this once both players are connected.
+func start_game() -> void:
+	if not multiplayer.is_server():
+		return
+	_goto_level.rpc(0)
+
 
 func notify_level_failed():
 	if multiplayer.is_server():

@@ -1,0 +1,78 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/lobby_manager.gd" id="1_lobby"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_fontb"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="3_font"]
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_lobby")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="LobbyHUD" type="Control" parent="UILayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="UILayer/LobbyHUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09, 0.09, 0.12, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/LobbyHUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 160.0
+offset_top = -90.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="UILayer/LobbyHUD/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fontb")
+theme_override_font_sizes/font_size = 48
+text = "PAST & FUTURE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="UILayer/LobbyHUD/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "a co-op across two eras"
+horizontal_alignment = 1
+
+[node name="HostGame" type="Button" parent="UILayer/LobbyHUD/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fontb")
+theme_override_font_sizes/font_size = 24
+text = "Start Game (Past)"
+
+[node name="JoinGame" type="Button" parent="UILayer/LobbyHUD/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fontb")
+theme_override_font_sizes/font_size = 24
+text = "Join Game (Future)"
+
+[node name="StatusLabel" type="Label" parent="UILayer/LobbyHUD/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "Choose your era to begin"
+horizontal_alignment = 1
