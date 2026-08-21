@@ -112,13 +112,9 @@ position = Vector2(290, 40)
 [node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
 position = Vector2(350, 20)
 
-[node name="Player" parent="." unique_id=1149967040 instance=ExtResource("2_player")]
+[node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(60, 40)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1744037603]
-position = Vector2(0, -7)
 zoom = Vector2(4, 4)
-position_smoothing_enabled = true
 
 [node name="Players" type="Node2D" parent="." unique_id=779539851]
 position = Vector2(60, 40)
@@ -158,43 +154,4 @@ shape = SubResource("GoalShape")
 [node name="Flag" type="Sprite2D" parent="FutureGoal"]
 texture = SubResource("GoalFlagTex")
 modulate = Color(0.3, 0.9, 1, 0.75)
-
-[node name="HUDLayer" type="CanvasLayer" parent="." unique_id=47053609]
-
-[node name="MultiplayerHUD" type="Control" parent="HUDLayer" unique_id=1734410826]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 230.0
-offset_bottom = 120.0
-
-[node name="Panel" type="Panel" parent="HUDLayer/MultiplayerHUD" unique_id=1974426622]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUDLayer/MultiplayerHUD/Panel" unique_id=1668508809]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HostGame" type="Button" parent="HUDLayer/MultiplayerHUD/Panel/VBoxContainer" unique_id=1469227203]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_fontb")
-theme_override_font_sizes/font_size = 8
-text = "Start Game (Past)"
-
-[node name="JoinAsPlayer2" type="Button" parent="HUDLayer/MultiplayerHUD/Panel/VBoxContainer" unique_id=160362513]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("10_font")
-theme_override_font_sizes/font_size = 8
-text = "Join Game (Future)"
 

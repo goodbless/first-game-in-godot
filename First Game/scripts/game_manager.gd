@@ -4,7 +4,7 @@ extends Node
 
 const PLAYER_RESPAWN_DELAY := 1.0
 
-@onready var multiplayer_hud = %MultiplayerHUD
+@onready var multiplayer_hud = get_node_or_null("%MultiplayerHUD")
 
 
 func _ready() -> void:
@@ -14,11 +14,9 @@ func _ready() -> void:
 		print("Running as dedicated server")
 		MultiplayerManager.become_host()
 
-	if MultiplayerManager.multiplayer_mode_enabled:
-		MultiplayerManager._remove_single_player()
-		if multiplayer.is_server():
-			await get_tree().create_timer(PLAYER_RESPAWN_DELAY).timeout
-			MultiplayerManager.respawn_all_players()
+	if MultiplayerManager.multiplayer_mode_enabled and multiplayer.is_server():
+		await get_tree().create_timer(PLAYER_RESPAWN_DELAY).timeout
+		MultiplayerManager.respawn_all_players()
 
 
 func _connect_hud() -> void:
