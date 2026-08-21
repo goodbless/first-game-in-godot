@@ -1,7 +1,7 @@
 extends "res://scripts/interactables/interactable_body.gd"
 
 ## Era gate. Blocks only the PAST player (layer 8); the future player walks
-## through freely. The future player opens it via the era switch.
+## through freely and opens it via the era switch.
 
 var open := false:
 	set(value):
@@ -15,7 +15,6 @@ func _ready() -> void:
 	super()
 	add_to_group("doors")
 	_update_state()
-	print("door: ready at ", position, " open=", open, " layer=", collision_layer)
 
 
 func _physics_process(delta: float) -> void:

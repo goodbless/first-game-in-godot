@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 		return
 	for body in sensor.get_overlapping_bodies():
 		if _can_interact(body) and Input.is_action_just_pressed("attack"):
-			print("switch: activate requested by ", body.name)
 			request_activate.rpc()
 			return
 
@@ -45,14 +44,10 @@ func _update_state() -> void:
 func request_activate() -> void:
 	if not multiplayer.is_server() or active:
 		return
-	var sender_era := MultiplayerManager.era_of(multiplayer.get_remote_sender_id())
-	print("switch: request from peer ", multiplayer.get_remote_sender_id(), " era ", sender_era, " (owner ", owner_era, ")")
-	if sender_era != owner_era:
+	if MultiplayerManager.era_of(multiplayer.get_remote_sender_id()) != owner_era:
 		return
 	active = true
-	var doors := get_tree().get_nodes_in_group("doors")
-	print("switch: activating ", doors.size(), " doors")
-	for door in doors:
+	for door in get_tree().get_nodes_in_group("doors"):
 		door.open = true
 
 
