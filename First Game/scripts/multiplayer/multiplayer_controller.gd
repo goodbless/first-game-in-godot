@@ -20,10 +20,39 @@ var alive := true
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready() -> void:
-	if multiplayer.get_unique_id() == player_id:
+	add_to_group("players")
+	var is_own := multiplayer.get_unique_id() == player_id
+	if is_own:
 		$Camera2D.make_current()
+		_apply_era_skin()
+		_apply_era_collision()
 	else:
 		$Camera2D.enabled = false
+		$AnimatedSprite2D.visible = false
+
+
+func reset_level() -> void:
+	position = Vector2.ZERO
+	velocity = Vector2.ZERO
+
+
+func _apply_era_skin() -> void:
+	if player_id == MultiplayerManager.Era.PAST:
+		animated_sprite.modulate = Color(1.0, 0.83, 0.62)
+	else:
+		animated_sprite.modulate = Color(0.65, 0.78, 1.0)
+
+
+func _apply_era_collision() -> void:
+	# L1=shared world, L2=past player, L3=future player,
+	# L4=past-only objects, L5=future-only objects. Players never collide
+	# with each other or with the other era's exclusive objects.
+	if player_id == MultiplayerManager.Era.PAST:
+		collision_layer = 0b00010
+		collision_mask = 0b01001
+	else:
+		collision_layer = 0b00100
+		collision_mask = 0b10001
 
 func _apply_animations(delta):
 	# Flip the Sprite
