@@ -18,8 +18,15 @@ func _physics_process(_delta: float) -> void:
 func _process(delta: float) -> void:
     if Input.is_action_just_pressed("jump"):
         jump.rpc()
+    if Input.is_action_just_released("jump"):
+        jump_cut.rpc()
 
 @rpc("call_local")
 func jump():
     if multiplayer.is_server():
         player.do_jump = true
+
+@rpc("call_local")
+func jump_cut():
+    if multiplayer.is_server():
+        player.jump_cut_pending = true

@@ -1,17 +1,20 @@
 extends CharacterBody2D
 
-
-const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var direction := 1
 var do_jump := false
+var jump_cut_pending := false
 var _is_on_floor := true
 var alive := true
 
+@export var max_speed := 130.0
+@export var jump_velocity := -300.0
+@export var rise_gravity_scale := 2.2
+@export var fall_gravity_scale := 3.0
+@export var jump_cut_scale := 0.4
+@export var max_fall_speed := 1500.0
 @export var player_id := 1:
 	set(id):
 		player_id = id
@@ -24,7 +27,7 @@ func _ready() -> void:
 	_apply_era_skin()
 	_apply_era_collision()
 	if multiplayer.get_unique_id() == player_id:
-		$Camera2D.make_current()
+		#$Camera2D.make_current()
 		var loading := get_tree().get_first_node_in_group("loading_screen")
 		if loading != null:
 			loading.hide()
@@ -73,22 +76,30 @@ func _apply_animations(delta):
 		animated_sprite.play("jump")
 
 func _apply_movement_from_input(delta):
-	# Add the gravity.
+	# Asymmetric gravity: heavier fall than rise kills the floaty feel;
+	# rise uses extra gravity too so jumps snap up instead of drifting.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		var g := gravity * (rise_gravity_scale if velocity.y < 0.0 else fall_gravity_scale)
+		velocity.y = minf(velocity.y + g * delta, max_fall_speed)
 
 	# Handle jump.
 	if do_jump and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 		do_jump = false
+
+	# Variable jump height: releasing the key early cuts the rise short.
+	if jump_cut_pending:
+		jump_cut_pending = false
+		if velocity.y < 0.0:
+			velocity.y *= jump_cut_scale
 
 	direction = %InputSynchronizer.input_direction
 
 	# Apply movement
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * max_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, max_speed)
 
 	move_and_slide()
 
