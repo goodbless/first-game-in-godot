@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
-## Physics-body base for era-aware interactables: dual visuals, era ownership
-## checks, level reset and server-side gravity helpers.
+## Physics-body base for era-aware interactables: era ownership checks,
+## level reset and server-side gravity helpers. Era visuals are delegated to
+## a dynamically added EraVisuals child (composition) so the same logic
+## stays reusable on non-CharacterBody2D nodes.
+
+const EraVisualsScript := preload("res://scripts/era_visuals.gd")
 
 @export var owner_era := 1  ## 1 = past player, 2 = future player
 
@@ -11,9 +15,11 @@ var _initial_position: Vector2
 
 func _ready() -> void:
 	add_to_group("level_resettable")
-	add_to_group("interactables")
 	_initial_position = position
-	apply_era_visibility()
+	var era_visuals := Node.new()
+	era_visuals.name = "EraVisuals"
+	era_visuals.set_script(EraVisualsScript)
+	add_child(era_visuals)
 
 
 ## Server-side gravity (velocity only — caller decides when to slide).
@@ -29,21 +35,6 @@ func _apply_gravity(delta: float) -> void:
 func _settle(delta: float) -> void:
 	_apply_gravity(delta)
 	move_and_slide()
-
-
-func apply_era_visibility() -> void:
-	var past_visual := get_node_or_null("PastVisual")
-	var future_visual := get_node_or_null("FutureVisual")
-	if MultiplayerManager.my_era == MultiplayerManager.Era.FUTURE:
-		if past_visual != null:
-			past_visual.visible = false
-		if future_visual != null:
-			future_visual.visible = true
-	else:
-		if past_visual != null:
-			past_visual.visible = true
-		if future_visual != null:
-			future_visual.visible = false
 
 
 func _hide_hint() -> void:

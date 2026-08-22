@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/vase.tscn" id="6_vase"]
 [ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="7_switch"]
 [ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="8_door"]
+[ext_resource type="PackedScene" uid="uid://bgv5v2fxqlswe" path="res://scenes/platform.tscn" id="9_fh3c8"]
 
 [sub_resource type="RectangleShape2D" id="FloorAShape"]
 size = Vector2(416, 16)
@@ -171,3 +172,6 @@ shape = SubResource("GoalShape")
 [node name="Flag" type="Sprite2D" parent="FutureGoal" unique_id=1295062120]
 modulate = Color(0.3, 0.9, 1, 0.75)
 texture = SubResource("GoalFlagTex")
+
+[node name="Platform" parent="." unique_id=663266155 instance=ExtResource("9_fh3c8")]
+position = Vector2(189, 16)
