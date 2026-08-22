@@ -7,8 +7,8 @@ extends StaticBody2D
 
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
 
-const GATE_TRAVEL := 44.0
-const GATE_SPEED := 60.0  ## px per second
+const GATE_TRAVEL := 150.0
+const GATE_SPEED := 200.0  ## px per second
 
 var open := false:
 	set(value):
@@ -30,6 +30,8 @@ func _ready() -> void:
 	add_to_group("level_resettable")
 	_update_state()
 
+func set_open(open: bool) ->void:
+	self.open = open
 
 func _update_state() -> void:
 	collision_layer = 0 if open else MultiplayerManager.existence_layer(exists_in)

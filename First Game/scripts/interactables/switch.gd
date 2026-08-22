@@ -4,8 +4,13 @@ extends Area2D
 ## Activating it opens every door in the level — gates that block the
 ## PAST player's path (future helps past).
 ## Scene-placed on the floor; the root Area doubles as the proximity sensor.
+signal switch_on
+signal switch_off
+signal switch_changed(on:bool)
 
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }  # scope: which timelines this exists in
+@onready var on: Sprite2D = $ON
+@onready var off: Sprite2D = $OFF
 
 @export var owner_era := 2  ## 1 = past player, 2 = future player
 @export var exists_in := Existence.BOTH:
@@ -36,8 +41,6 @@ func _apply_existence() -> void:
 
 
 func _process(_delta: float) -> void:
-	if active:
-		return
 	var bodies: Array = get_overlapping_bodies()
 	_update_hint(bodies)
 	for body in bodies:
@@ -64,29 +67,22 @@ func _update_hint(bodies: Array) -> void:
 
 
 func _update_state() -> void:
-	for visual in [get_node_or_null("PastVisual"), get_node_or_null("FutureVisual")]:
-		if visual == null:
-			continue
-		if active:
-			visual.modulate = Color(0.4, 1.0, 0.8, 1)
-		else:
-			visual.modulate = Color(0.5, 0.5, 0.55, 1)
-	if active:
-		var hint := get_node_or_null("Hint")
-		if hint != null:
-			hint.visible = false
+	on.visible = active
+	off.visible = !active
 
 
 @rpc("any_peer", "call_local", "reliable")
 func request_activate() -> void:
-	if not multiplayer.is_server() or active:
+	if not multiplayer.is_server():
 		return
 	if MultiplayerManager.era_of(multiplayer.get_remote_sender_id()) != owner_era:
 		return
-	active = true
-	for door in get_tree().get_nodes_in_group("doors"):
-		door.open = true
-
+	active = !active
+	switch_changed.emit(active)
+	if active:
+		switch_on.emit()
+	else:
+		switch_off.emit()
 
 func reset_level() -> void:
 	if multiplayer.multiplayer_peer != null and multiplayer.is_server():

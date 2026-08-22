@@ -1,13 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://hpiy1nkt1qpo"]
 
-[ext_resource type="Script" path="res://scripts/interactables/door.gd" id="1_door"]
-[ext_resource type="Script" path="res://scripts/era_visuals.gd" id="2_era"]
-
-[sub_resource type="PlaceholderTexture2D" id="GateTex"]
-size = Vector2(12, 48)
+[ext_resource type="Script" uid="uid://dolhi2svonbke" path="res://scripts/interactables/door.gd" id="1_door"]
+[ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
 
 [sub_resource type="RectangleShape2D" id="DoorShape"]
-size = Vector2(12, 48)
+size = Vector2(40, 200)
+
+[sub_resource type="PlaceholderTexture2D" id="GateTex"]
+size = Vector2(40, 200)
 
 [sub_resource type="SceneReplicationConfig" id="DoorSync"]
 properties/0/path = NodePath(".:open")
@@ -17,26 +17,29 @@ properties/1/path = NodePath(".:exists_in")
 properties/1/spawn = true
 properties/1/replication_mode = 2
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" unique_id=87996404]
 script = ExtResource("1_door")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216706818]
+position = Vector2(0, -100)
 shape = SubResource("DoorShape")
 
-[node name="EraVisuals" type="Node" parent="."]
+[node name="EraVisuals" type="Node" parent="." unique_id=781345580]
 script = ExtResource("2_era")
 
-[node name="PastVisual" type="Node2D" parent="."]
+[node name="PastVisual" type="Node2D" parent="." unique_id=1979132589]
+position = Vector2(0, -100)
 
-[node name="Gate" type="Sprite2D" parent="PastVisual"]
-texture = SubResource("GateTex")
+[node name="Gate" type="Sprite2D" parent="PastVisual" unique_id=1307947077]
 modulate = Color(0.55, 0.4, 0.25, 1)
-
-[node name="FutureVisual" type="Node2D" parent="."]
-
-[node name="Grate" type="Sprite2D" parent="FutureVisual"]
 texture = SubResource("GateTex")
-modulate = Color(0.5, 0.32, 0.22, 1)
 
-[node name="Synchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="FutureVisual" type="Node2D" parent="." unique_id=1587934749]
+position = Vector2(0, -100)
+
+[node name="Grate" type="Sprite2D" parent="FutureVisual" unique_id=322507347]
+modulate = Color(0.5, 0.32, 0.22, 1)
+texture = SubResource("GateTex")
+
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1311755615]
 replication_config = SubResource("DoorSync")
