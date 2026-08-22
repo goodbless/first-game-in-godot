@@ -4,7 +4,7 @@ enum Era { NONE = 0, PAST = 1, FUTURE = 2 }
 
 const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"
-const LEVELS := ["res://scenes/test_room.tscn"]
+const LEVELS := ["res://scenes/Levels/test_room.tscn"]
 
 var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
 
