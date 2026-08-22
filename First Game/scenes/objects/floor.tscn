@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c375g36rpv282" path="res://scripts/interactables/floor.gd" id="1_floor"]
 [ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
-[ext_resource type="Texture2D" uid="uid://ctfl4xfw2w15v" path="res://assets/sprites/platform.png" id="3_hocbu"]
-[ext_resource type="Texture2D" uid="uid://cjm1jtutxv1hj" path="res://assets/sprites/Platform_future.png" id="4_18mal"]
+[ext_resource type="Texture2D" uid="uid://dx5juwc8jja4a" path="res://assets/sprites/floor02.png" id="3_hocbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13ihi"]
-size = Vector2(208, 60)
+size = Vector2(365, 70)
 
 [node name="Floor" type="StaticBody2D" unique_id=2063579164]
 script = ExtResource("1_floor")
@@ -22,8 +21,8 @@ texture = ExtResource("3_hocbu")
 [node name="FutureVisual" type="Node2D" parent="." unique_id=2012611232]
 
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=1372873994]
-texture = ExtResource("4_18mal")
+texture = ExtResource("3_hocbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1672323316]
-position = Vector2(0, -5)
+position = Vector2(10.5, 9)
 shape = SubResource("RectangleShape2D_13ihi")

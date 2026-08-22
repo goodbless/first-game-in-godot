@@ -16,9 +16,6 @@
 [ext_resource type="PackedScene" path="res://scenes/components/future_spawn.tscn" id="12_hofti"]
 [ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="12_yn2df"]
 
-[sub_resource type="RectangleShape2D" id="FloorAShape"]
-size = Vector2(1920, 100)
-
 [sub_resource type="RectangleShape2D" id="WallShape"]
 size = Vector2(100, 1080)
 
@@ -27,7 +24,7 @@ size = Vector2(1930, 64)
 
 [sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
 
-[node name="TestRoom" type="Node2D" unique_id=1611006981]
+[node name="TestRoom2" type="Node2D" unique_id=1611006981]
 script = ExtResource("1_gm")
 
 [node name="Level" type="Node2D" parent="." unique_id=1271458255]
@@ -35,12 +32,6 @@ script = ExtResource("1_gm")
 [node name="SceneLab" type="Sprite2D" parent="Level" unique_id=611536403]
 texture = ExtResource("2_mqi01")
 script = ExtResource("3_2cma6")
-
-[node name="GroundA" type="StaticBody2D" parent="Level" unique_id=776659089]
-position = Vector2(3, 493)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/GroundA" unique_id=2041111902]
-shape = SubResource("FloorAShape")
 
 [node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
 position = Vector2(-944, 0)
@@ -106,19 +97,28 @@ position = Vector2(0, -515)
 shape = SubResource("CeilingShape")
 
 [node name="Floor" parent="Level" unique_id=1509154067 instance=ExtResource("2_qqxd0")]
-position = Vector2(-88, -280)
+position = Vector2(848, 472)
+
+[node name="Floor2" parent="Level" unique_id=1366317735 instance=ExtResource("2_qqxd0")]
+position = Vector2(504, 472)
+
+[node name="Floor3" parent="Level" unique_id=2063579164 instance=ExtResource("2_qqxd0")]
+position = Vector2(168, 472)
+
+[node name="Floor4" parent="Level" unique_id=1416282274 instance=ExtResource("2_qqxd0")]
+position = Vector2(-168, 472)
+
+[node name="Floor5" parent="Level" unique_id=1771218313 instance=ExtResource("2_qqxd0")]
+position = Vector2(-504, 472)
+
+[node name="Floor6" parent="Level" unique_id=894614707 instance=ExtResource("2_qqxd0")]
+position = Vector2(-848, 472)
 
 [node name="Box" parent="Level" unique_id=2056746295 instance=ExtResource("5_box")]
 position = Vector2(-96, -376)
 
 [node name="Box2" parent="Level" unique_id=1940846343 instance=ExtResource("5_box")]
-position = Vector2(-200, 376)
-
-[node name="Floor2" parent="Level" unique_id=1366317735 instance=ExtResource("2_qqxd0")]
-position = Vector2(-408, 224)
-
-[node name="Floor3" parent="Level" unique_id=2063579164 instance=ExtResource("2_qqxd0")]
-position = Vector2(619, 229)
+position = Vector2(-216, 392)
 
 [node name="PlatformV2" parent="Level" unique_id=2085541356 instance=ExtResource("12_yn2df")]
 position = Vector2(-712, 368)
@@ -162,7 +162,7 @@ position = Vector2(643, 45)
 position = Vector2(619, 117)
 
 [node name="SpikeTrap" parent="." unique_id=1042375586 instance=ExtResource("10_qqxd0")]
-position = Vector2(336, 408)
+position = Vector2(336, 424)
 collision_mask = 6
 
 [node name="PastSpawn" parent="." unique_id=309091987 instance=ExtResource("11_yn2df")]
