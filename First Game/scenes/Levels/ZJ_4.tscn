@@ -108,12 +108,12 @@ position = Vector2(-177, 207)
 position = Vector2(32, 207)
 cycle_time = 0.0
 target_offset = Vector2(0, 0)
-crumble_time = 0.3
+crumble_time = 0.2
 respawn_time = 0.0
 
 [node name="PlatformV7" parent="." index="34" unique_id=453786575 instance=ExtResource("3_x3rh6")]
 position = Vector2(240, 207)
 cycle_time = 0.0
 target_offset = Vector2(0, 0)
-crumble_time = 0.3
+crumble_time = 0.2
 respawn_time = 0.0

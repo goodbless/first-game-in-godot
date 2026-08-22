@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_pdmg4"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_h0mxt"]
-[ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="3_nq141"]
+[ext_resource type="PackedScene" uid="uid://fdff3lkc645i" path="res://scenes/objects/switch.tscn" id="3_nq141"]
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="4_nq141"]
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_pdmg4")]
@@ -72,6 +72,7 @@ position = Vector2(832, -46)
 
 [node name="Switch" parent="." index="27" unique_id=662216463 instance=ExtResource("3_nq141")]
 position = Vector2(-224, -99)
+owner_era = 1
 exists_in = 1
 
 [node name="Floor17" parent="." index="28" unique_id=164651875 instance=ExtResource("2_h0mxt")]
@@ -96,22 +97,24 @@ position = Vector2(636, 88)
 position = Vector2(-499.00003, 332)
 scale = Vector2(1.59, 1.59)
 
+[node name="SpikeTrap3" parent="SpikeTrap" index="5" unique_id=1487543102 instance=ExtResource("4_nq141")]
+position = Vector2(261.63522, -64.77986)
+
+[node name="SpikeTrap5" parent="SpikeTrap" index="6" unique_id=1262238137 instance=ExtResource("4_nq141")]
+position = Vector2(537.10693, -111.94968)
+
 [node name="SpikeTrap2" parent="." index="35" unique_id=113766670 instance=ExtResource("4_nq141")]
+visible = false
 position = Vector2(-295, 278)
 scale = Vector2(1.59, 1.59)
 
-[node name="SpikeTrap3" parent="." index="36" unique_id=1487543102 instance=ExtResource("4_nq141")]
-position = Vector2(-83, 229)
-scale = Vector2(1.59, 1.59)
+[node name="SpikeTrap4" parent="SpikeTrap2" index="5" unique_id=875809529 instance=ExtResource("4_nq141")]
+position = Vector2(262.89307, 1.2578735)
 
-[node name="SpikeTrap4" parent="." index="37" unique_id=875809529 instance=ExtResource("4_nq141")]
-position = Vector2(123, 280)
-scale = Vector2(1.59, 1.59)
+[node name="SpikeTrap6" parent="SpikeTrap2" index="6" unique_id=1531949145 instance=ExtResource("4_nq141")]
+position = Vector2(578.61633, -154.71698)
 
-[node name="SpikeTrap5" parent="." index="38" unique_id=1262238137 instance=ExtResource("4_nq141")]
-position = Vector2(355, 154)
-scale = Vector2(1.59, 1.59)
-
-[node name="SpikeTrap6" parent="." index="39" unique_id=1531949145 instance=ExtResource("4_nq141")]
-position = Vector2(625, 32)
-scale = Vector2(1.59, 1.59)
+[connection signal="switch_off" from="Switch" to="SpikeTrap" method="show"]
+[connection signal="switch_off" from="Switch" to="SpikeTrap2" method="hide"]
+[connection signal="switch_on" from="Switch" to="SpikeTrap" method="hide"]
+[connection signal="switch_on" from="Switch" to="SpikeTrap2" method="show"]
