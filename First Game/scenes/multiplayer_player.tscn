@@ -219,8 +219,6 @@ shape = SubResource("CircleShape2D_k8tkd")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=527958384]
 position = Vector2(0, -7)
 zoom = Vector2(4, 4)
-limit_bottom = 120
-limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=16580997]

@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" path="res://scenes/components/future_spawn.tscn" id="2_fwtru"]
 [ext_resource type="PackedScene" path="res://scenes/components/past_spawn.tscn" id="3_c3k5b"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tioki"]
+size = Vector2(1080, 16)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oegr0"]
 size = Vector2(1080, 16)
 
@@ -14,6 +17,9 @@ size = Vector2(1080, 16)
 
 [node name="Floor" parent="." unique_id=699578574 instance=ExtResource("1_tioki")]
 position = Vector2(814, 968)
+
+[node name="CollisionShape2D" parent="Floor" index="0"]
+shape = SubResource("RectangleShape2D_tioki")
 
 [node name="Sprite2D" parent="Floor/PastVisual" index="0"]
 texture = SubResource("PlaceholderTexture2D_oegr0")
