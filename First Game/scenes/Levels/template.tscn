@@ -52,7 +52,7 @@ shape = SubResource("CeilingShape")
 position = Vector2(60, 40)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2098103311]
-_spawnable_scenes = PackedStringArray("uid://u6e7d34la27u")
+_spawnable_scenes = PackedStringArray("uid://u6e7d34la27u", "uid://co6alg6cmej5s")
 spawn_path = NodePath("../Players")
 spawn_limit = 2
 
