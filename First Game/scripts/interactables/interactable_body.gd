@@ -46,6 +46,26 @@ func apply_era_visibility() -> void:
 			future_visual.visible = false
 
 
+func _hide_hint() -> void:
+	var hint := get_node_or_null("Hint")
+	if hint != null:
+		hint.visible = false
+
+
+## Show/hide the "[E]" hint: visible only when the LOCAL player (this
+## machine's own character) is inside the sensor and may interact.
+func _update_hint(sensor_bodies: Array) -> void:
+	var hint := get_node_or_null("Hint")
+	if hint == null:
+		return
+	var show_hint := false
+	for body in sensor_bodies:
+		if _can_interact(body) and body.player_id == multiplayer.get_unique_id():
+			show_hint = true
+			break
+	hint.visible = show_hint
+
+
 func _can_interact(body) -> bool:
 	return body is CharacterBody2D and "player_id" in body \
 		and MultiplayerManager.era_of(body.player_id) == owner_era
