@@ -41,7 +41,12 @@ func clamp_owner(existence: int, owner_era: int, object_name: String) -> int:
 
 const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"
-const LEVELS := ["res://scenes/Levels/test_room.tscn"]
+const LEVELS_DIR := "res://scenes/Levels"
+
+## Discovered level scenes, sorted by filename. Refreshed on lobby load —
+## drop a .tscn into scenes/Levels/ and it shows up in the lobby picker.
+var levels: Array[String] = []
+var _selected_level := 0
 
 var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
 
@@ -164,11 +169,36 @@ func _del_player(id):
 
 ## --- Level flow (server-authoritative) ---
 
+func refresh_levels() -> void:
+	levels.clear()
+	var dir := DirAccess.open(LEVELS_DIR)
+	if dir == null:
+		push_warning("No levels directory found: %s" % LEVELS_DIR)
+		return
+	dir.list_dir_begin()
+	var file := dir.get_next()
+	while file != "":
+		if file.ends_with(".tscn"):
+			levels.append(LEVELS_DIR + "/" + file)
+		file = dir.get_next()
+	dir.list_dir_end()
+	levels.sort()
+	_selected_level = clampi(_selected_level, 0, maxi(levels.size() - 1, 0))
+
+
+func selected_level() -> int:
+	return _selected_level
+
+
+func select_level(index: int) -> void:
+	_selected_level = clampi(index, 0, maxi(levels.size() - 1, 0))
+
+
 ## Lobby entry point: the server calls this once both players are connected.
 func start_game() -> void:
-	if not multiplayer.is_server():
+	if not multiplayer.is_server() or levels.is_empty():
 		return
-	_goto_level.rpc(0)
+	_goto_level.rpc(_selected_level)
 
 
 func notify_level_failed():
@@ -178,9 +208,7 @@ func notify_level_failed():
 
 func notify_level_complete():
 	if multiplayer.is_server():
-		var next := _current_level + 1
-		if next >= LEVELS.size():
-			next = 0
+		var next := (_current_level + 1) % maxi(levels.size(), 1)
 		_goto_level.rpc(next)
 
 
@@ -197,4 +225,4 @@ func _reset_level():
 @rpc("call_local", "reliable")
 func _goto_level(level_index: int) -> void:
 	_current_level = level_index
-	get_tree().change_scene_to_file.call_deferred(LEVELS[level_index])
+	get_tree().change_scene_to_file.call_deferred(levels[level_index])
