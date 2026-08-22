@@ -1,6 +1,6 @@
 extends "res://scripts/interactables/interactable_body.gd"
 
-## Breakable vase. The past player attacks (X) while nearby — it shatters in
+## Breakable vase. The past player interacts (E) while nearby — it shatters in
 ## BOTH eras: the future player sees it "suddenly" explode into debris.
 
 var broken := false:
@@ -22,8 +22,10 @@ func _physics_process(delta: float) -> void:
 	_settle(delta)
 	if broken:
 		return
-	for body in sensor.get_overlapping_bodies():
-		if _can_interact(body) and Input.is_action_just_pressed("attack"):
+	var bodies: Array = sensor.get_overlapping_bodies()
+	_update_hint(bodies)
+	for body in bodies:
+		if _can_interact(body) and Input.is_action_just_pressed("interact"):
 			request_break.rpc()
 			return
 
@@ -42,6 +44,8 @@ func _update_state() -> void:
 			visual.position = Vector2.ZERO
 	collision_layer = 0 if broken else 1
 	set_physics_process(not broken)
+	if broken:
+		_hide_hint()
 
 
 @rpc("any_peer", "call_local", "reliable")

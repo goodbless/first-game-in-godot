@@ -1,7 +1,7 @@
 extends "res://scripts/interactables/interactable_body.gd"
 
-## Pushable crate. Server-authoritative physics; clients render the synced
-## position — the future player sees it move "on its own".
+## Pushable crate. Walk into it to push — the future player sees it move
+## "on its own".
 
 const PUSH_SPEED := 40.0
 

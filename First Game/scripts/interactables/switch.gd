@@ -1,6 +1,6 @@
 extends "res://scripts/interactables/interactable_body.gd"
 
-## Future-era switch. Only the FUTURE player can press it (X nearby).
+## Future-era switch. Only the FUTURE player can press it (E nearby).
 ## Activating it opens every door in the level — including gates that
 ## block the PAST player's path (future helps past).
 
@@ -22,9 +22,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_settle(delta)
 	if active:
+		_update_hint([])
 		return
-	for body in sensor.get_overlapping_bodies():
-		if _can_interact(body) and Input.is_action_just_pressed("attack"):
+	var bodies: Array = sensor.get_overlapping_bodies()
+	_update_hint(bodies)
+	for body in bodies:
+		if _can_interact(body) and Input.is_action_just_pressed("interact"):
 			request_activate.rpc()
 			return
 
@@ -38,6 +41,8 @@ func _update_state() -> void:
 		else:
 			visual.modulate = Color(0.5, 0.5, 0.55, 1)
 	set_physics_process(not active)
+	if active:
+		_hide_hint()
 
 
 @rpc("any_peer", "call_local", "reliable")
