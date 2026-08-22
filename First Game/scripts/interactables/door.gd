@@ -1,9 +1,9 @@
-extends "res://scripts/interactables/interactable_body.gd"
+extends StaticBody2D
 
 ## Era gate. Blocks only the PAST player (layer 8); the future player walks
-## through freely and opens it via the era switch. Turns fully static once
-## it has settled on the floor.
-
+## through freely and opens it via the era switch.
+## Scene-placed: set its Y so the base sits flush on the floor (no settle).
+## Era visuals come from the EraVisuals child node.
 var open := false:
 	set(value):
 		if open == value:
@@ -13,18 +13,9 @@ var open := false:
 
 
 func _ready() -> void:
-	super()
 	add_to_group("doors")
+	add_to_group("level_resettable")
 	_update_state()
-
-
-func _physics_process(delta: float) -> void:
-	_settle(delta)
-	# The door only needs physics for its initial drop. Once settled it must
-	# become a truly static wall: a still-simulating door would let a pushed
-	# box shove it aside via penetration recovery.
-	if is_on_floor():
-		set_physics_process(false)
 
 
 func _update_state() -> void:
@@ -38,7 +29,5 @@ func _update_state() -> void:
 
 
 func reset_level() -> void:
-	super()
 	if multiplayer.multiplayer_peer != null and multiplayer.is_server():
 		open = false
-		set_physics_process(true)  # re-drop and re-settle at the reset position
