@@ -7,12 +7,21 @@
 properties/0/path = NodePath(".:_t_sync")
 properties/0/spawn = true
 properties/0/replication_mode = 2
+properties/1/path = NodePath(".:broken")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:warning")
+properties/2/spawn = true
+properties/2/replication_mode = 2
 
 [sub_resource type="PlaceholderTexture2D" id="PlatformTex"]
 size = Vector2(32, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13ihi"]
 size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RiderSensorShape"]
+size = Vector2(28, 6)
 
 [node name="Platform" type="AnimatableBody2D"]
 script = ExtResource("1_nlgqw")
@@ -34,6 +43,13 @@ modulate = Color(0.72, 0.5, 0.28, 1)
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
 texture = SubResource("PlatformTex")
 modulate = Color(0.42, 0.38, 0.34, 1)
+
+[node name="RiderSensor" type="Area2D" parent="."]
+position = Vector2(0, -6)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiderSensor"]
+shape = SubResource("RiderSensorShape")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_13ihi")

@@ -177,3 +177,5 @@ texture = SubResource("GoalFlagTex")
 position = Vector2(189, 16)
 move_distance = 64.0
 move_axis = Vector2(1, 1)
+crumble_time = 3.0
+respawn_time = 0.0
