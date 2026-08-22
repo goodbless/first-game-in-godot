@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_qqxd0"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="4_kz"]
 [ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="5_box"]
-[ext_resource type="PackedScene" uid="uid://bgv5v2fxqlswe" path="res://scenes/platform.tscn" id="9_fh3c8"]
 [ext_resource type="PackedScene" uid="uid://bw6gomvbrnoah" path="res://scenes/objects/past_goal.tscn" id="9_hofti"]
 [ext_resource type="PackedScene" uid="uid://p3tlrv2hnp3h" path="res://scenes/objects/future_goal.tscn" id="10_h4m6d"]
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="10_qqxd0"]
@@ -58,10 +57,10 @@ position = Vector2(0, -515)
 shape = SubResource("CeilingShape")
 
 [node name="Floor" parent="Level" unique_id=1509154067 instance=ExtResource("2_qqxd0")]
-position = Vector2(88, -80)
+position = Vector2(-88, -280)
 
 [node name="Box" parent="Level" unique_id=2056746295 instance=ExtResource("5_box")]
-position = Vector2(-352, 104)
+position = Vector2(-96, -376)
 
 [node name="Box2" parent="Level" unique_id=1940846343 instance=ExtResource("5_box")]
 position = Vector2(-200, 376)
@@ -72,10 +71,14 @@ position = Vector2(-408, 224)
 [node name="Floor3" parent="Level" unique_id=2063579164 instance=ExtResource("2_qqxd0")]
 position = Vector2(619, 229)
 
-[node name="Platform" parent="Level" unique_id=994423101 instance=ExtResource("9_fh3c8")]
-position = Vector2(64, 8)
-move_distance = 100.0
-respawn_time = 0.0
+[node name="PlatformV2" parent="Level" unique_id=2085541356 instance=ExtResource("12_yn2df")]
+position = Vector2(-712, 368)
+target_offset = Vector2(0, -428)
+exists_in = 2
+
+[node name="PlatformV3" parent="Level" unique_id=952583973 instance=ExtResource("12_yn2df")]
+position = Vector2(-320, -136)
+target_offset = Vector2(439.8772, 313.61304)
 
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
@@ -115,3 +118,4 @@ position = Vector2(-717, 269)
 position = Vector2(360, 176)
 target_offset = Vector2(-162.14381, 151.13995)
 crumble_time = 3.0
+exists_in = 1
