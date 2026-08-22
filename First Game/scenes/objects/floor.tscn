@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cliik6xx7aynh"]
+
+[ext_resource type="Script" path="res://scripts/interactables/floor.gd" id="1_floor"]
+[ext_resource type="Script" path="res://scripts/era_visuals.gd" id="2_era"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnqe"]
+size = Vector2(32, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="FloorTex"]
+size = Vector2(32, 16)
+
+[node name="Floor" type="StaticBody2D"]
+script = ExtResource("1_floor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_crnqe")
+
+[node name="EraVisuals" type="Node" parent="."]
+script = ExtResource("2_era")
+
+[node name="PastVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual"]
+texture = SubResource("FloorTex")
+modulate = Color(0.42, 0.4, 0.36, 1)
+
+[node name="FutureVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
+texture = SubResource("FloorTex")
+modulate = Color(0.25, 0.24, 0.26, 1)
