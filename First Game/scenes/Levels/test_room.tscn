@@ -101,6 +101,17 @@ texture = SubResource("CeilingTex")
 [node name="Floor" parent="Level" unique_id=1509154067 instance=ExtResource("2_qqxd0")]
 position = Vector2(150, 66)
 
+[node name="Box" parent="Level" unique_id=2056746295 instance=ExtResource("5_box")]
+position = Vector2(145, 87)
+
+[node name="Floor2" parent="Level" unique_id=1366317735 instance=ExtResource("2_qqxd0")]
+position = Vector2(248, 46)
+
+[node name="Platform" parent="Level" unique_id=994423101 instance=ExtResource("9_fh3c8")]
+position = Vector2(305, 28)
+move_distance = 10.0
+respawn_time = 0.0
+
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
 [node name="Box" parent="Objects" unique_id=1349724052 instance=ExtResource("5_box")]

@@ -125,6 +125,18 @@ func respawn_all_players():
 			_add_player_to_game(peer_id)
 
 
+## World position where a peer's player (re)spawns: the era's spawn marker
+## if the level has one, else the Players node origin.
+func spawn_position_for_peer(peer_id: int) -> Vector2:
+	var wanted_era := era_of(peer_id)
+	for point in get_tree().get_nodes_in_group("spawn_points"):
+		if point.spawn_era == wanted_era:
+			return point.global_position
+	if _player_spawn_node != null:
+		return _player_spawn_node.global_position
+	return Vector2.ZERO
+
+
 func _add_player_to_game(id):
 	print("Player joined: " + str(id))
 	# Lobby / mid-scene-switch: no Players node yet — respawn_all_players()
@@ -137,6 +149,7 @@ func _add_player_to_game(id):
 	player_to_add.name = "Player_" + str(id)
 
 	_player_spawn_node.add_child(player_to_add, true)
+	player_to_add.global_position = spawn_position_for_peer(id)
 
 
 func _del_player(id):

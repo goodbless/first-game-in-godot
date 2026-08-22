@@ -34,7 +34,7 @@ func _ready() -> void:
 
 
 func reset_level() -> void:
-	position = Vector2.ZERO
+	global_position = MultiplayerManager.spawn_position_for_peer(player_id)
 	velocity = Vector2.ZERO
 
 
