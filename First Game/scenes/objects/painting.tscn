@@ -1,23 +1,23 @@
-[gd_scene format=4]
+[gd_scene format=3 uid="uid://j8njf5ir66k8"]
 
-[ext_resource type="Script" path="res://scripts/interactables/painting.gd" id="1_painting"]
+[ext_resource type="Script" uid="uid://dpxie66kxf8hs" path="res://scripts/interactables/painting.gd" id="1_painting"]
 
 [sub_resource type="PlaceholderTexture2D" id="PaintingTex"]
 size = Vector2(24, 18)
 
-[node name="Painting" type="CharacterBody2D"]
+[node name="Painting" type="CharacterBody2D" unique_id=570052815]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_painting")
 
-[node name="PastVisual" type="Node2D" parent="."]
+[node name="PastVisual" type="Node2D" parent="." unique_id=1962602378]
 
-[node name="Sprite2D" type="Sprite2D" parent="PastVisual"]
-texture = SubResource("PaintingTex")
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual" unique_id=109695878]
 modulate = Color(0.85, 0.7, 0.4, 1)
-
-[node name="FutureVisual" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
 texture = SubResource("PaintingTex")
+
+[node name="FutureVisual" type="Node2D" parent="." unique_id=2074969323]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=1218798204]
 modulate = Color(0.28, 0.24, 0.2, 1)
+texture = SubResource("PaintingTex")
