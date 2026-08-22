@@ -24,6 +24,14 @@ extends AnimatableBody2D
 @export var crumble_time := 0.0         ## countdown length after first touch; 0 = solid
 @export var respawn_time := 3.0         ## seconds before a broken platform returns; <= 0 = only level reset restores it
 
+enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
+
+@export var exists_in := Existence.BOTH:
+	set(value):
+		exists_in = value
+		if not Engine.is_editor_hint() and is_inside_tree():
+			_apply_existence()
+
 const PHASE_SYNC_INTERVAL := 0.5
 const STATIC_EPSILON := 1.0  ## px; travel shorter than this counts as static
 
@@ -34,6 +42,7 @@ var _respawn_accum := 0.0
 var _flicker_t := 0.0
 var _triggered := false
 var _is_moving := false
+var _base_collision_layer := 1
 
 var _origin: Vector2
 
@@ -69,6 +78,20 @@ func _ready() -> void:
 	add_to_group("level_resettable")
 	_origin = position
 	_is_moving = target_offset.length() > STATIC_EPSILON and cycle_time > 0.0
+	_apply_existence()
+
+
+## Era scoping: solid only on its existence layers, crumble-triggered only by
+## the era's player, and the scoped-out era's visual hidden by EraVisuals.
+func _apply_existence() -> void:
+	_base_collision_layer = MultiplayerManager.existence_layer(exists_in)
+	collision_layer = _base_collision_layer
+	var sensor := get_node_or_null("RiderSensor") as Area2D
+	if sensor != null:
+		sensor.collision_mask = MultiplayerManager.existence_trigger_mask(exists_in)
+	var era_visuals := get_node_or_null("EraVisuals")
+	if era_visuals != null:
+		era_visuals.apply_era_visibility()
 
 
 func _draw() -> void:
@@ -156,7 +179,7 @@ func _has_rider() -> bool:
 
 
 func _apply_broken() -> void:
-	collision_layer = 0 if broken else 1
+	collision_layer = 0 if broken else _base_collision_layer
 	for sprite in [get_node_or_null("PastVisual/Sprite2D"), get_node_or_null("FutureVisual/Sprite2D")]:
 		if sprite != null:
 			sprite.visible = not broken

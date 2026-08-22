@@ -48,8 +48,12 @@ const LEVELS_DIR := "res://scenes/Levels"
 var levels: Array[String] = []
 var _selected_level := 0
 
-var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
+var past_player_scene: PackedScene = preload("res://scenes/multiplayer_player.tscn")
+var future_player_scene: PackedScene = preload("res://scenes/multiplayer_player_2.tscn")
 var loading_scene = preload("res://scenes/ui/loading_screen.tscn")
+
+const PAST_PLAYER_UID := "uid://u6e7d34la27u"
+const FUTURE_PLAYER_UID := "uid://co6alg6cmej5s"
 
 var _player_spawn_node: Node2D
 var host_mode_enabled := false
@@ -73,6 +77,12 @@ func _process(_delta: float) -> void:
 
 
 func _on_level_scene_loaded(scene: Node) -> void:
+	# Runs for every level — including game_manager ones — because both player
+	# scenes must be spawnable wherever a spawner exists.
+	var spawner := scene.get_node_or_null("MultiplayerSpawner")
+	if spawner is MultiplayerSpawner:
+		_ensure_spawnable_scenes(spawner as MultiplayerSpawner)
+
 	var root_script: Script = scene.get_script()
 	if root_script != null and root_script.resource_path == "res://scripts/game_manager.gd":
 		return  # explicit per-level flow — leave it alone
@@ -83,12 +93,12 @@ func _on_level_scene_loaded(scene: Node) -> void:
 		players.position = Vector2(60, 40)
 		scene.add_child(players)
 	if not scene.has_node("MultiplayerSpawner"):
-		var spawner := MultiplayerSpawner.new()
-		spawner.name = "MultiplayerSpawner"
-		spawner.add_spawnable_scene("uid://u6e7d34la27u")
-		spawner.spawn_limit = 2
-		scene.add_child(spawner)
-		spawner.spawn_path = NodePath("../Players")
+		var new_spawner := MultiplayerSpawner.new()
+		new_spawner.name = "MultiplayerSpawner"
+		new_spawner.spawn_limit = 2
+		scene.add_child(new_spawner)
+		new_spawner.spawn_path = NodePath("../Players")
+		_ensure_spawnable_scenes(new_spawner)
 
 	if multiplayer_mode_enabled:
 		scene.add_child(loading_scene.instantiate())
@@ -150,6 +160,19 @@ func join_as_player_2():
 	multiplayer.multiplayer_peer = client_peer
 
 
+## Both player scenes must be registered on any level's spawner — scene-authored
+## spawners predate the future player, so top up their lists at runtime.
+func _ensure_spawnable_scenes(spawner: MultiplayerSpawner) -> void:
+	for uid in [PAST_PLAYER_UID, FUTURE_PLAYER_UID]:
+		var present := false
+		for i in spawner.get_spawnable_scene_count():
+			if spawner.get_spawnable_scene(i) == uid:
+				present = true
+				break
+		if not present:
+			spawner.add_spawnable_scene(uid)
+
+
 func respawn_all_players():
 	if not multiplayer.is_server():
 		return
@@ -189,7 +212,8 @@ func _add_player_to_game(id):
 	if _player_spawn_node == null or not is_instance_valid(_player_spawn_node):
 		return
 
-	var player_to_add = multiplayer_scene.instantiate()
+	var scene := future_player_scene if era_of(id) == Era.FUTURE else past_player_scene
+	var player_to_add = scene.instantiate()
 	player_to_add.player_id = id
 	player_to_add.name = "Player_" + str(id)
 

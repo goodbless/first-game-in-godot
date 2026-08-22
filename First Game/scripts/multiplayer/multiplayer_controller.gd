@@ -24,7 +24,6 @@ var alive := true
 
 func _ready() -> void:
 	add_to_group("players")
-	_apply_era_skin()
 	_apply_era_collision()
 	if multiplayer.get_unique_id() == player_id:
 		#$Camera2D.make_current()
@@ -39,13 +38,6 @@ func _ready() -> void:
 func reset_level() -> void:
 	global_position = MultiplayerManager.spawn_position_for_peer(player_id)
 	velocity = Vector2.ZERO
-
-
-func _apply_era_skin() -> void:
-	if MultiplayerManager.era_of(player_id) == MultiplayerManager.Era.PAST:
-		animated_sprite.modulate = Color(1.0, 0.83, 0.62)
-	else:
-		animated_sprite.modulate = Color(0.65, 0.78, 1.0)
 
 
 func _apply_era_collision() -> void:

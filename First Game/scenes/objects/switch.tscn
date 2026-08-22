@@ -1,52 +1,60 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://fdff3lkc645i"]
 
-[ext_resource type="Script" path="res://scripts/interactables/switch.gd" id="1_switch"]
-[ext_resource type="Script" path="res://scripts/era_visuals.gd" id="2_era"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fontb"]
+[ext_resource type="Script" uid="uid://c1g6wwoj310ex" path="res://scripts/interactables/switch.gd" id="1_switch"]
+[ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
+[ext_resource type="Texture2D" uid="uid://dmf20sbjus16y" path="res://assets/sprites/controller01.png" id="3_n6htd"]
+[ext_resource type="Texture2D" uid="uid://bsku3ipwqxqbl" path="res://assets/sprites/controller02.png" id="4_335tb"]
 
 [sub_resource type="PlaceholderTexture2D" id="SwitchTex"]
 size = Vector2(10, 10)
-
-[sub_resource type="RectangleShape2D" id="SensorShape"]
-size = Vector2(26, 26)
 
 [sub_resource type="SceneReplicationConfig" id="SwitchSync"]
 properties/0/path = NodePath(".:active")
 properties/0/spawn = true
 properties/0/replication_mode = 2
 
-[node name="Switch" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="SensorShape"]
+size = Vector2(95, 85)
+
+[node name="Switch" type="Area2D" unique_id=1386044479]
 script = ExtResource("1_switch")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("SensorShape")
-
-[node name="EraVisuals" type="Node" parent="."]
+[node name="EraVisuals" type="Node" parent="." unique_id=184796944]
 script = ExtResource("2_era")
 
-[node name="PastVisual" type="Node2D" parent="."]
+[node name="PastVisual" type="Node2D" parent="." unique_id=1743485514]
 
-[node name="Sprite2D" type="Sprite2D" parent="PastVisual"]
-texture = SubResource("SwitchTex")
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual" unique_id=383811855]
 modulate = Color(0.5, 0.5, 0.55, 1)
-
-[node name="FutureVisual" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
 texture = SubResource("SwitchTex")
-modulate = Color(0.5, 0.5, 0.55, 1)
 
-[node name="Hint" type="Label" parent="."]
-visible = false
-offset_left = -12.0
-offset_top = -24.0
-offset_right = 12.0
-offset_bottom = -12.0
+[node name="FutureVisual" type="Node2D" parent="." unique_id=1480767786]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=389382419]
+modulate = Color(0.5, 0.5, 0.55, 1)
+texture = SubResource("SwitchTex")
+
+[node name="Hint" type="Label" parent="." unique_id=802664417]
+offset_left = -21.0
+offset_top = -162.0
+offset_right = 25.0
+offset_bottom = -117.0
 theme_override_colors/font_color = Color(1, 0.95, 0.7, 1)
-theme_override_fonts/font = ExtResource("3_fontb")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 32
 text = "[E]"
 horizontal_alignment = 1
 
-[node name="Synchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="." unique_id=18993035]
 replication_config = SubResource("SwitchSync")
+
+[node name="ON" type="Sprite2D" parent="." unique_id=1405370701]
+position = Vector2(3, -30)
+texture = ExtResource("3_n6htd")
+
+[node name="OFF" type="Sprite2D" parent="." unique_id=339233901]
+position = Vector2(0, -29)
+texture = ExtResource("4_335tb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1751172231]
+position = Vector2(1.5, -28.5)
+shape = SubResource("SensorShape")
