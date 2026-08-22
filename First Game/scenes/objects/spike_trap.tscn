@@ -6,8 +6,16 @@
 [sub_resource type="RectangleShape2D" id="TrapShape"]
 size = Vector2(32, 6)
 
+[sub_resource type="SceneReplicationConfig" id="TrapSync"]
+properties/0/path = NodePath(".:exists_in")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
 [node name="SpikeTrap" type="Area2D" unique_id=806943503]
 script = ExtResource("1_trap")
+
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("TrapSync")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361969618]
 shape = SubResource("TrapShape")

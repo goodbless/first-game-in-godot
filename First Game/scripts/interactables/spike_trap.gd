@@ -3,8 +3,9 @@ extends Area2D
 ## Spike trap: touching it kills — level fails for BOTH players (killzone
 ## semantics, server-side trigger). Skins differ per era via EraVisuals.
 ##
-## exists_in scopes the trap to one timeline: single-era traps are invisible
-## AND intangible (wrong mask) to the other era's player.
+## exists_in scopes the trap to one timeline (synced, runtime-changeable):
+## single-era traps are invisible AND intangible to the other era's player.
+## Visibility of the scoped-out era is reversible (no node freeing).
 
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
 
@@ -23,20 +24,13 @@ func _apply_existence() -> void:
 	match exists_in:
 		Existence.PAST_ONLY:
 			collision_mask = 2
-			_drop_visual("FutureVisual")
 		Existence.FUTURE_ONLY:
 			collision_mask = 4
-			_drop_visual("PastVisual")
 		_:
 			collision_mask = 6
-
-
-## Remove the other timeline's visual node entirely — EraVisuals then finds
-## nothing to show for that era, so no visibility-fight between the two systems.
-func _drop_visual(node_name: String) -> void:
-	var visual := get_node_or_null(node_name)
-	if visual != null:
-		visual.queue_free()
+	var era_visuals := get_node_or_null("EraVisuals")
+	if era_visuals != null:
+		era_visuals.apply_era_visibility()
 
 
 func _on_body_entered(body) -> void:
