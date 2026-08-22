@@ -30,7 +30,7 @@ func is_future() -> bool:
 
 ## Host (peer 1) is always the past player; joined peers are future players.
 ## Client peer ids are random in Godot 4, so "id == 2" is never a valid check.
-static func era_of(peer_id: int) -> Era:
+func era_of(peer_id: int) -> Era:
 	return Era.PAST if peer_id == 1 else Era.FUTURE
 
 
