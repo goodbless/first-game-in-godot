@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/interactables/spike_trap.gd" id="1_trap"]
+[ext_resource type="Script" path="res://scripts/era_visuals.gd" id="2_era"]
+
+[sub_resource type="RectangleShape2D" id="TrapShape"]
+size = Vector2(32, 6)
+
+[node name="SpikeTrap" type="Area2D"]
+collision_mask = 6
+script = ExtResource("1_trap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("TrapShape")
+
+[node name="EraVisuals" type="Node" parent="."]
+script = ExtResource("2_era")
+
+[node name="PastVisual" type="Node2D" parent="."]
+
+[node name="Spikes" type="Polygon2D" parent="PastVisual"]
+polygon = PackedVector2Array(-16, 4, -12, -4, -8, 4, -4, -4, 0, 4, 4, -4, 8, 4, 12, -4, 16, 4)
+color = Color(0.75, 0.78, 0.82, 1)
+
+[node name="FutureVisual" type="Node2D" parent="."]
+
+[node name="Spikes" type="Polygon2D" parent="FutureVisual"]
+polygon = PackedVector2Array(-16, 4, -13, -3, -8, 3, -4, -5, 0, 4, 5, -3, 8, 4, 12, -4, 16, 3)
+color = Color(0.45, 0.3, 0.2, 1)
