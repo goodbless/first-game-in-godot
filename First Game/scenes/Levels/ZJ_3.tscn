@@ -64,37 +64,34 @@ position = Vector2(-8, -48)
 [node name="Floor15" parent="." index="24" unique_id=2017562055 instance=ExtResource("2_h0mxt")]
 position = Vector2(202, -48)
 
-[node name="Floor16" parent="." index="25" unique_id=1923654492 instance=ExtResource("2_h0mxt")]
-position = Vector2(412, -46)
-
-[node name="Floor18" parent="." index="26" unique_id=509946675 instance=ExtResource("2_h0mxt")]
+[node name="Floor18" parent="." index="25" unique_id=509946675 instance=ExtResource("2_h0mxt")]
 position = Vector2(832, -46)
 
-[node name="Switch" parent="." index="27" unique_id=662216463 instance=ExtResource("3_nq141")]
+[node name="Switch" parent="." index="26" unique_id=662216463 instance=ExtResource("3_nq141")]
 position = Vector2(-224, -99)
 owner_era = 1
 exists_in = 1
 
-[node name="Floor17" parent="." index="28" unique_id=164651875 instance=ExtResource("2_h0mxt")]
+[node name="Floor17" parent="." index="27" unique_id=164651875 instance=ExtResource("2_h0mxt")]
 position = Vector2(-497, 389)
 
-[node name="Floor19" parent="." index="29" unique_id=590538938 instance=ExtResource("2_h0mxt")]
+[node name="Floor19" parent="." index="28" unique_id=590538938 instance=ExtResource("2_h0mxt")]
 position = Vector2(-291, 338)
 
-[node name="Floor20" parent="." index="30" unique_id=809113853 instance=ExtResource("2_h0mxt")]
+[node name="Floor20" parent="." index="29" unique_id=809113853 instance=ExtResource("2_h0mxt")]
 position = Vector2(-80, 286)
 
-[node name="Floor21" parent="." index="31" unique_id=1087925412 instance=ExtResource("2_h0mxt")]
+[node name="Floor21" parent="." index="30" unique_id=1087925412 instance=ExtResource("2_h0mxt")]
 position = Vector2(117, 337)
 
-[node name="Floor22" parent="." index="32" unique_id=982072802 instance=ExtResource("2_h0mxt")]
+[node name="Floor22" parent="." index="31" unique_id=982072802 instance=ExtResource("2_h0mxt")]
 position = Vector2(355, 211)
 
-[node name="Floor23" parent="." index="33" unique_id=956245679 instance=ExtResource("2_h0mxt")]
+[node name="Floor23" parent="." index="32" unique_id=956245679 instance=ExtResource("2_h0mxt")]
 position = Vector2(636, 88)
 
-[node name="SpikeTrap" parent="." index="34" unique_id=806943503 instance=ExtResource("4_nq141")]
-position = Vector2(-499.00003, 332)
+[node name="SpikeTrap" parent="." index="33" unique_id=806943503 instance=ExtResource("4_nq141")]
+position = Vector2(-497, 325)
 scale = Vector2(1.59, 1.59)
 
 [node name="SpikeTrap3" parent="SpikeTrap" index="5" unique_id=1487543102 instance=ExtResource("4_nq141")]
@@ -103,7 +100,7 @@ position = Vector2(261.63522, -64.77986)
 [node name="SpikeTrap5" parent="SpikeTrap" index="6" unique_id=1262238137 instance=ExtResource("4_nq141")]
 position = Vector2(537.10693, -111.94968)
 
-[node name="SpikeTrap2" parent="." index="35" unique_id=113766670 instance=ExtResource("4_nq141")]
+[node name="SpikeTrap2" parent="." index="34" unique_id=113766670 instance=ExtResource("4_nq141")]
 visible = false
 position = Vector2(-295, 278)
 scale = Vector2(1.59, 1.59)
