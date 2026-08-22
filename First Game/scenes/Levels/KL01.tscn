@@ -29,41 +29,44 @@ position = Vector2(-741, 5)
 [node name="Floor" parent="." index="10" unique_id=2063579164 instance=ExtResource("2_03r3m")]
 position = Vector2(-738, 201)
 
-[node name="Floor" parent="Floor" index="4" unique_id=1109329490 instance=ExtResource("2_03r3m")]
-position = Vector2(224, 83)
+[node name="Floor15" parent="." index="11" unique_id=1772439972 instance=ExtResource("2_03r3m")]
+position = Vector2(888, 284)
 
-[node name="Floor2" parent="." index="11" unique_id=306569970 instance=ExtResource("2_03r3m")]
-position = Vector2(-284, 284)
+[node name="Floor11" parent="." index="12" unique_id=266798873 instance=ExtResource("2_03r3m")]
+position = Vector2(688, 284)
 
-[node name="Floor3" parent="." index="12" unique_id=572021158 instance=ExtResource("2_03r3m")]
-position = Vector2(-371, -19)
+[node name="Floor10" parent="." index="13" unique_id=345963009 instance=ExtResource("2_03r3m")]
+position = Vector2(488, 284)
 
-[node name="Floor4" parent="." index="13" unique_id=742515768 instance=ExtResource("2_03r3m")]
-position = Vector2(-55, 285)
-
-[node name="Floor5" parent="." index="14" unique_id=153183574 instance=ExtResource("2_03r3m")]
-position = Vector2(62, -18)
+[node name="Floor9" parent="." index="14" unique_id=1091092446 instance=ExtResource("2_03r3m")]
+position = Vector2(288, 284)
 
 [node name="Floor6" parent="." index="15" unique_id=2090084883 instance=ExtResource("2_03r3m")]
-position = Vector2(173, 284)
+position = Vector2(88, 284)
 
-[node name="Floor7" parent="." index="16" unique_id=1459251685 instance=ExtResource("2_03r3m")]
+[node name="Floor4" parent="." index="16" unique_id=742515768 instance=ExtResource("2_03r3m")]
+position = Vector2(-112, 284)
+
+[node name="Floor2" parent="." index="17" unique_id=306569970 instance=ExtResource("2_03r3m")]
+position = Vector2(-312, 284)
+
+[node name="Floor3" parent="." index="18" unique_id=572021158 instance=ExtResource("2_03r3m")]
+position = Vector2(-371, -19)
+
+[node name="Floor5" parent="." index="19" unique_id=153183574 instance=ExtResource("2_03r3m")]
+position = Vector2(62, -18)
+
+[node name="Floor13" parent="." index="20" unique_id=2124983996 instance=ExtResource("2_03r3m")]
+position = Vector2(896, 61)
+
+[node name="Floor8" parent="." index="21" unique_id=2120449341 instance=ExtResource("2_03r3m")]
+position = Vector2(696, 61)
+
+[node name="Floor7" parent="." index="22" unique_id=1459251685 instance=ExtResource("2_03r3m")]
 position = Vector2(495, 61)
 
-[node name="Floor8" parent="." index="17" unique_id=2120449341 instance=ExtResource("2_03r3m")]
-position = Vector2(726, 61)
+[node name="Floor12" parent="." index="23" unique_id=2099449573 instance=ExtResource("2_03r3m")]
+position = Vector2(-936, 201)
 
-[node name="Floor9" parent="." index="18" unique_id=1091092446 instance=ExtResource("2_03r3m")]
-position = Vector2(405, 284)
-
-[node name="Floor10" parent="." index="19" unique_id=345963009 instance=ExtResource("2_03r3m")]
-position = Vector2(633, 284)
-
-[node name="Floor11" parent="." index="20" unique_id=266798873 instance=ExtResource("2_03r3m")]
-position = Vector2(864, 284)
-
-[node name="Floor12" parent="." index="21" unique_id=2099449573 instance=ExtResource("2_03r3m")]
-position = Vector2(-968, 199)
-
-[node name="Floor13" parent="." index="22" unique_id=2124983996 instance=ExtResource("2_03r3m")]
-position = Vector2(955, 61)
+[node name="Floor14" parent="." index="24" unique_id=1109329490 instance=ExtResource("2_03r3m")]
+position = Vector2(-514, 284)
