@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dolhi2svonbke" path="res://scripts/interactables/door.gd" id="1_door"]
 [ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
+[ext_resource type="Texture2D" uid="uid://xsj0qfwj8un7" path="res://assets/sprites/sidewall02.png" id="3_xm0wp"]
 
 [sub_resource type="RectangleShape2D" id="DoorShape"]
-size = Vector2(40, 200)
-
-[sub_resource type="PlaceholderTexture2D" id="GateTex"]
-size = Vector2(40, 200)
+size = Vector2(46, 260)
 
 [sub_resource type="SceneReplicationConfig" id="DoorSync"]
 properties/0/path = NodePath(".:open")
@@ -30,16 +28,22 @@ script = ExtResource("2_era")
 [node name="PastVisual" type="Node2D" parent="." unique_id=1979132589]
 position = Vector2(0, -100)
 
-[node name="Gate" type="Sprite2D" parent="PastVisual" unique_id=1307947077]
-modulate = Color(0.55, 0.4, 0.25, 1)
-texture = SubResource("GateTex")
+[node name="GateClip" type="Sprite2D" parent="PastVisual"]
+texture = ExtResource("3_xm0wp")
+clip_children = 1
+
+[node name="Gate" type="Sprite2D" parent="PastVisual/GateClip" unique_id=1307947077]
+texture = ExtResource("3_xm0wp")
 
 [node name="FutureVisual" type="Node2D" parent="." unique_id=1587934749]
 position = Vector2(0, -100)
 
-[node name="Grate" type="Sprite2D" parent="FutureVisual" unique_id=322507347]
-modulate = Color(0.5, 0.32, 0.22, 1)
-texture = SubResource("GateTex")
+[node name="GrateClip" type="Sprite2D" parent="FutureVisual"]
+texture = ExtResource("3_xm0wp")
+clip_children = 1
+
+[node name="Grate" type="Sprite2D" parent="FutureVisual/GrateClip" unique_id=322507347]
+texture = ExtResource("3_xm0wp")
 
 [node name="Synchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1311755615]
 replication_config = SubResource("DoorSync")

@@ -7,10 +7,9 @@ extends StaticBody2D
 
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
 
-const GATE_TRAVEL := 150.0
 const GATE_SPEED := 200.0  ## px per second
 
-var open := false:
+@export var open := false:
 	set(value):
 		if open == value:
 			return
@@ -38,18 +37,21 @@ func _update_state() -> void:
 	_animate_gates()
 
 
-## Raise/lower the era-specific gate sprites in sync. Collision switches
-## instantly; the visuals catch up over a fraction of a second.
+## Raise/lower the era-specific gate sprites in sync. Each gate sits inside a
+## clip-parent sprite (GateClip/GrateClip) sized to the doorway, so the rising
+## part vanishes into the frame instead of poking out the top. Collision
+## switches instantly; the visuals catch up over a fraction of a second.
 func _animate_gates() -> void:
 	if _gate_tween != null and _gate_tween.is_valid():
 		_gate_tween.kill()
 	_gate_tween = create_tween()
-	var target_y := -GATE_TRAVEL if open else 0.0
-	for gate in [get_node_or_null("PastVisual/Gate"), get_node_or_null("FutureVisual/Grate")]:
-		if gate == null:
+	for gate in [get_node_or_null("PastVisual/GateClip/Gate"), get_node_or_null("FutureVisual/GrateClip/Grate")]:
+		var sprite := gate as Sprite2D
+		if sprite == null or sprite.texture == null:
 			continue
-		var duration := absf(target_y - gate.position.y) / GATE_SPEED
-		_gate_tween.parallel().tween_property(gate, "position:y", target_y, duration)
+		var target_y: float = -sprite.texture.get_height() if open else 0.0
+		var duration := absf(target_y - sprite.position.y) / GATE_SPEED
+		_gate_tween.parallel().tween_property(sprite, "position:y", target_y, duration)
 
 
 func reset_level() -> void:

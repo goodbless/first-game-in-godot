@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://chn6242x6hgyk"]
 
+[ext_resource type="Texture2D" uid="uid://bbgmye32jesiw" path="res://assets/sprites/sidewall.png" id="2_uagt1"]
 [ext_resource type="Texture2D" uid="uid://fsyoba3sfmwd" path="res://assets/sprites/scene_lab.png" id="2_wjpas"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="6_lwjhc"]
 [ext_resource type="PackedScene" uid="uid://bw6gomvbrnoah" path="res://scenes/objects/past_goal.tscn" id="7_y5o84"]
@@ -27,16 +28,61 @@ position = Vector2(0, 15)
 texture = ExtResource("2_wjpas")
 
 [node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
-position = Vector2(-900, 0)
+position = Vector2(-944, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LeftWall" unique_id=2044048087]
 shape = SubResource("WallShape")
 
+[node name="Sidewall" type="Sprite2D" parent="Level/LeftWall" unique_id=2076167545]
+position = Vector2(7, 453.5)
+texture = ExtResource("2_uagt1")
+
+[node name="Sidewall2" type="Sprite2D" parent="Level/LeftWall" unique_id=207193344]
+position = Vector2(7, 229.5)
+texture = ExtResource("2_uagt1")
+
+[node name="Sidewall3" type="Sprite2D" parent="Level/LeftWall" unique_id=717908615]
+position = Vector2(7, 5.5)
+texture = ExtResource("2_uagt1")
+
+[node name="Sidewall4" type="Sprite2D" parent="Level/LeftWall" unique_id=81327283]
+position = Vector2(7, -226.5)
+texture = ExtResource("2_uagt1")
+
+[node name="Sidewall5" type="Sprite2D" parent="Level/LeftWall" unique_id=456796029]
+position = Vector2(7, -450.5)
+texture = ExtResource("2_uagt1")
+
 [node name="RightWall" type="StaticBody2D" parent="Level" unique_id=610959921]
-position = Vector2(900, 0)
+position = Vector2(944, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/RightWall" unique_id=953928271]
 shape = SubResource("RectangleShape2D_273jt")
+
+[node name="Sidewall" type="Sprite2D" parent="Level/RightWall" unique_id=514474515]
+position = Vector2(-17, 453.5)
+texture = ExtResource("2_uagt1")
+flip_h = true
+
+[node name="Sidewall2" type="Sprite2D" parent="Level/RightWall" unique_id=865879088]
+position = Vector2(-17, 229.5)
+texture = ExtResource("2_uagt1")
+flip_h = true
+
+[node name="Sidewall3" type="Sprite2D" parent="Level/RightWall" unique_id=1197449686]
+position = Vector2(-17, 5.5)
+texture = ExtResource("2_uagt1")
+flip_h = true
+
+[node name="Sidewall4" type="Sprite2D" parent="Level/RightWall" unique_id=950516803]
+position = Vector2(-17, -226.5)
+texture = ExtResource("2_uagt1")
+flip_h = true
+
+[node name="Sidewall5" type="Sprite2D" parent="Level/RightWall" unique_id=513567255]
+position = Vector2(-17, -450.5)
+texture = ExtResource("2_uagt1")
+flip_h = true
 
 [node name="Ceiling" type="StaticBody2D" parent="Level" unique_id=970822897]
 position = Vector2(0, -515)
