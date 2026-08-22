@@ -1,0 +1,53 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/platform_v2.gd" id="1_v2"]
+[ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
+[ext_resource type="Texture2D" uid="uid://ctfl4xfw2w15v" path="res://assets/sprites/platform.png" id="3_tex"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v2"]
+properties/0/path = NodePath(".:_t_sync")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:broken")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:warning")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RiderSensorShape"]
+size = Vector2(156, 28)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape"]
+size = Vector2(208, 60)
+
+[node name="PlatformV2" type="AnimatableBody2D"]
+script = ExtResource("1_v2")
+
+[node name="PlatformSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_v2")
+
+[node name="EraVisuals" type="Node" parent="."]
+script = ExtResource("2_era")
+
+[node name="PastVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual"]
+texture = ExtResource("3_tex")
+
+[node name="FutureVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
+texture = ExtResource("3_tex")
+
+[node name="RiderSensor" type="Area2D" parent="."]
+position = Vector2(0, -49)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiderSensor"]
+shape = SubResource("RiderSensorShape")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("PlatformShape")
+one_way_collision = true
