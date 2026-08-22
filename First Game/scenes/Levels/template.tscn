@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://chn6242x6hgyk"]
+
+[ext_resource type="Texture2D" uid="uid://fsyoba3sfmwd" path="res://assets/sprites/scene_lab.png" id="2_wjpas"]
+[ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="6_lwjhc"]
+[ext_resource type="PackedScene" uid="uid://bw6gomvbrnoah" path="res://scenes/objects/past_goal.tscn" id="7_y5o84"]
+[ext_resource type="PackedScene" uid="uid://p3tlrv2hnp3h" path="res://scenes/objects/future_goal.tscn" id="8_1m4i8"]
+[ext_resource type="PackedScene" path="res://scenes/components/past_spawn.tscn" id="10_8j55q"]
+[ext_resource type="PackedScene" path="res://scenes/components/future_spawn.tscn" id="11_wkw4k"]
+
+[sub_resource type="RectangleShape2D" id="WallShape"]
+size = Vector2(100, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_273jt"]
+size = Vector2(100, 1080)
+
+[sub_resource type="RectangleShape2D" id="CeilingShape"]
+size = Vector2(1930, 64)
+
+[sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
+
+[node name="TestRoom" type="Node2D" unique_id=1611006981]
+
+[node name="Level" type="Node2D" parent="." unique_id=1271458255]
+
+[node name="SceneLab" type="Sprite2D" parent="Level" unique_id=611536403]
+position = Vector2(0, 15)
+texture = ExtResource("2_wjpas")
+
+[node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
+position = Vector2(-900, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LeftWall" unique_id=2044048087]
+shape = SubResource("WallShape")
+
+[node name="RightWall" type="StaticBody2D" parent="Level" unique_id=610959921]
+position = Vector2(900, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/RightWall" unique_id=953928271]
+shape = SubResource("RectangleShape2D_273jt")
+
+[node name="Ceiling" type="StaticBody2D" parent="Level" unique_id=970822897]
+position = Vector2(0, -515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ceiling" unique_id=224563774]
+shape = SubResource("CeilingShape")
+
+[node name="Objects" type="Node2D" parent="." unique_id=2077598514]
+
+[node name="LevelCamera" type="Camera2D" parent="." unique_id=1432207259]
+
+[node name="Players" type="Node2D" parent="." unique_id=779539851]
+position = Vector2(60, 40)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2098103311]
+_spawnable_scenes = PackedStringArray("uid://u6e7d34la27u")
+spawn_path = NodePath("../Players")
+spawn_limit = 2
+
+[node name="Killzone" parent="." unique_id=975202292 instance=ExtResource("6_lwjhc")]
+position = Vector2(-616, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1786211310]
+shape = SubResource("KillzoneShape")
+
+[node name="PastGoal" parent="." unique_id=1446956518 instance=ExtResource("7_y5o84")]
+position = Vector2(643, 45)
+
+[node name="FutureGoal" parent="." unique_id=1426790453 instance=ExtResource("8_1m4i8")]
+position = Vector2(619, 117)
+
+[node name="PastSpawn" parent="." unique_id=309091987 instance=ExtResource("10_8j55q")]
+position = Vector2(-85, 189)
+
+[node name="FutureSpawn" parent="." unique_id=1424180485 instance=ExtResource("11_wkw4k")]
+position = Vector2(-717, 269)
