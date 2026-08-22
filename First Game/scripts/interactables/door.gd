@@ -1,10 +1,10 @@
 extends StaticBody2D
 
-## Era gate. Functionally exists only where its existence scope says
-## (default PAST_ONLY: blocks the past player, the future player walks
-## through). The future side still sees the gate's ruined archway — the
-## decay narrative — via remnant_visual.
+## Era gate. Exists in BOTH timelines and blocks both players until the
+## future player opens it via the era switch.
 ## Scene-placed: set Y so the base sits flush on the floor (no settle).
+## exists_in stays runtime-changeable (synced) for scripted scope shifts.
+
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
 
 var open := false:
@@ -14,20 +14,15 @@ var open := false:
 		open = value
 		_update_state()
 
-@export var exists_in := Existence.PAST_ONLY:
+@export var exists_in := Existence.BOTH:
 	set(value):
 		exists_in = value
 		_update_state()
-
-@export var remnant_visual := true
-
-@export var owner_era := 1  ## reserved: who may interact once the gate is interactive
 
 
 func _ready() -> void:
 	add_to_group("doors")
 	add_to_group("level_resettable")
-	owner_era = MultiplayerManager.clamp_owner(exists_in, owner_era, name)
 	_update_state()
 
 
