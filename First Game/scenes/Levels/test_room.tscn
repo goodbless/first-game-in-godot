@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="10_qqxd0"]
 [ext_resource type="PackedScene" path="res://scenes/components/past_spawn.tscn" id="11_yn2df"]
 [ext_resource type="PackedScene" path="res://scenes/components/future_spawn.tscn" id="12_hofti"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform_v2.tscn" id="12_yn2df"]
 
 [sub_resource type="RectangleShape2D" id="FloorAShape"]
 size = Vector2(1920, 100)
@@ -72,7 +73,7 @@ position = Vector2(-408, 224)
 position = Vector2(619, 229)
 
 [node name="Platform" parent="Level" unique_id=994423101 instance=ExtResource("9_fh3c8")]
-position = Vector2(120, 224)
+position = Vector2(64, 8)
 move_distance = 100.0
 respawn_time = 0.0
 
@@ -89,7 +90,7 @@ spawn_path = NodePath("../Players")
 spawn_limit = 2
 
 [node name="Killzone" parent="." unique_id=975202292 instance=ExtResource("4_kz")]
-position = Vector2(0, 640)
+position = Vector2(-616, 560)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1786211310]
 shape = SubResource("KillzoneShape")
@@ -109,3 +110,8 @@ position = Vector2(-85, 189)
 
 [node name="FutureSpawn" parent="." unique_id=1424180485 instance=ExtResource("12_hofti")]
 position = Vector2(-717, 269)
+
+[node name="PlatformV2" parent="." unique_id=872996148 instance=ExtResource("12_yn2df")]
+position = Vector2(360, 176)
+target_offset = Vector2(-162.14381, 151.13995)
+crumble_time = 3.0
