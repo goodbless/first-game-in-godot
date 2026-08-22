@@ -59,6 +59,14 @@ interact={
 ]
 }
 
+[physics]
+
+2d/physics_layer_names/layer_1="World"
+2d/physics_layer_names/layer_2="PastPlayer"
+2d/physics_layer_names/layer_3="FuturePlayer"
+2d/physics_layer_names/layer_4="PastOnly"
+2d/physics_layer_names/layer_5="FutureOnly"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

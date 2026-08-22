@@ -17,6 +17,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="Box" type="CharacterBody2D" unique_id=2056746295]
+collision_mask = 9
 script = ExtResource("1_box")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629149382]

@@ -1,8 +1,8 @@
 extends "res://scripts/interactables/interactable_body.gd"
 
 ## Future-era switch. Only the FUTURE player can press it (E nearby).
-## Activating it opens every door in the level — including gates that
-## block the PAST player's path (future helps past).
+## Activating it opens every door in the level — gates that block the
+## PAST player's path (future helps past).
 
 var active := false:
 	set(value):
@@ -19,10 +19,18 @@ func _ready() -> void:
 	_update_state()
 
 
+## Physics only runs for the initial drop; after settling the switch becomes
+## static so a pushed box can never depenetrate-shove it around.
 func _physics_process(delta: float) -> void:
 	_settle(delta)
+	if is_on_floor():
+		set_physics_process(false)
+
+
+## Interaction + hint live in _process so they keep running after physics
+## has stopped for good.
+func _process(_delta: float) -> void:
 	if active:
-		_update_hint([])
 		return
 	var bodies: Array = sensor.get_overlapping_bodies()
 	_update_hint(bodies)
@@ -40,7 +48,6 @@ func _update_state() -> void:
 			visual.modulate = Color(0.4, 1.0, 0.8, 1)
 		else:
 			visual.modulate = Color(0.5, 0.5, 0.55, 1)
-	set_physics_process(not active)
 	if active:
 		_hide_hint()
 
@@ -60,3 +67,4 @@ func reset_level() -> void:
 	super()
 	if multiplayer.multiplayer_peer != null and multiplayer.is_server():
 		active = false
+		set_physics_process(true)  # re-drop and re-settle
