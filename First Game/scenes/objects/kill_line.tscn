@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cr03m47jdt4lc"]
+
+[ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="1_ntqfx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_81cba"]
+
+[node name="Killzone" unique_id=1380397750 instance=ExtResource("1_ntqfx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=269460902]
+shape = SubResource("WorldBoundaryShape2D_81cba")
