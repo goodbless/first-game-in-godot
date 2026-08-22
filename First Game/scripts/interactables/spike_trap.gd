@@ -6,7 +6,6 @@ extends Area2D
 ## Scene-placed: set Y flush on the floor.
 
 func _ready() -> void:
-	collision_mask = 6
 	body_entered.connect(_on_body_entered)
 
 
