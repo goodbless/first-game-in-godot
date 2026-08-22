@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://cm130kmm1322o"]
 
 [ext_resource type="Script" uid="uid://clw81guyetrjo" path="res://scripts/game_manager.gd" id="1_gm"]
+[ext_resource type="Texture2D" uid="uid://fsyoba3sfmwd" path="res://assets/sprites/scene_lab.png" id="2_mqi01"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_qqxd0"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="4_kz"]
 [ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="5_box"]
-[ext_resource type="PackedScene" path="res://scenes/objects/vase.tscn" id="6_vase"]
-[ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="7_switch"]
-[ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="8_door"]
 [ext_resource type="PackedScene" uid="uid://bgv5v2fxqlswe" path="res://scenes/platform.tscn" id="9_fh3c8"]
 [ext_resource type="PackedScene" uid="uid://bw6gomvbrnoah" path="res://scenes/objects/past_goal.tscn" id="9_hofti"]
 [ext_resource type="PackedScene" uid="uid://p3tlrv2hnp3h" path="res://scenes/objects/future_goal.tscn" id="10_h4m6d"]
@@ -15,28 +13,13 @@
 [ext_resource type="PackedScene" path="res://scenes/components/future_spawn.tscn" id="12_hofti"]
 
 [sub_resource type="RectangleShape2D" id="FloorAShape"]
-size = Vector2(416, 16)
-
-[sub_resource type="PlaceholderTexture2D" id="FloorATex"]
-size = Vector2(416, 16)
-
-[sub_resource type="RectangleShape2D" id="FloorBShape"]
-size = Vector2(186, 16)
-
-[sub_resource type="PlaceholderTexture2D" id="FloorBTex"]
-size = Vector2(186, 16)
+size = Vector2(1920, 100)
 
 [sub_resource type="RectangleShape2D" id="WallShape"]
-size = Vector2(16, 232)
-
-[sub_resource type="PlaceholderTexture2D" id="WallTex"]
-size = Vector2(16, 232)
+size = Vector2(100, 1080)
 
 [sub_resource type="RectangleShape2D" id="CeilingShape"]
-size = Vector2(392, 16)
-
-[sub_resource type="PlaceholderTexture2D" id="CeilingTex"]
-size = Vector2(672, 16)
+size = Vector2(1930, 64)
 
 [sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
 
@@ -45,89 +28,57 @@ script = ExtResource("1_gm")
 
 [node name="Level" type="Node2D" parent="." unique_id=1271458255]
 
+[node name="SceneLab" type="Sprite2D" parent="Level" unique_id=611536403]
+position = Vector2(0, 15)
+texture = ExtResource("2_mqi01")
+
 [node name="GroundA" type="StaticBody2D" parent="Level" unique_id=776659089]
-position = Vector2(192, 108)
+position = Vector2(3, 493)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/GroundA" unique_id=2041111902]
 shape = SubResource("FloorAShape")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/GroundA" unique_id=28387924]
-modulate = Color(0.24, 0.27, 0.3, 1)
-texture = SubResource("FloorATex")
-
-[node name="GroundB" type="StaticBody2D" parent="Level" unique_id=885874680]
-position = Vector2(563, 108)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/GroundB" unique_id=1047158771]
-shape = SubResource("FloorBShape")
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/GroundB" unique_id=699725217]
-modulate = Color(0.24, 0.27, 0.3, 1)
-texture = SubResource("FloorBTex")
-
 [node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
-position = Vector2(-8, 0)
+position = Vector2(-900, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LeftWall" unique_id=2044048087]
 shape = SubResource("WallShape")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/LeftWall" unique_id=259123960]
-modulate = Color(0.2, 0.22, 0.25, 1)
-texture = SubResource("WallTex")
-
 [node name="RightWall" type="StaticBody2D" parent="Level" unique_id=610959921]
-position = Vector2(648, 0)
+position = Vector2(900, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/RightWall" unique_id=953928271]
 shape = SubResource("WallShape")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/RightWall" unique_id=1574029593]
-modulate = Color(0.2, 0.22, 0.25, 1)
-texture = SubResource("WallTex")
-
 [node name="Ceiling" type="StaticBody2D" parent="Level" unique_id=970822897]
-position = Vector2(320, -108)
+position = Vector2(0, -515)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ceiling" unique_id=224563774]
 shape = SubResource("CeilingShape")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/Ceiling" unique_id=1487537355]
-modulate = Color(0.2, 0.22, 0.25, 1)
-texture = SubResource("CeilingTex")
-
 [node name="Floor" parent="Level" unique_id=1509154067 instance=ExtResource("2_qqxd0")]
-position = Vector2(150, 66)
+position = Vector2(88, -80)
 
 [node name="Box" parent="Level" unique_id=2056746295 instance=ExtResource("5_box")]
-position = Vector2(145, 87)
+position = Vector2(-352, 104)
+
+[node name="Box2" parent="Level" unique_id=1940846343 instance=ExtResource("5_box")]
+position = Vector2(-200, 376)
 
 [node name="Floor2" parent="Level" unique_id=1366317735 instance=ExtResource("2_qqxd0")]
-position = Vector2(248, 46)
+position = Vector2(-408, 224)
+
+[node name="Floor3" parent="Level" unique_id=2063579164 instance=ExtResource("2_qqxd0")]
+position = Vector2(619, 229)
 
 [node name="Platform" parent="Level" unique_id=994423101 instance=ExtResource("9_fh3c8")]
-position = Vector2(305, 28)
-move_distance = 10.0
+position = Vector2(120, 224)
+move_distance = 100.0
 respawn_time = 0.0
 
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
-[node name="Box" parent="Objects" unique_id=1349724052 instance=ExtResource("5_box")]
-position = Vector2(150, 40)
-
-[node name="Vase" parent="Objects" unique_id=1386730635 instance=ExtResource("6_vase")]
-position = Vector2(220, 93)
-
-[node name="Switch" parent="Objects" unique_id=707042492 instance=ExtResource("7_switch")]
-position = Vector2(290, 95)
-collision_mask = 6
-
-[node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
-position = Vector2(350, 76)
-collision_layer = 8
-
 [node name="LevelCamera" type="Camera2D" parent="." unique_id=1432207259]
-position = Vector2(60, 40)
-zoom = Vector2(4, 4)
 
 [node name="Players" type="Node2D" parent="." unique_id=779539851]
 position = Vector2(60, 40)
@@ -138,30 +89,23 @@ spawn_path = NodePath("../Players")
 spawn_limit = 2
 
 [node name="Killzone" parent="." unique_id=975202292 instance=ExtResource("4_kz")]
-position = Vector2(320, 160)
+position = Vector2(0, 640)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1786211310]
 shape = SubResource("KillzoneShape")
 
 [node name="PastGoal" parent="." unique_id=1446956518 instance=ExtResource("9_hofti")]
-position = Vector2(560, 65)
+position = Vector2(643, 45)
 
 [node name="FutureGoal" parent="." unique_id=1426790453 instance=ExtResource("10_h4m6d")]
-position = Vector2(615, 65)
-
-[node name="Platform" parent="." unique_id=663266155 instance=ExtResource("9_fh3c8")]
-position = Vector2(189, 16)
-move_distance = 64.0
-move_axis = Vector2(1, 1)
-crumble_time = 3.0
-respawn_time = 0.0
+position = Vector2(619, 117)
 
 [node name="SpikeTrap" parent="." unique_id=1042375586 instance=ExtResource("10_qqxd0")]
-position = Vector2(166, 96)
+position = Vector2(408, 432)
 collision_mask = 6
 
 [node name="PastSpawn" parent="." unique_id=309091987 instance=ExtResource("11_yn2df")]
-position = Vector2(35, 64)
+position = Vector2(-85, 189)
 
 [node name="FutureSpawn" parent="." unique_id=1424180485 instance=ExtResource("12_hofti")]
-position = Vector2(326, 77)
+position = Vector2(-717, 269)

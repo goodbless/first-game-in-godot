@@ -3,7 +3,7 @@ extends "res://scripts/interactables/interactable_body.gd"
 ## Pushable crate. Walk into it to push — the future player sees it move
 ## "on its own". Stops at closed era gates (mask includes layer 8).
 
-const PUSH_SPEED := 40.0
+const PUSH_SPEED := 200.0
 
 @onready var push_left := $PushLeft
 @onready var push_right := $PushRight

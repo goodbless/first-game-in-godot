@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://c708tyxe3670o"]
 
 [ext_resource type="Script" uid="uid://u7tkwviudo0g" path="res://scripts/interactables/box.gd" id="1_box"]
+[ext_resource type="Texture2D" uid="uid://bcap7tn5aup8p" path="res://assets/sprites/Box.png" id="2_tf0hf"]
 
 [sub_resource type="RectangleShape2D" id="BoxShape"]
-size = Vector2(16, 16)
-
-[sub_resource type="PlaceholderTexture2D" id="BoxTex"]
-size = Vector2(16, 16)
+size = Vector2(130, 122)
 
 [sub_resource type="RectangleShape2D" id="SensorShape"]
-size = Vector2(6, 12)
+size = Vector2(12, 80)
 
 [sub_resource type="SceneReplicationConfig" id="BoxSync"]
 properties/0/path = NodePath(".:position")
@@ -26,24 +24,22 @@ shape = SubResource("BoxShape")
 [node name="PastVisual" type="Node2D" parent="." unique_id=1918250063]
 
 [node name="Sprite2D" type="Sprite2D" parent="PastVisual" unique_id=1096023125]
-modulate = Color(0.72, 0.5, 0.28, 1)
-texture = SubResource("BoxTex")
+texture = ExtResource("2_tf0hf")
 
 [node name="FutureVisual" type="Node2D" parent="." unique_id=1190098160]
 
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=212797583]
-modulate = Color(0.45, 0.4, 0.35, 1)
-texture = SubResource("BoxTex")
+texture = ExtResource("2_tf0hf")
 
 [node name="PushLeft" type="Area2D" parent="." unique_id=1080111757]
-position = Vector2(-11, 0)
+position = Vector2(-71, 0)
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushLeft" unique_id=292949071]
 shape = SubResource("SensorShape")
 
 [node name="PushRight" type="Area2D" parent="." unique_id=2135219786]
-position = Vector2(11, 0)
+position = Vector2(71, 0)
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushRight" unique_id=2010948976]

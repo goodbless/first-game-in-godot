@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="1_yhw4v"]
 
 [sub_resource type="RectangleShape2D" id="GoalShape"]
-size = Vector2(40, 70)
+size = Vector2(112, 144)
 
 [sub_resource type="PlaceholderTexture2D" id="GoalFlagTex"]
-size = Vector2(40, 70)
+size = Vector2(112, 144)
 
 [node name="PastGoal" type="Area2D" unique_id=1446956518]
 collision_mask = 2
