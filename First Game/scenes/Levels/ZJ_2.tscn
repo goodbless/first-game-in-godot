@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_0282s"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_is81v"]
-[ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="3_et0up"]
-[ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="4_yog2h"]
+[ext_resource type="PackedScene" uid="uid://fdff3lkc645i" path="res://scenes/objects/switch.tscn" id="3_et0up"]
+[ext_resource type="PackedScene" uid="uid://hpiy1nkt1qpo" path="res://scenes/objects/door.tscn" id="4_yog2h"]
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_0282s")]
 
@@ -263,49 +263,49 @@ position = Vector2(630, -400)
 position = Vector2(843, -400)
 
 [node name="Door" parent="." index="91" unique_id=1678147658 instance=ExtResource("4_yog2h")]
-position = Vector2(1, 293)
+position = Vector2(-104, 280)
 rotation = 1.5707964
-scale = Vector2(4.41, 4.41)
 exists_in = 2
 
 [node name="Door2" parent="." index="92" unique_id=390891108 instance=ExtResource("4_yog2h")]
-position = Vector2(1, 90)
+position = Vector2(-104, 77)
 rotation = 1.5707964
-scale = Vector2(4.41, 4.41)
 exists_in = 2
 
 [node name="Door3" parent="." index="93" unique_id=1127324521 instance=ExtResource("4_yog2h")]
-position = Vector2(1, -124)
+position = Vector2(-104, -137)
 rotation = 1.5707964
-scale = Vector2(4.41, 4.41)
 exists_in = 2
 
 [node name="Door4" parent="." index="94" unique_id=1578601791 instance=ExtResource("4_yog2h")]
-position = Vector2(-8, -347)
+position = Vector2(-113, -360)
 rotation = 1.5707964
-scale = Vector2(4.41, 4.41)
 exists_in = 2
 
 [node name="Door5" parent="." index="95" unique_id=407610737 instance=ExtResource("4_yog2h")]
+visible = false
 position = Vector2(1, 293)
 rotation = 1.5707964
 scale = Vector2(4.41, 4.41)
 exists_in = 1
 
-[node name="Door6" parent="." index="96" unique_id=1030567314 instance=ExtResource("4_yog2h")]
+[node name="Door8" parent="." index="96" unique_id=559342357 instance=ExtResource("4_yog2h")]
+visible = false
+position = Vector2(-8, -347)
+rotation = 1.5707964
+scale = Vector2(4.41, 4.41)
+exists_in = 1
+
+[node name="Door6" parent="." index="97" unique_id=1030567314 instance=ExtResource("4_yog2h")]
+visible = false
 position = Vector2(1, 90)
 rotation = 1.5707964
 scale = Vector2(4.41, 4.41)
 exists_in = 1
 
-[node name="Door7" parent="." index="97" unique_id=654757464 instance=ExtResource("4_yog2h")]
+[node name="Door7" parent="." index="98" unique_id=654757464 instance=ExtResource("4_yog2h")]
+visible = false
 position = Vector2(1, -124)
-rotation = 1.5707964
-scale = Vector2(4.41, 4.41)
-exists_in = 1
-
-[node name="Door8" parent="." index="98" unique_id=559342357 instance=ExtResource("4_yog2h")]
-position = Vector2(-8, -347)
 rotation = 1.5707964
 scale = Vector2(4.41, 4.41)
 exists_in = 1
