@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dx5juwc8jja4a" path="res://assets/sprites/floor02.png" id="3_hocbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13ihi"]
-size = Vector2(365, 70)
+size = Vector2(208, 60)
 
 [node name="Floor" type="StaticBody2D" unique_id=2063579164]
 script = ExtResource("1_floor")
@@ -16,13 +16,17 @@ script = ExtResource("2_era")
 [node name="PastVisual" type="Node2D" parent="." unique_id=1604523303]
 
 [node name="Sprite2D" type="Sprite2D" parent="PastVisual" unique_id=1416392710]
+position = Vector2(-0.09500122, 3.1049995)
+scale = Vector2(0.585, 0.87)
 texture = ExtResource("3_hocbu")
 
 [node name="FutureVisual" type="Node2D" parent="." unique_id=2012611232]
 
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=1372873994]
+position = Vector2(-0.09500122, 3.1049995)
+scale = Vector2(0.585, 0.87)
 texture = ExtResource("3_hocbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1672323316]
-position = Vector2(10.5, 9)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_13ihi")
