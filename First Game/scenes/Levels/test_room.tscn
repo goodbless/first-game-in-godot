@@ -130,9 +130,11 @@ target_offset = Vector2(439.8772, 313.61304)
 
 [node name="Switch" parent="Level" unique_id=1386044479 instance=ExtResource("6_yn2df")]
 position = Vector2(-32, 432)
+owner_era = 1
 
 [node name="Door" parent="Level" unique_id=87996404 instance=ExtResource("7_hofti")]
 position = Vector2(160, 440)
+open = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
