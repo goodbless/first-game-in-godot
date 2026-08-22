@@ -134,12 +134,18 @@ func _physics_process(delta: float) -> void:
 
 
 func reset_level() -> void:
-	if multiplayer.multiplayer_peer != null and multiplayer.is_server():
-		_crumble_accum = 0.0
-		_respawn_accum = 0.0
-		_triggered = false
+	# Local sim state — reset identically on every peer, no sync conflict.
+	_t = 0.0
+	_crumble_accum = 0.0
+	_respawn_accum = 0.0
+	_triggered = false
+	if _is_moving:
+		position = _origin
+	# Synced state — server only; ON_CHANGE rebroadcasts to clients.
+	if multiplayer.is_server():
 		warning = false
 		broken = false
+		_t_sync = _t
 
 
 func _has_rider() -> bool:
