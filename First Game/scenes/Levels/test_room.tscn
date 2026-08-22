@@ -128,7 +128,7 @@ position = Vector2(220, 40)
 position = Vector2(290, 40)
 
 [node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
-position = Vector2(350, 20)
+position = Vector2(350, 76)
 
 [node name="LevelCamera" type="Camera2D" parent="." unique_id=1432207259]
 position = Vector2(60, 40)
