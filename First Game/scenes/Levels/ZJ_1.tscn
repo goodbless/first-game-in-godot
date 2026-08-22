@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fdff3lkc645i" path="res://scenes/objects/switch.tscn" id="2_skmjf"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="3_vqrgy"]
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="4_rv5vn"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform_v2.tscn" id="5_rv5vn"]
+[ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="5_rv5vn"]
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_kp7p8")]
 
@@ -20,51 +20,44 @@ position = Vector2(-697, -65)
 [node name="FutureSpawn" parent="." index="9" unique_id=1424180485]
 position = Vector2(-697, -68)
 
-[node name="Floor" parent="." index="10" unique_id=2063579164 instance=ExtResource("3_vqrgy")]
-position = Vector2(-256, 471)
+[node name="Floor5" parent="." index="10" unique_id=1389828649 instance=ExtResource("3_vqrgy")]
+position = Vector2(574, 472)
 
 [node name="Floor4" parent="." index="11" unique_id=304485677 instance=ExtResource("3_vqrgy")]
 position = Vector2(373, 472)
 
-[node name="Floor5" parent="." index="12" unique_id=1389828649 instance=ExtResource("3_vqrgy")]
-position = Vector2(582, 472)
+[node name="Floor10" parent="Floor4" index="4" unique_id=1994220618 instance=ExtResource("3_vqrgy")]
+position = Vector2(-200, 0)
 
-[node name="Floor9" parent="." index="13" unique_id=280031450 instance=ExtResource("3_vqrgy")]
-position = Vector2(-537, 10)
-
-[node name="Floor11" parent="." index="14" unique_id=386565459 instance=ExtResource("3_vqrgy")]
-position = Vector2(-745, 10)
-
-[node name="Floor13" parent="." index="15" unique_id=1861761785 instance=ExtResource("3_vqrgy")]
-position = Vector2(-330, 10)
-
-[node name="Floor14" parent="." index="16" unique_id=1358748718 instance=ExtResource("3_vqrgy")]
-position = Vector2(-121, 11)
-
-[node name="Floor15" parent="." index="17" unique_id=1760123784 instance=ExtResource("3_vqrgy")]
-position = Vector2(87, 11)
-
-[node name="Floor2" parent="." index="18" unique_id=874266697 instance=ExtResource("3_vqrgy")]
-position = Vector2(-674, 472)
-
-[node name="Floor10" parent="." index="19" unique_id=1994220618 instance=ExtResource("3_vqrgy")]
-position = Vector2(161, 472)
-
-[node name="PlatformV3" parent="." index="20" unique_id=127802949 instance=ExtResource("5_rv5vn")]
+[node name="PlatformV3" parent="." index="12" unique_id=127802949 instance=ExtResource("5_rv5vn")]
 position = Vector2(-47, 471)
 cycle_time = 0.0
 target_offset = Vector2(0, 0)
 crumble_time = 0.2
 respawn_time = 0.0
 
-[node name="PlatformV2" parent="." index="21" unique_id=425481614 instance=ExtResource("5_rv5vn")]
+[node name="PlatformV2" parent="." index="13" unique_id=425481614 instance=ExtResource("5_rv5vn")]
 position = Vector2(-465, 472)
 cycle_time = 0.0
 target_offset = Vector2(0, 0)
 crumble_time = 0.2
 respawn_time = 0.0
 
-[node name="PlatformV4" parent="." index="22" unique_id=1719718380 instance=ExtResource("5_rv5vn")]
+[node name="PlatformV7" parent="." index="14" unique_id=1733860117 instance=ExtResource("5_rv5vn")]
+position = Vector2(-257, 472)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 0.2
+respawn_time = 0.0
+
+[node name="PlatformV6" parent="." index="15" unique_id=2078026767 instance=ExtResource("5_rv5vn")]
+position = Vector2(-673, 472)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 0.2
+respawn_time = 0.0
+
+[node name="PlatformV4" parent="." index="16" unique_id=1719718380 instance=ExtResource("5_rv5vn")]
 position = Vector2(791, 471)
 target_offset = Vector2(-0.63494873, -430.64215)
 
@@ -72,24 +65,39 @@ target_offset = Vector2(-0.63494873, -430.64215)
 position = Vector2(-4, -54)
 owner_era = 1
 
-[node name="PlatformV5" parent="." index="23" unique_id=840963387 instance=ExtResource("5_rv5vn")]
-position = Vector2(295, 11)
+[node name="PlatformV5" parent="." index="17" unique_id=840963387 instance=ExtResource("5_rv5vn")]
+position = Vector2(206, 21)
 target_offset = Vector2(254.64978, -247.50446)
 
-[node name="SpikeTrap" parent="." index="24" unique_id=806943503 instance=ExtResource("4_rv5vn")]
-position = Vector2(346, 423)
+[node name="SpikeTrap" parent="." index="18" unique_id=806943503 instance=ExtResource("4_rv5vn")]
+position = Vector2(348, 432)
 
-[node name="SpikeTrap2" parent="." index="25" unique_id=1359043023 instance=ExtResource("4_rv5vn")]
-position = Vector2(458, 423)
+[node name="SpikeTrap2" parent="." index="19" unique_id=1359043023 instance=ExtResource("4_rv5vn")]
+position = Vector2(460, 432)
 
 [node name="SpikeTrap5" parent="SpikeTrap2" index="5" unique_id=1685553002 instance=ExtResource("4_rv5vn")]
 position = Vector2(112, 0)
 
-[node name="SpikeTrap3" parent="SpikeTrap2" index="6" unique_id=277958519 instance=ExtResource("4_rv5vn")]
+[node name="SpikeTrap4" parent="SpikeTrap2" index="6" unique_id=358246979 instance=ExtResource("4_rv5vn")]
+position = Vector2(-224, 0)
+
+[node name="SpikeTrap6" parent="SpikeTrap2" index="7" unique_id=1923531813 instance=ExtResource("4_rv5vn")]
 position = Vector2(-336, 0)
 
-[node name="SpikeTrap4" parent="SpikeTrap2" index="7" unique_id=358246979 instance=ExtResource("4_rv5vn")]
-position = Vector2(-224, 0)
+[node name="Floor11" parent="." index="20" unique_id=2063579164 instance=ExtResource("3_vqrgy")]
+position = Vector2(-3, 6)
+
+[node name="Floor3" parent="." index="21" unique_id=35253342 instance=ExtResource("3_vqrgy")]
+position = Vector2(-203, 6)
+
+[node name="Floor12" parent="." index="22" unique_id=355517310 instance=ExtResource("3_vqrgy")]
+position = Vector2(-403, 6)
+
+[node name="Floor13" parent="." index="23" unique_id=180372963 instance=ExtResource("3_vqrgy")]
+position = Vector2(-603, 6)
+
+[node name="Floor14" parent="." index="24" unique_id=177449055 instance=ExtResource("3_vqrgy")]
+position = Vector2(-803, 6)
 
 [connection signal="switch_on" from="PlatformV4/Switch" to="SpikeTrap" method="hide"]
 [connection signal="switch_on" from="PlatformV4/Switch" to="SpikeTrap2" method="hide"]

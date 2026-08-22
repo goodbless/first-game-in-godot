@@ -2,22 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_syn24"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_05gei"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform_v2.tscn" id="3_x3rh6"]
+[ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="3_x3rh6"]
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="5_x3rh6"]
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_syn24")]
-
-[node name="SceneLab" parent="Level" parent_id_path=PackedInt32Array(1271458255) index="0" unique_id=611536403]
-visible = false
 
 [node name="Players" parent="." index="3" unique_id=779539851]
 position = Vector2(-1208, 176)
 
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(-179, 93)
+position = Vector2(31, 92)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(-179, 94)
+position = Vector2(31, 93)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
 position = Vector2(549, 397)
@@ -25,32 +22,32 @@ position = Vector2(549, 397)
 [node name="FutureSpawn" parent="." index="9" unique_id=1424180485]
 position = Vector2(-603, 407)
 
-[node name="Floor" parent="." index="10" unique_id=2063579164 instance=ExtResource("2_05gei")]
-position = Vector2(-830, 491)
+[node name="Floor9" parent="." index="10" unique_id=2063579164 instance=ExtResource("2_05gei")]
+position = Vector2(780, 491)
 
-[node name="Floor2" parent="." index="11" unique_id=1145844154 instance=ExtResource("2_05gei")]
+[node name="Floor5" parent="." index="11" unique_id=1135326467 instance=ExtResource("2_05gei")]
+position = Vector2(580, 491)
+
+[node name="Floor6" parent="." index="12" unique_id=613070442 instance=ExtResource("2_05gei")]
+position = Vector2(380, 491)
+
+[node name="Floor7" parent="." index="13" unique_id=1439675307 instance=ExtResource("2_05gei")]
+position = Vector2(180, 491)
+
+[node name="Floor8" parent="." index="14" unique_id=827906737 instance=ExtResource("2_05gei")]
+position = Vector2(-20, 491)
+
+[node name="Floor3" parent="." index="15" unique_id=555591382 instance=ExtResource("2_05gei")]
+position = Vector2(-220, 491)
+
+[node name="Floor4" parent="." index="16" unique_id=1653558388 instance=ExtResource("2_05gei")]
+position = Vector2(-420, 491)
+
+[node name="Floor2" parent="." index="17" unique_id=1145844154 instance=ExtResource("2_05gei")]
 position = Vector2(-620, 491)
 
-[node name="Floor3" parent="." index="12" unique_id=320594899 instance=ExtResource("2_05gei")]
-position = Vector2(-410, 493)
-
-[node name="Floor4" parent="." index="13" unique_id=502922191 instance=ExtResource("2_05gei")]
-position = Vector2(-200, 493)
-
-[node name="Floor5" parent="." index="14" unique_id=98323780 instance=ExtResource("2_05gei")]
-position = Vector2(10, 493)
-
-[node name="Floor6" parent="." index="15" unique_id=359267588 instance=ExtResource("2_05gei")]
-position = Vector2(220, 493)
-
-[node name="Floor7" parent="." index="16" unique_id=1818429087 instance=ExtResource("2_05gei")]
-position = Vector2(430, 495)
-
-[node name="Floor8" parent="." index="17" unique_id=358343765 instance=ExtResource("2_05gei")]
-position = Vector2(640, 495)
-
-[node name="Floor9" parent="." index="18" unique_id=1030537989 instance=ExtResource("2_05gei")]
-position = Vector2(850, 495)
+[node name="Floor" parent="." index="18" unique_id=194099454 instance=ExtResource("2_05gei")]
+position = Vector2(-820, 491)
 
 [node name="PlatformV2" parent="." index="19" unique_id=1718257228 instance=ExtResource("3_x3rh6")]
 position = Vector2(-737, 7)
@@ -59,31 +56,31 @@ target_offset = Vector2(1456.775, 0)
 crumble_time = 5.0
 
 [node name="SpikeTrap2" parent="." index="20" unique_id=194310505 instance=ExtResource("5_x3rh6")]
-position = Vector2(-228, 440)
+position = Vector2(-227, 447)
 
 [node name="SpikeTrap17" parent="." index="21" unique_id=580798629 instance=ExtResource("5_x3rh6")]
-position = Vector2(-340, 440)
+position = Vector2(-339, 447)
 
 [node name="SpikeTrap18" parent="." index="22" unique_id=806943503 instance=ExtResource("5_x3rh6")]
-position = Vector2(-453, 440)
+position = Vector2(-452, 447)
 
 [node name="SpikeTrap3" parent="." index="23" unique_id=836406208 instance=ExtResource("5_x3rh6")]
-position = Vector2(-117, 440)
+position = Vector2(-116, 447)
 
 [node name="SpikeTrap4" parent="." index="24" unique_id=1629799656 instance=ExtResource("5_x3rh6")]
-position = Vector2(-5, 440)
+position = Vector2(-4, 447)
 
 [node name="SpikeTrap5" parent="." index="25" unique_id=1116785289 instance=ExtResource("5_x3rh6")]
-position = Vector2(106, 440)
+position = Vector2(107, 447)
 
 [node name="SpikeTrap6" parent="." index="26" unique_id=1687752601 instance=ExtResource("5_x3rh6")]
-position = Vector2(218, 440)
+position = Vector2(219, 447)
 
 [node name="SpikeTrap7" parent="." index="27" unique_id=370276151 instance=ExtResource("5_x3rh6")]
-position = Vector2(329, 440)
+position = Vector2(330, 447)
 
 [node name="SpikeTrap8" parent="." index="28" unique_id=377613933 instance=ExtResource("5_x3rh6")]
-position = Vector2(441, 440)
+position = Vector2(442, 447)
 
 [node name="PlatformV3" parent="." index="29" unique_id=1339030799 instance=ExtResource("3_x3rh6")]
 position = Vector2(720, -305)
@@ -101,19 +98,8 @@ position = Vector2(729, 416)
 cycle_time = 5.0
 target_offset = Vector2(0, -802.364)
 
-[node name="Floor10" parent="." index="32" unique_id=716203926 instance=ExtResource("2_05gei")]
-position = Vector2(-177, 207)
-
-[node name="PlatformV6" parent="." index="33" unique_id=1861045904 instance=ExtResource("3_x3rh6")]
+[node name="PlatformV6" parent="." index="32" unique_id=1861045904 instance=ExtResource("3_x3rh6")]
 position = Vector2(32, 207)
 cycle_time = 0.0
 target_offset = Vector2(0, 0)
-crumble_time = 0.2
-respawn_time = 0.0
-
-[node name="PlatformV7" parent="." index="34" unique_id=453786575 instance=ExtResource("3_x3rh6")]
-position = Vector2(240, 207)
-cycle_time = 0.0
-target_offset = Vector2(0, 0)
-crumble_time = 0.2
 respawn_time = 0.0
