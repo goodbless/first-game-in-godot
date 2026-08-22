@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2k0itmkmhtd0" path="res://scripts/platform.gd" id="1_nlgqw"]
 [ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
 [ext_resource type="Texture2D" uid="uid://ctfl4xfw2w15v" path="res://assets/sprites/platform.png" id="3_507ja"]
+[ext_resource type="Texture2D" uid="uid://cjm1jtutxv1hj" path="res://assets/sprites/Platform_future.png" id="4_n1ckp"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_507ja"]
 properties/0/path = NodePath(".:_t_sync")
@@ -38,7 +39,7 @@ texture = ExtResource("3_507ja")
 [node name="FutureVisual" type="Node2D" parent="." unique_id=940733877]
 
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=1454335452]
-texture = ExtResource("3_507ja")
+texture = ExtResource("4_n1ckp")
 
 [node name="RiderSensor" type="Area2D" parent="." unique_id=1950071348]
 position = Vector2(0, -49)

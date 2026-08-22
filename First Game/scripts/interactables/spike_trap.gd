@@ -13,9 +13,20 @@ enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
 		_apply_existence()
 
 
+var _initial_visible := true
+
+
 func _ready() -> void:
+	add_to_group("level_resettable")
+	_initial_visible = visible
 	_apply_existence()
 	body_entered.connect(_on_body_entered)
+
+
+## Restore the state the trap spawned with — a switch may have hidden it
+## mid-run (e.g. retracting spikes), and a failed level must bring it back.
+func reset_level() -> void:
+	visible = _initial_visible
 
 
 func _apply_existence() -> void:
