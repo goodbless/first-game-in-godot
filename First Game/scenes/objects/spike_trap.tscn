@@ -13,7 +13,7 @@ properties/1/spawn = true
 properties/1/replication_mode = 2
 
 [sub_resource type="RectangleShape2D" id="TrapShape"]
-size = Vector2(118, 77)
+size = Vector2(112, 43)
 
 [node name="SpikeTrap" type="Area2D" unique_id=806943503]
 script = ExtResource("1_trap")
@@ -22,7 +22,7 @@ script = ExtResource("1_trap")
 replication_config = SubResource("TrapSync")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361969618]
-position = Vector2(0, -1.5)
+position = Vector2(0, 0.5)
 shape = SubResource("TrapShape")
 
 [node name="EraVisuals" type="Node" parent="." unique_id=1868826149]
@@ -32,24 +32,30 @@ script = ExtResource("2_era")
 
 [node name="Spike01" type="Sprite2D" parent="PastVisual" unique_id=1808200809]
 position = Vector2(-43, 0)
+scale = Vector2(0.885, 0.65)
 texture = ExtResource("3_sb7xr")
 
 [node name="Spike02" type="Sprite2D" parent="PastVisual" unique_id=1253036925]
+scale = Vector2(0.885, 0.65)
 texture = ExtResource("3_sb7xr")
 
 [node name="Spike03" type="Sprite2D" parent="PastVisual" unique_id=1192395344]
 position = Vector2(43, 0)
+scale = Vector2(0.885, 0.65)
 texture = ExtResource("3_sb7xr")
 
 [node name="FutureVisual" type="Node2D" parent="." unique_id=1196173250]
 
 [node name="Spike04" type="Sprite2D" parent="FutureVisual" unique_id=392672925]
 position = Vector2(-43, 0)
+scale = Vector2(0.885, 0.65)
 texture = ExtResource("3_sb7xr")
 
 [node name="Spike05" type="Sprite2D" parent="FutureVisual" unique_id=622482511]
+scale = Vector2(0.885, 0.65)
 texture = ExtResource("3_sb7xr")
 
 [node name="Spike06" type="Sprite2D" parent="FutureVisual" unique_id=1161223176]
 position = Vector2(43, 0)
+scale = Vector2(0.885, 0.65)
 texture = ExtResource("3_sb7xr")
