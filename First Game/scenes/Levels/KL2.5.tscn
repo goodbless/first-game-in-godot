@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://r7r6e6a4p2b4"]
+
+[ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_c76ud"]
+[ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_64w07"]
+[ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="3_7825s"]
+[ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="4_atu60"]
+
+[node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_c76ud")]
+
+[node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
+position = Vector2(-111, -4)
+scale = Vector2(1, 1.6799996)
+
+[node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
+position = Vector2(111, 0)
+scale = Vector2(1, 1.76)
+
+[node name="Floor" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="1" unique_id=2063579164 instance=ExtResource("2_64w07")]
+position = Vector2(-58, 14)
+
+[node name="CollisionShape2D" parent="Level/Ceiling" parent_id_path=PackedInt32Array(970822897) index="0" unique_id=224563774]
+position = Vector2(0, -261)
+
+[node name="PastGoal" parent="." index="6" unique_id=1446956518]
+position = Vector2(850, -101)
+
+[node name="FutureGoal" parent="." index="7" unique_id=1426790453]
+position = Vector2(853, -101)
+
+[node name="PastSpawn" parent="." index="8" unique_id=309091987]
+position = Vector2(-687, 268)
+
+[node name="FutureSpawn" parent="." index="9" unique_id=1424180485]
+position = Vector2(-686, 266)
+
+[node name="Floor" parent="." index="10" unique_id=1285337496 instance=ExtResource("2_64w07")]
+position = Vector2(-855, 406)
+
+[node name="Floor2" parent="." index="11" unique_id=2029577900 instance=ExtResource("2_64w07")]
+position = Vector2(-645, 406)
+
+[node name="Floor3" parent="." index="12" unique_id=1692104023 instance=ExtResource("2_64w07")]
+position = Vector2(-435, 406)
+
+[node name="Floor4" parent="." index="13" unique_id=685999007 instance=ExtResource("2_64w07")]
+position = Vector2(-222, 408)
+
+[node name="PlatformV2" parent="." index="14" unique_id=210009724 instance=ExtResource("3_7825s")]
+position = Vector2(407, 108)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+
+[node name="PlatformV4" parent="." index="15" unique_id=2094198261 instance=ExtResource("3_7825s")]
+position = Vector2(190, -227)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+
+[node name="PlatformV5" parent="." index="16" unique_id=1638872308 instance=ExtResource("3_7825s")]
+position = Vector2(190, -227)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="Floor8" parent="." index="17" unique_id=395103147 instance=ExtResource("2_64w07")]
+position = Vector2(-21, -227)
+
+[node name="Floor9" parent="." index="18" unique_id=1788361189 instance=ExtResource("2_64w07")]
+position = Vector2(-230, -227)
+
+[node name="Floor10" parent="." index="19" unique_id=1627945673 instance=ExtResource("2_64w07")]
+position = Vector2(-485, -26)
+exists_in = 1
+
+[node name="Floor11" parent="." index="20" unique_id=763515262 instance=ExtResource("2_64w07")]
+position = Vector2(-853, 170)
+exists_in = 1
+
+[node name="Floor12" parent="." index="21" unique_id=487888075 instance=ExtResource("2_64w07")]
+position = Vector2(401, -226)
+
+[node name="PlatformV3" parent="." index="22" unique_id=1383946414 instance=ExtResource("3_7825s")]
+position = Vector2(407, 108)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="Floor5" parent="." index="23" unique_id=1366697864 instance=ExtResource("2_64w07")]
+position = Vector2(-15, 408)
+
+[node name="Floor6" parent="." index="24" unique_id=484362759 instance=ExtResource("2_64w07")]
+position = Vector2(194, 408)
+
+[node name="Floor7" parent="." index="25" unique_id=1242848580 instance=ExtResource("2_64w07")]
+position = Vector2(403, 408)
+
+[node name="Box" parent="." index="26" unique_id=2056746295 instance=ExtResource("4_atu60")]
+position = Vector2(-49, -318)
+
+[node name="Floor13" parent="." index="27" unique_id=74006540 instance=ExtResource("2_64w07")]
+position = Vector2(632, 14)
+
+[node name="Floor14" parent="." index="28" unique_id=587692365 instance=ExtResource("2_64w07")]
+position = Vector2(613, 408)
+
+[node name="Floor15" parent="." index="29" unique_id=851633950 instance=ExtResource("2_64w07")]
+position = Vector2(824, 408)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dmdljljrjg2cu"]
+
+[ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_4x6p3"]
+
+[node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_4x6p3")]
+
+[node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
+position = Vector2(-111, 0)
+scale = Vector2(1, 2.72)
+
+[node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
+position = Vector2(111, 0)
+scale = Vector2(1, 2.0399995)
+
+[node name="CollisionShape2D" parent="Level/Ceiling" parent_id_path=PackedInt32Array(970822897) index="0" unique_id=224563774]
+position = Vector2(0, -234)
+
+[node name="Players" parent="." index="3" unique_id=779539851]
+position = Vector2(-1283, -243)

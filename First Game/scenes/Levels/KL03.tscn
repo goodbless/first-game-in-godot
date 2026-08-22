@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://evtapu2ldlxh"]
+
+[ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_sj74j"]
+[ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_j812l"]
+[ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="3_1x4ed"]
+[ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="4_j812l"]
+
+[node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_sj74j")]
+
+[node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
+position = Vector2(-109, 0)
+scale = Vector2(1, 1.5999994)
+
+[node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
+position = Vector2(107, 0)
+scale = Vector2(1, 2.0400014)
+
+[node name="Floor" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="1" unique_id=2063579164 instance=ExtResource("2_j812l")]
+position = Vector2(-1445, -230)
+
+[node name="PlatformV6" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="2" unique_id=254798516 instance=ExtResource("3_1x4ed")]
+position = Vector2(-600, -233)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+
+[node name="PlatformV9" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="3" unique_id=307212764 instance=ExtResource("3_1x4ed")]
+position = Vector2(-1021, -231)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+
+[node name="PlatformV8" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="4" unique_id=1681915531 instance=ExtResource("3_1x4ed")]
+position = Vector2(-391, -234)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="PlatformV7" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="5" unique_id=1198344851 instance=ExtResource("3_1x4ed")]
+position = Vector2(-601, -233)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="PlatformV4" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="6" unique_id=33363094 instance=ExtResource("3_1x4ed")]
+position = Vector2(-811, -232)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="PlatformV5" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="7" unique_id=403687741 instance=ExtResource("3_1x4ed")]
+position = Vector2(-1022, -230)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="PlatformV2" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="8" unique_id=1272288630 instance=ExtResource("3_1x4ed")]
+position = Vector2(-1234, -230)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 1.0
+respawn_time = 0.0
+exists_in = 1
+
+[node name="Floor2" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="9" unique_id=951840902 instance=ExtResource("2_j812l")]
+position = Vector2(-181, -234)
+
+[node name="PlatformV3" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="10" unique_id=1266421561 instance=ExtResource("3_1x4ed")]
+position = Vector2(-1701, -231)
+target_offset = Vector2(3.1999512, 274.4)
+
+[node name="Floor3" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="11" unique_id=76161824 instance=ExtResource("2_j812l")]
+position = Vector2(-1733, 383)
+
+[node name="Floor4" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="12" unique_id=697386648 instance=ExtResource("2_j812l")]
+position = Vector2(-1522, 384)
+
+[node name="Floor5" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="13" unique_id=675768052 instance=ExtResource("2_j812l")]
+position = Vector2(-1350, 79)
+
+[node name="Floor6" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="14" unique_id=290329894 instance=ExtResource("2_j812l")]
+position = Vector2(-1312, 384)
+
+[node name="Floor7" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="15" unique_id=1674893783 instance=ExtResource("2_j812l")]
+position = Vector2(-1104, 384)
+
+[node name="Floor8" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="16" unique_id=1863745006 instance=ExtResource("2_j812l")]
+position = Vector2(-1136, 78)
+
+[node name="Floor10" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="17" unique_id=980602459 instance=ExtResource("2_j812l")]
+position = Vector2(-810, 217)
+exists_in = 1
+
+[node name="Floor11" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="18" unique_id=1305613130 instance=ExtResource("2_j812l")]
+position = Vector2(29, -234)
+
+[node name="Box" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="19" unique_id=2056746295 instance=ExtResource("4_j812l")]
+position = Vector2(-1350, -33)
+
+[node name="CollisionShape2D" parent="Level/Ceiling" parent_id_path=PackedInt32Array(970822897) index="0" unique_id=224563774]
+position = Vector2(0, -265)
+
+[node name="PastGoal" parent="." index="6" unique_id=1446956518]
+position = Vector2(841, -340)
+
+[node name="FutureGoal" parent="." index="7" unique_id=1426790453]
+position = Vector2(843, -343)
+
+[node name="PastSpawn" parent="." index="8" unique_id=309091987]
+position = Vector2(-716, 268)
