@@ -49,12 +49,52 @@ var levels: Array[String] = []
 var _selected_level := 0
 
 var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
+var loading_scene = preload("res://scenes/ui/loading_screen.tscn")
 
 var _player_spawn_node: Node2D
 var host_mode_enabled := false
 var multiplayer_mode_enabled := false
 var my_era: Era = Era.NONE
 var _current_level := 0
+var _last_scene_path := ""
+
+
+## Auto-setup watch: on entering a level scene, ensure the structural nodes
+## exist (Players + MultiplayerSpawner + loading screen + respawn schedule).
+## Levels with their own game_manager script keep the old explicit flow.
+## Pure-content levels need none of this — drop them in Levels/ and they work.
+func _process(_delta: float) -> void:
+	var scene := get_tree().current_scene
+	if scene == null or scene.scene_file_path == _last_scene_path:
+		return
+	_last_scene_path = scene.scene_file_path
+	if scene.scene_file_path.begins_with(LEVELS_DIR):
+		_on_level_scene_loaded(scene)
+
+
+func _on_level_scene_loaded(scene: Node) -> void:
+	var root_script: Script = scene.get_script()
+	if root_script != null and root_script.resource_path == "res://scripts/game_manager.gd":
+		return  # explicit per-level flow — leave it alone
+
+	if not scene.has_node("Players"):
+		var players := Node2D.new()
+		players.name = "Players"
+		players.position = Vector2(60, 40)
+		scene.add_child(players)
+	if not scene.has_node("MultiplayerSpawner"):
+		var spawner := MultiplayerSpawner.new()
+		spawner.name = "MultiplayerSpawner"
+		spawner.add_spawnable_scene("uid://u6e7d34la27u")
+		spawner.spawn_limit = 2
+		scene.add_child(spawner)
+		spawner.spawn_path = NodePath("../Players")
+
+	if multiplayer_mode_enabled:
+		scene.add_child(loading_scene.instantiate())
+		if multiplayer.is_server():
+			await get_tree().create_timer(1.0).timeout
+			respawn_all_players()
 
 
 func _refresh_era_visuals():
