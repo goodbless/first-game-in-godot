@@ -28,10 +28,16 @@ size = Vector2(16, 232)
 size = Vector2(16, 232)
 
 [sub_resource type="RectangleShape2D" id="CeilingShape"]
-size = Vector2(672, 16)
+size = Vector2(392, 16)
 
 [sub_resource type="PlaceholderTexture2D" id="CeilingTex"]
 size = Vector2(672, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnqe"]
+size = Vector2(32, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jumof"]
+size = Vector2(32, 16)
 
 [sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
 
@@ -98,6 +104,16 @@ shape = SubResource("CeilingShape")
 [node name="Sprite2D" type="Sprite2D" parent="Level/Ceiling" unique_id=1487537355]
 modulate = Color(0.2, 0.22, 0.25, 1)
 texture = SubResource("CeilingTex")
+
+[node name="Floor" type="StaticBody2D" parent="Level" unique_id=437042207]
+position = Vector2(150, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor" unique_id=1266952690]
+shape = SubResource("RectangleShape2D_crnqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Floor" unique_id=197919945]
+modulate = Color(0.2, 0.22, 0.25, 1)
+texture = SubResource("PlaceholderTexture2D_jumof")
 
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
