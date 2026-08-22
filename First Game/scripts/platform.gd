@@ -2,11 +2,11 @@ extends AnimatableBody2D
 
 @export var animation_player_optional: AnimationPlayer
 
-func _on_player_connected(id: int) -> void:
-    if not multiplayer.is_server():
-        animation_player_optional.stop()
-        animation_player_optional.active = false
 
 func _ready() -> void:
-    if animation_player_optional:
-        multiplayer.peer_connected.connect(_on_player_connected)
+	# Levels load after the lobby handshake, so peer state is already settled
+	# here: the server keeps animating (position syncs to clients), clients
+	# kill their local animation immediately.
+	if animation_player_optional != null and not multiplayer.is_server():
+		animation_player_optional.stop()
+		animation_player_optional.active = false
