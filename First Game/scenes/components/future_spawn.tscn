@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/spawn_point.gd" id="1_spawn"]
+
+[node name="FutureSpawn" type="Marker2D"]
+script = ExtResource("1_spawn")
+spawn_era = 2
+
+[node name="EditorHint" type="Label" parent="."]
+offset_left = -28.0
+offset_top = -22.0
+offset_right = 28.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.65, 0.78, 1, 1)
+theme_override_font_sizes/font_size = 8
+text = "FUTURE SPAWN"
+horizontal_alignment = 1
