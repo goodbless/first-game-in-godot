@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://h6lcqsfatc74" path="res://scripts/interactables/spike_trap.gd" id="1_trap"]
 [ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
+[ext_resource type="Texture2D" uid="uid://c8cx0sdqlvsr" path="res://assets/sprites/spike01.png" id="3_sb7xr"]
 
 [sub_resource type="SceneReplicationConfig" id="TrapSync"]
 properties/0/path = NodePath(".:exists_in")
@@ -12,7 +13,7 @@ properties/1/spawn = true
 properties/1/replication_mode = 2
 
 [sub_resource type="RectangleShape2D" id="TrapShape"]
-size = Vector2(112, 29)
+size = Vector2(118, 77)
 
 [node name="SpikeTrap" type="Area2D" unique_id=806943503]
 script = ExtResource("1_trap")
@@ -29,12 +30,26 @@ script = ExtResource("2_era")
 
 [node name="PastVisual" type="Node2D" parent="." unique_id=1937518747]
 
-[node name="Spikes" type="Polygon2D" parent="PastVisual" unique_id=879147166]
-color = Color(0.75, 0.78, 0.82, 1)
-polygon = PackedVector2Array(-55.145596, 12.699022, -41.3592, -14.873777, -27.572798, 12.699022, -13.786398, -14.873777, -4.7953705e-08, 12.699022, 13.786401, -14.873777, 27.572798, 12.699022, 41.3592, -14.873777, 55.145596, 12.699022)
+[node name="Spike01" type="Sprite2D" parent="PastVisual" unique_id=1808200809]
+position = Vector2(-43, 0)
+texture = ExtResource("3_sb7xr")
+
+[node name="Spike02" type="Sprite2D" parent="PastVisual" unique_id=1253036925]
+texture = ExtResource("3_sb7xr")
+
+[node name="Spike03" type="Sprite2D" parent="PastVisual" unique_id=1192395344]
+position = Vector2(43, 0)
+texture = ExtResource("3_sb7xr")
 
 [node name="FutureVisual" type="Node2D" parent="." unique_id=1196173250]
 
-[node name="Spikes" type="Polygon2D" parent="FutureVisual" unique_id=80389525]
-color = Color(0.45, 0.3, 0.2, 1)
-polygon = PackedVector2Array(-55.25463, 13.228938, -44.96116, -10.789167, -27.805372, 9.797781, -14.080737, -17.651484, 0.86559254, 7.567901, 16.799686, -10.789167, 27.738317, 11.549046, 40.817795, -14.2203245, 57.198788, 13.141504)
+[node name="Spike04" type="Sprite2D" parent="FutureVisual" unique_id=392672925]
+position = Vector2(-43, 0)
+texture = ExtResource("3_sb7xr")
+
+[node name="Spike05" type="Sprite2D" parent="FutureVisual" unique_id=622482511]
+texture = ExtResource("3_sb7xr")
+
+[node name="Spike06" type="Sprite2D" parent="FutureVisual" unique_id=1161223176]
+position = Vector2(43, 0)
+texture = ExtResource("3_sb7xr")

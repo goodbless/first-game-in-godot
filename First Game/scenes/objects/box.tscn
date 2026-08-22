@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u7tkwviudo0g" path="res://scripts/interactables/box.gd" id="1_box"]
 [ext_resource type="Texture2D" uid="uid://bcap7tn5aup8p" path="res://assets/sprites/Box.png" id="2_tf0hf"]
+[ext_resource type="Texture2D" uid="uid://cskw7wf7tnj6y" path="res://assets/sprites/Box_future.png" id="3_vfogt"]
 
 [sub_resource type="RectangleShape2D" id="BoxShape"]
 size = Vector2(130, 122)
@@ -29,7 +30,7 @@ texture = ExtResource("2_tf0hf")
 [node name="FutureVisual" type="Node2D" parent="." unique_id=1190098160]
 
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=212797583]
-texture = ExtResource("2_tf0hf")
+texture = ExtResource("3_vfogt")
 
 [node name="PushLeft" type="Area2D" parent="." unique_id=1080111757]
 position = Vector2(-71, 0)
