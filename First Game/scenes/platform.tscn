@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scripts/era_visuals.gd" id="2_era"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_507ja"]
-properties/0/path = NodePath(".:position")
+properties/0/path = NodePath(".:_t_sync")
 properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/0/replication_mode = 2
 
 [sub_resource type="PlaceholderTexture2D" id="PlatformTex"]
 size = Vector2(32, 8)
