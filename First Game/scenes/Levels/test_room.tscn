@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cm130kmm1322o"]
 
 [ext_resource type="Script" uid="uid://clw81guyetrjo" path="res://scripts/game_manager.gd" id="1_gm"]
-[ext_resource type="PackedScene" path="res://scenes/objects/painting.tscn" id="2_crnqe"]
+[ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_qqxd0"]
 [ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="3_goal"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="4_kz"]
 [ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="5_box"]
@@ -34,12 +34,6 @@ size = Vector2(392, 16)
 
 [sub_resource type="PlaceholderTexture2D" id="CeilingTex"]
 size = Vector2(672, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnqe"]
-size = Vector2(32, 16)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jumof"]
-size = Vector2(32, 16)
 
 [sub_resource type="WorldBoundaryShape2D" id="KillzoneShape"]
 
@@ -74,9 +68,6 @@ shape = SubResource("FloorBShape")
 modulate = Color(0.24, 0.27, 0.3, 1)
 texture = SubResource("FloorBTex")
 
-[node name="Painting" parent="Level/GroundB" unique_id=179766098 instance=ExtResource("2_crnqe")]
-position = Vector2(-491, -47)
-
 [node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
 position = Vector2(-8, 0)
 
@@ -107,15 +98,8 @@ shape = SubResource("CeilingShape")
 modulate = Color(0.2, 0.22, 0.25, 1)
 texture = SubResource("CeilingTex")
 
-[node name="Floor" type="StaticBody2D" parent="Level" unique_id=437042207]
+[node name="Floor" parent="Level" unique_id=1509154067 instance=ExtResource("2_qqxd0")]
 position = Vector2(150, 66)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor" unique_id=1266952690]
-shape = SubResource("RectangleShape2D_crnqe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/Floor" unique_id=197919945]
-modulate = Color(0.2, 0.22, 0.25, 1)
-texture = SubResource("PlaceholderTexture2D_jumof")
 
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
@@ -127,9 +111,11 @@ position = Vector2(220, 93)
 
 [node name="Switch" parent="Objects" unique_id=707042492 instance=ExtResource("7_switch")]
 position = Vector2(290, 95)
+collision_mask = 6
 
 [node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
 position = Vector2(350, 76)
+collision_layer = 8
 
 [node name="LevelCamera" type="Camera2D" parent="." unique_id=1432207259]
 position = Vector2(60, 40)
@@ -183,3 +169,4 @@ respawn_time = 0.0
 
 [node name="SpikeTrap" parent="." unique_id=1042375586 instance=ExtResource("10_qqxd0")]
 position = Vector2(166, 96)
+collision_mask = 6
