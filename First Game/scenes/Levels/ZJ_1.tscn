@@ -4,69 +4,88 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="2_skmjf"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="3_vqrgy"]
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="4_rv5vn"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform_v2.tscn" id="5_rv5vn"]
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_kp7p8")]
 
-[node name="SceneLab" parent="Level" parent_id_path=PackedInt32Array(1271458255) index="0" unique_id=611536403]
-visible = false
-
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(-692, -81)
+position = Vector2(-716, 362)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(-691, -79)
+position = Vector2(-715, 364)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
-position = Vector2(-738, 406)
+position = Vector2(-697, -65)
 
 [node name="FutureSpawn" parent="." index="9" unique_id=1424180485]
-position = Vector2(-738, 406)
+position = Vector2(-697, -68)
 
-[node name="Switch" parent="." index="10" unique_id=58366816 instance=ExtResource("2_skmjf")]
-position = Vector2(-434, 405)
+[node name="Floor" parent="." index="10" unique_id=2063579164 instance=ExtResource("3_vqrgy")]
+position = Vector2(-256, 471)
 
-[node name="Floor" parent="." index="11" unique_id=2063579164 instance=ExtResource("3_vqrgy")]
-position = Vector2(-230, 403)
+[node name="Floor4" parent="." index="11" unique_id=304485677 instance=ExtResource("3_vqrgy")]
+position = Vector2(373, 472)
 
-[node name="Floor4" parent="." index="12" unique_id=304485677 instance=ExtResource("3_vqrgy")]
-position = Vector2(20, 316)
+[node name="Floor5" parent="." index="12" unique_id=1389828649 instance=ExtResource("3_vqrgy")]
+position = Vector2(582, 472)
 
-[node name="Floor5" parent="." index="13" unique_id=1389828649 instance=ExtResource("3_vqrgy")]
-position = Vector2(289, 236)
+[node name="Floor9" parent="." index="13" unique_id=280031450 instance=ExtResource("3_vqrgy")]
+position = Vector2(-537, 10)
 
-[node name="Floor6" parent="." index="14" unique_id=1160763493 instance=ExtResource("3_vqrgy")]
-position = Vector2(536, 137)
+[node name="Floor11" parent="." index="14" unique_id=386565459 instance=ExtResource("3_vqrgy")]
+position = Vector2(-745, 10)
 
-[node name="Floor7" parent="." index="15" unique_id=389524689 instance=ExtResource("3_vqrgy")]
-position = Vector2(198, 38)
+[node name="Floor13" parent="." index="15" unique_id=1861761785 instance=ExtResource("3_vqrgy")]
+position = Vector2(-330, 10)
 
-[node name="Floor8" parent="." index="16" unique_id=1287149977 instance=ExtResource("3_vqrgy")]
-position = Vector2(740, 35)
+[node name="Floor14" parent="." index="16" unique_id=1358748718 instance=ExtResource("3_vqrgy")]
+position = Vector2(-121, 11)
 
-[node name="inv_1" parent="." index="17" unique_id=1682154044 instance=ExtResource("3_vqrgy")]
-position = Vector2(-4, 35)
-exists_in = 1
+[node name="Floor15" parent="." index="17" unique_id=1760123784 instance=ExtResource("3_vqrgy")]
+position = Vector2(87, 11)
 
-[node name="Floor9" parent="." index="18" unique_id=280031450 instance=ExtResource("3_vqrgy")]
-position = Vector2(-207, 35)
-
-[node name="inv_2" parent="." index="19" unique_id=1278492763 instance=ExtResource("3_vqrgy")]
-position = Vector2(-432, 33)
-exists_in = 1
-
-[node name="Floor11" parent="." index="20" unique_id=386565459 instance=ExtResource("3_vqrgy")]
-position = Vector2(-653, 33)
-
-[node name="Floor2" parent="." index="21" unique_id=874266697 instance=ExtResource("3_vqrgy")]
+[node name="Floor2" parent="." index="18" unique_id=874266697 instance=ExtResource("3_vqrgy")]
 position = Vector2(-674, 472)
 
-[node name="Floor3" parent="." index="22" unique_id=1815224220 instance=ExtResource("3_vqrgy")]
-position = Vector2(-444, 474)
+[node name="Floor10" parent="." index="19" unique_id=1994220618 instance=ExtResource("3_vqrgy")]
+position = Vector2(161, 472)
 
-[node name="SpikeTrap2" parent="." index="23" unique_id=593470760 instance=ExtResource("4_rv5vn")]
-position = Vector2(-1, -23)
-scale = Vector2(1.815, 1.815)
+[node name="PlatformV3" parent="." index="20" unique_id=127802949 instance=ExtResource("5_rv5vn")]
+position = Vector2(-47, 471)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 0.5
+respawn_time = 0.0
 
-[node name="SpikeTrap3" parent="." index="24" unique_id=806943503 instance=ExtResource("4_rv5vn")]
-position = Vector2(-434, -25)
-scale = Vector2(1.815, 1.815)
+[node name="PlatformV2" parent="." index="21" unique_id=425481614 instance=ExtResource("5_rv5vn")]
+position = Vector2(-465, 472)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+crumble_time = 0.5
+respawn_time = 0.0
+
+[node name="PlatformV4" parent="." index="22" unique_id=1719718380 instance=ExtResource("5_rv5vn")]
+position = Vector2(791, 471)
+target_offset = Vector2(-0.63494873, -430.64215)
+
+[node name="Switch" parent="PlatformV4" index="6" unique_id=58366816 instance=ExtResource("2_skmjf")]
+position = Vector2(-3, -77)
+
+[node name="PlatformV5" parent="." index="23" unique_id=840963387 instance=ExtResource("5_rv5vn")]
+position = Vector2(295, 11)
+target_offset = Vector2(254.64978, -247.50446)
+
+[node name="SpikeTrap" parent="." index="24" unique_id=806943503 instance=ExtResource("4_rv5vn")]
+position = Vector2(346, 423)
+
+[node name="SpikeTrap2" parent="." index="25" unique_id=1359043023 instance=ExtResource("4_rv5vn")]
+position = Vector2(458, 423)
+
+[node name="SpikeTrap5" parent="." index="26" unique_id=1685553002 instance=ExtResource("4_rv5vn")]
+position = Vector2(570, 423)
+
+[node name="SpikeTrap3" parent="." index="27" unique_id=277958519 instance=ExtResource("4_rv5vn")]
+position = Vector2(122, 423)
+
+[node name="SpikeTrap4" parent="." index="28" unique_id=358246979 instance=ExtResource("4_rv5vn")]
+position = Vector2(234, 423)

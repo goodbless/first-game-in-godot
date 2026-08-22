@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dio0t2ug3yb0t"]
+
+[ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_pdmg4"]
+[ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_h0mxt"]
+[ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="3_nq141"]
+[ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="4_nq141"]
+
+[node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_pdmg4")]
+
+[node name="PastGoal" parent="." index="6" unique_id=1446956518]
+position = Vector2(787, -150)
+
+[node name="FutureGoal" parent="." index="7" unique_id=1426790453]
+position = Vector2(788, -156)
+
+[node name="PastSpawn" parent="." index="8" unique_id=309091987]
+position = Vector2(-819, -114)
+
+[node name="FutureSpawn" parent="." index="9" unique_id=1424180485]
+position = Vector2(-818, 425)
+
+[node name="Floor" parent="." index="10" unique_id=2063579164 instance=ExtResource("2_h0mxt")]
+position = Vector2(-830, 491)
+
+[node name="Floor2" parent="." index="11" unique_id=1472705546 instance=ExtResource("2_h0mxt")]
+position = Vector2(-620, 491)
+
+[node name="Floor3" parent="." index="12" unique_id=335411053 instance=ExtResource("2_h0mxt")]
+position = Vector2(-410, 493)
+
+[node name="Floor4" parent="." index="13" unique_id=139848328 instance=ExtResource("2_h0mxt")]
+position = Vector2(-200, 493)
+
+[node name="Floor5" parent="." index="14" unique_id=125519429 instance=ExtResource("2_h0mxt")]
+position = Vector2(10, 493)
+
+[node name="Floor6" parent="." index="15" unique_id=1990900436 instance=ExtResource("2_h0mxt")]
+position = Vector2(220, 493)
+
+[node name="Floor7" parent="." index="16" unique_id=1077083613 instance=ExtResource("2_h0mxt")]
+position = Vector2(430, 495)
+
+[node name="Floor8" parent="." index="17" unique_id=538588772 instance=ExtResource("2_h0mxt")]
+position = Vector2(640, 495)
+
+[node name="Floor9" parent="." index="18" unique_id=745539187 instance=ExtResource("2_h0mxt")]
+position = Vector2(850, 495)
+
+[node name="Floor10" parent="." index="19" unique_id=885807436 instance=ExtResource("2_h0mxt")]
+position = Vector2(-848, -50)
+
+[node name="Floor11" parent="." index="20" unique_id=1875985915 instance=ExtResource("2_h0mxt")]
+position = Vector2(-638, -50)
+
+[node name="Floor12" parent="." index="21" unique_id=1317555553 instance=ExtResource("2_h0mxt")]
+position = Vector2(-428, -48)
+
+[node name="Floor13" parent="." index="22" unique_id=325150473 instance=ExtResource("2_h0mxt")]
+position = Vector2(-218, -48)
+
+[node name="Floor14" parent="." index="23" unique_id=1155182371 instance=ExtResource("2_h0mxt")]
+position = Vector2(-8, -48)
+
+[node name="Floor15" parent="." index="24" unique_id=2017562055 instance=ExtResource("2_h0mxt")]
+position = Vector2(202, -48)
+
+[node name="Floor16" parent="." index="25" unique_id=1923654492 instance=ExtResource("2_h0mxt")]
+position = Vector2(412, -46)
+
+[node name="Floor18" parent="." index="26" unique_id=509946675 instance=ExtResource("2_h0mxt")]
+position = Vector2(832, -46)
+
+[node name="Switch" parent="." index="27" unique_id=662216463 instance=ExtResource("3_nq141")]
+position = Vector2(-224, -99)
+exists_in = 1
+
+[node name="Floor17" parent="." index="28" unique_id=164651875 instance=ExtResource("2_h0mxt")]
+position = Vector2(-497, 389)
+
+[node name="Floor19" parent="." index="29" unique_id=590538938 instance=ExtResource("2_h0mxt")]
+position = Vector2(-291, 338)
+
+[node name="Floor20" parent="." index="30" unique_id=809113853 instance=ExtResource("2_h0mxt")]
+position = Vector2(-80, 286)
+
+[node name="Floor21" parent="." index="31" unique_id=1087925412 instance=ExtResource("2_h0mxt")]
+position = Vector2(117, 337)
+
+[node name="Floor22" parent="." index="32" unique_id=982072802 instance=ExtResource("2_h0mxt")]
+position = Vector2(355, 211)
+
+[node name="Floor23" parent="." index="33" unique_id=956245679 instance=ExtResource("2_h0mxt")]
+position = Vector2(636, 88)
+
+[node name="SpikeTrap" parent="." index="34" unique_id=806943503 instance=ExtResource("4_nq141")]
+position = Vector2(-499.00003, 332)
+scale = Vector2(1.59, 1.59)
+
+[node name="SpikeTrap2" parent="." index="35" unique_id=113766670 instance=ExtResource("4_nq141")]
+position = Vector2(-295, 278)
+scale = Vector2(1.59, 1.59)
+
+[node name="SpikeTrap3" parent="." index="36" unique_id=1487543102 instance=ExtResource("4_nq141")]
+position = Vector2(-83, 229)
+scale = Vector2(1.59, 1.59)
+
+[node name="SpikeTrap4" parent="." index="37" unique_id=875809529 instance=ExtResource("4_nq141")]
+position = Vector2(123, 280)
+scale = Vector2(1.59, 1.59)
+
+[node name="SpikeTrap5" parent="." index="38" unique_id=1262238137 instance=ExtResource("4_nq141")]
+position = Vector2(355, 154)
+scale = Vector2(1.59, 1.59)
+
+[node name="SpikeTrap6" parent="." index="39" unique_id=1531949145 instance=ExtResource("4_nq141")]
+position = Vector2(625, 32)
+scale = Vector2(1.59, 1.59)
