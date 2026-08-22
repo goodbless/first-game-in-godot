@@ -7,9 +7,9 @@ extends Node
 ## specific body base class.
 ##
 ## Scope support: if the parent has an "exists_in" property
-## (0 = both eras, 1 = past only, 2 = future only), visuals of the
-## non-existent era are hidden on EVERY peer — single-era objects are
-## invisible to the wrong timeline.
+## (MultiplayerManager.Existence), the functionally-absent era's visual is
+## hidden — unless the parent opts into "remnant_visual" (decay narrative:
+## the other era sees the object's ruined trace, e.g. a gate's archway).
 
 const _SCOPE_PAST_ONLY := 1
 const _SCOPE_FUTURE_ONLY := 2
@@ -34,9 +34,12 @@ func apply_era_visibility() -> void:
 func _visible_in(parent: Node, visual_era: int) -> bool:
 	var existence = parent.get("exists_in")
 	if existence != null:
+		var scoped_out := false
 		if existence == _SCOPE_PAST_ONLY and visual_era != MultiplayerManager.Era.PAST:
-			return false
-		if existence == _SCOPE_FUTURE_ONLY and visual_era != MultiplayerManager.Era.FUTURE:
+			scoped_out = true
+		elif existence == _SCOPE_FUTURE_ONLY and visual_era != MultiplayerManager.Era.FUTURE:
+			scoped_out = true
+		if scoped_out and parent.get("remnant_visual") != true:
 			return false
 	if MultiplayerManager.my_era == MultiplayerManager.Era.NONE:
 		return true
