@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="7_switch"]
 [ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="8_door"]
 [ext_resource type="PackedScene" uid="uid://bgv5v2fxqlswe" path="res://scenes/platform.tscn" id="9_fh3c8"]
+[ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="10_qqxd0"]
 
 [sub_resource type="RectangleShape2D" id="FloorAShape"]
 size = Vector2(416, 16)
@@ -179,3 +180,6 @@ move_distance = 64.0
 move_axis = Vector2(1, 1)
 crumble_time = 3.0
 respawn_time = 0.0
+
+[node name="SpikeTrap" parent="." unique_id=1042375586 instance=ExtResource("10_qqxd0")]
+position = Vector2(166, 96)
