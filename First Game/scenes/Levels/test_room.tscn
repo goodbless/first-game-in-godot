@@ -175,3 +175,5 @@ texture = SubResource("GoalFlagTex")
 
 [node name="Platform" parent="." unique_id=663266155 instance=ExtResource("9_fh3c8")]
 position = Vector2(189, 16)
+move_distance = 64.0
+move_axis = Vector2(1, 1)

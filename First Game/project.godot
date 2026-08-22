@@ -61,6 +61,7 @@ interact={
 
 [physics]
 
+common/physics_interpolation=true
 2d/physics_layer_names/layer_1="World"
 2d/physics_layer_names/layer_2="PastPlayer"
 2d/physics_layer_names/layer_3="FuturePlayer"
