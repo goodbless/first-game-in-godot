@@ -33,9 +33,6 @@ func _ready() -> void:
 
 func _update_state() -> void:
 	collision_layer = 0 if open else MultiplayerManager.existence_layer(exists_in)
-	var arch := get_node_or_null("FutureVisual/Arch")
-	if arch != null:
-		arch.modulate = Color(0.4, 1.0, 0.8, 0.9) if open else Color(0.3, 0.3, 0.35, 0.5)
 	_animate_gates()
 
 
