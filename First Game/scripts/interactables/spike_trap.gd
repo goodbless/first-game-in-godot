@@ -26,6 +26,6 @@ func _apply_existence() -> void:
 
 
 func _on_body_entered(body) -> void:
-	if multiplayer.multiplayer_peer != null and multiplayer.is_server():
+	if multiplayer.multiplayer_peer != null and multiplayer.is_server() and self.is_visible_in_tree():
 		print("Spike trap hit: ", body.name, " — level failed for both")
 		MultiplayerManager.notify_level_failed()

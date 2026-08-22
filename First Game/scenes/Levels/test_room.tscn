@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_qqxd0"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="4_kz"]
 [ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="5_box"]
+[ext_resource type="PackedScene" uid="uid://fdff3lkc645i" path="res://scenes/objects/switch.tscn" id="6_yn2df"]
+[ext_resource type="PackedScene" uid="uid://hpiy1nkt1qpo" path="res://scenes/objects/door.tscn" id="7_hofti"]
 [ext_resource type="PackedScene" uid="uid://bw6gomvbrnoah" path="res://scenes/objects/past_goal.tscn" id="9_hofti"]
 [ext_resource type="PackedScene" uid="uid://p3tlrv2hnp3h" path="res://scenes/objects/future_goal.tscn" id="10_h4m6d"]
 [ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="10_qqxd0"]
@@ -80,6 +82,12 @@ exists_in = 2
 position = Vector2(-320, -136)
 target_offset = Vector2(439.8772, 313.61304)
 
+[node name="Switch" parent="Level" unique_id=1386044479 instance=ExtResource("6_yn2df")]
+position = Vector2(72, 432)
+
+[node name="Door" parent="Level" unique_id=87996404 instance=ExtResource("7_hofti")]
+position = Vector2(256, 440)
+
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
 [node name="LevelCamera" type="Camera2D" parent="." unique_id=1432207259]
@@ -119,3 +127,7 @@ position = Vector2(360, 176)
 target_offset = Vector2(-162.14381, 151.13995)
 crumble_time = 3.0
 exists_in = 1
+
+[connection signal="switch_changed" from="Level/Switch" to="Level/Door" method="set_open"]
+[connection signal="switch_off" from="Level/Switch" to="SpikeTrap" method="hide"]
+[connection signal="switch_on" from="Level/Switch" to="SpikeTrap" method="show"]
