@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://cm130kmm1322o"]
 
 [ext_resource type="Script" uid="uid://clw81guyetrjo" path="res://scripts/game_manager.gd" id="1_gm"]
-[ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/objects/painting.tscn" id="2_crnqe"]
 [ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="3_goal"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="4_kz"]
 [ext_resource type="PackedScene" uid="uid://c708tyxe3670o" path="res://scenes/objects/box.tscn" id="5_box"]
 [ext_resource type="PackedScene" path="res://scenes/objects/vase.tscn" id="6_vase"]
 [ext_resource type="PackedScene" path="res://scenes/objects/switch.tscn" id="7_switch"]
 [ext_resource type="PackedScene" path="res://scenes/objects/door.tscn" id="8_door"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_fontb"]
-[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="10_font"]
 
 [sub_resource type="RectangleShape2D" id="FloorAShape"]
 size = Vector2(416, 16)
@@ -68,6 +66,9 @@ shape = SubResource("FloorBShape")
 modulate = Color(0.24, 0.27, 0.3, 1)
 texture = SubResource("FloorBTex")
 
+[node name="Painting" parent="Level/GroundB" unique_id=179766098 instance=ExtResource("2_crnqe")]
+position = Vector2(-491, -47)
+
 [node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
 position = Vector2(-8, 0)
 
@@ -112,7 +113,7 @@ position = Vector2(290, 40)
 [node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
 position = Vector2(350, 20)
 
-[node name="LevelCamera" type="Camera2D" parent="."]
+[node name="LevelCamera" type="Camera2D" parent="." unique_id=1432207259]
 position = Vector2(60, 40)
 zoom = Vector2(4, 4)
 
@@ -138,9 +139,9 @@ script = ExtResource("3_goal")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PastGoal" unique_id=284546454]
 shape = SubResource("GoalShape")
 
-[node name="Flag" type="Sprite2D" parent="PastGoal"]
-texture = SubResource("GoalFlagTex")
+[node name="Flag" type="Sprite2D" parent="PastGoal" unique_id=635412092]
 modulate = Color(1, 0.85, 0.3, 0.75)
+texture = SubResource("GoalFlagTex")
 
 [node name="FutureGoal" type="Area2D" parent="." unique_id=246416478]
 position = Vector2(615, 65)
@@ -151,7 +152,6 @@ goal_era = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FutureGoal" unique_id=1339981108]
 shape = SubResource("GoalShape")
 
-[node name="Flag" type="Sprite2D" parent="FutureGoal"]
-texture = SubResource("GoalFlagTex")
+[node name="Flag" type="Sprite2D" parent="FutureGoal" unique_id=1295062120]
 modulate = Color(0.3, 0.9, 1, 0.75)
-
+texture = SubResource("GoalFlagTex")
