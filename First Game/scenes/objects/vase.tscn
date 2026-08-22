@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/interactables/vase.gd" id="1_vase"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_fontb"]
+[ext_resource type="Script" path="res://scripts/era_visuals.gd" id="2_era"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fontb"]
 
 [sub_resource type="PlaceholderTexture2D" id="VaseTex"]
 size = Vector2(12, 14)
@@ -13,20 +14,19 @@ size = Vector2(12, 14)
 radius = 22.0
 
 [sub_resource type="SceneReplicationConfig" id="VaseSync"]
-properties/0/path = NodePath(".:position")
+properties/0/path = NodePath(".:broken")
 properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:broken")
-properties/1/spawn = true
-properties/1/replication_mode = 2
+properties/0/replication_mode = 2
 
-[node name="Vase" type="CharacterBody2D"]
+[node name="Vase" type="StaticBody2D"]
 collision_layer = 1
-collision_mask = 1
 script = ExtResource("1_vase")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("VaseShape")
+
+[node name="EraVisuals" type="Node" parent="."]
+script = ExtResource("2_era")
 
 [node name="PastVisual" type="Node2D" parent="."]
 
@@ -53,7 +53,7 @@ offset_top = -28.0
 offset_right = 12.0
 offset_bottom = -16.0
 theme_override_colors/font_color = Color(1, 0.95, 0.7, 1)
-theme_override_fonts/font = ExtResource("2_fontb")
+theme_override_fonts/font = ExtResource("3_fontb")
 theme_override_font_sizes/font_size = 8
 text = "[E]"
 horizontal_alignment = 1

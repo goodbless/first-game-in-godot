@@ -122,10 +122,10 @@ texture = SubResource("PlaceholderTexture2D_jumof")
 position = Vector2(150, 40)
 
 [node name="Vase" parent="Objects" unique_id=1386730635 instance=ExtResource("6_vase")]
-position = Vector2(220, 40)
+position = Vector2(220, 93)
 
 [node name="Switch" parent="Objects" unique_id=707042492 instance=ExtResource("7_switch")]
-position = Vector2(290, 40)
+position = Vector2(290, 95)
 
 [node name="Door" parent="Objects" unique_id=1745019336 instance=ExtResource("8_door")]
 position = Vector2(350, 76)
