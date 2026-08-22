@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://u6e7d34la27u"]
+[gd_scene format=3 uid="uid://u6e7d34la27u"]
 
 [ext_resource type="Script" uid="uid://23k6gavh071k" path="res://scripts/multiplayer/multiplayer_controller.gd" id="1_47gve"]
 [ext_resource type="Script" uid="uid://dsq6t2ojamm2c" path="res://scripts/multiplayer/multiplayer_input.gd" id="2_2d20i"]
@@ -125,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5qbp8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 10.0
 }, {
@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m4p6y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -186,7 +186,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wq37r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 10.0
 }]
@@ -194,36 +194,36 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8tkd"]
 radius = 5.0
 
-[node name="MultiplayerPlayer" type="CharacterBody2D"]
+[node name="MultiplayerPlayer" type="CharacterBody2D" unique_id=1821475338]
 collision_layer = 2
 script = ExtResource("1_47gve")
 
-[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=624140548]
 replication_config = SubResource("SceneReplicationConfig_2d20i")
 
-[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1742047937]
 unique_name_in_owner = true
 replication_config = SubResource("SceneReplicationConfig_k8tkd")
 script = ExtResource("2_2d20i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=849144573]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_2d20i")
 animation = &"jump"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386566152]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_k8tkd")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=527958384]
 position = Vector2(0, -7)
 zoom = Vector2(4, 4)
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="RespawnTimer" type="Timer" parent="."]
+[node name="RespawnTimer" type="Timer" parent="." unique_id=16580997]
 wait_time = 0.6
 one_shot = true
 
