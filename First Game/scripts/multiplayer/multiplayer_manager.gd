@@ -1,6 +1,43 @@
 extends Node
 
 enum Era { NONE = 0, PAST = 1, FUTURE = 2 }
+enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }  # scope: which timelines an object functionally occupies
+
+
+## Collision layer for a solid body scoped to an existence range.
+func existence_layer(existence: int) -> int:
+	match existence:
+		Existence.PAST_ONLY:
+			return 8
+		Existence.FUTURE_ONLY:
+			return 16
+		_:
+			return 1
+
+
+## Detection mask for a trigger scoped to an existence range.
+func existence_trigger_mask(existence: int) -> int:
+	match existence:
+		Existence.PAST_ONLY:
+			return 2
+		Existence.FUTURE_ONLY:
+			return 4
+		_:
+			return 6
+
+
+## owner_era must stay within exists_in — clamp and warn on bad configs.
+func clamp_owner(existence: int, owner_era: int, object_name: String) -> int:
+	match existence:
+		Existence.PAST_ONLY:
+			if owner_era != Era.PAST:
+				push_warning("%s: owner_era %d outside PAST_ONLY existence — clamped to past" % [object_name, owner_era])
+				return Era.PAST
+		Existence.FUTURE_ONLY:
+			if owner_era != Era.FUTURE:
+				push_warning("%s: owner_era %d outside FUTURE_ONLY existence — clamped to future" % [object_name, owner_era])
+				return Era.FUTURE
+	return owner_era
 
 const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"

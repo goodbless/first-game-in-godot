@@ -1,11 +1,16 @@
 extends StaticBody2D
 
 ## Breakable vase. The past player interacts (E) while nearby — it shatters in
-## BOTH eras: the future player sees it "suddenly" explode into debris.
-## Scene-placed: set Y flush on the floor. Era visuals via EraVisuals child.
+## BOTH eras: the future player sees it "suddenly" explode into debris.## Scene-placed: set Y flush on the floor. Era visuals via EraVisuals child.
 ## Static since it never moves; shattering only toggles its collision layer.
 
+enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
+
 @export var owner_era := 1  ## 1 = past player, 2 = future player
+@export var exists_in := Existence.BOTH:
+	set(value):
+		exists_in = value
+		_update_state()
 
 var broken := false:
 	set(value):
@@ -19,6 +24,7 @@ var broken := false:
 
 func _ready() -> void:
 	add_to_group("level_resettable")
+	owner_era = MultiplayerManager.clamp_owner(exists_in, owner_era, name)
 	_update_state()
 
 
@@ -62,7 +68,7 @@ func _update_state() -> void:
 			visual.modulate = Color(1, 1, 1, 1)
 			visual.scale = Vector2(1, 1)
 			visual.position = Vector2.ZERO
-	collision_layer = 0 if broken else 1
+	collision_layer = 0 if broken else MultiplayerManager.existence_layer(exists_in)
 	if broken:
 		var hint := get_node_or_null("Hint")
 		if hint != null:

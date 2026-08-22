@@ -5,9 +5,15 @@ extends CharacterBody2D
 ## a dynamically added EraVisuals child (composition) so the same logic
 ## stays reusable on non-CharacterBody2D nodes.
 
-const EraVisualsScript := preload("res://scripts/era_visuals.gd")
+const EraVisualsScript := preload("res://scripts/era_visuals.gd")  # composition: era skins without base-class coupling
 
 @export var owner_era := 1  ## 1 = past player, 2 = future player
+enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
+
+@export var exists_in := Existence.BOTH:
+	set(value):
+		exists_in = value
+		_apply_existence()
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var _initial_position: Vector2
@@ -15,11 +21,20 @@ var _initial_position: Vector2
 
 func _ready() -> void:
 	add_to_group("level_resettable")
+	owner_era = MultiplayerManager.clamp_owner(exists_in, owner_era, name)
 	_initial_position = position
 	var era_visuals := Node.new()
 	era_visuals.name = "EraVisuals"
 	era_visuals.set_script(EraVisualsScript)
 	add_child(era_visuals)
+	_apply_existence()
+
+
+func _apply_existence() -> void:
+	collision_layer = MultiplayerManager.existence_layer(exists_in)
+	var era_visuals := get_node_or_null("EraVisuals")
+	if era_visuals != null:
+		era_visuals.apply_era_visibility()
 
 
 ## Server-side gravity (velocity only — caller decides when to slide).

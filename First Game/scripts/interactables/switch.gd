@@ -4,7 +4,14 @@ extends Area2D
 ## Activating it opens every door in the level — gates that block the
 ## PAST player's path (future helps past).
 ## Scene-placed on the floor; the root Area doubles as the proximity sensor.
+
+enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }  # scope: which timelines this exists in
+
 @export var owner_era := 2  ## 1 = past player, 2 = future player
+@export var exists_in := Existence.BOTH:
+	set(value):
+		exists_in = value
+		_apply_existence()
 
 var active := false:
 	set(value):
@@ -16,7 +23,16 @@ var active := false:
 
 func _ready() -> void:
 	add_to_group("level_resettable")
+	owner_era = MultiplayerManager.clamp_owner(exists_in, owner_era, name)
+	_apply_existence()
 	_update_state()
+
+
+func _apply_existence() -> void:
+	collision_mask = MultiplayerManager.existence_trigger_mask(exists_in)
+	var era_visuals := get_node_or_null("EraVisuals")
+	if era_visuals != null:
+		era_visuals.apply_era_visibility()
 
 
 func _process(_delta: float) -> void:

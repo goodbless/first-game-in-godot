@@ -5,8 +5,6 @@ extends Area2D
 ##
 ## exists_in scopes the trap to one timeline (synced, runtime-changeable):
 ## single-era traps are invisible AND intangible to the other era's player.
-## Visibility of the scoped-out era is reversible (no node freeing).
-
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
 
 @export var exists_in := Existence.BOTH:
@@ -21,13 +19,7 @@ func _ready() -> void:
 
 
 func _apply_existence() -> void:
-	match exists_in:
-		Existence.PAST_ONLY:
-			collision_mask = 2
-		Existence.FUTURE_ONLY:
-			collision_mask = 4
-		_:
-			collision_mask = 6
+	collision_mask = MultiplayerManager.existence_trigger_mask(exists_in)
 	var era_visuals := get_node_or_null("EraVisuals")
 	if era_visuals != null:
 		era_visuals.apply_era_visibility()
