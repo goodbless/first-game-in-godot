@@ -12,6 +12,7 @@ var _starting := false
 @onready var join_button = %JoinGame
 @onready var status_label = %StatusLabel
 @onready var level_select = %LevelSelect
+@onready var ip_input: LineEdit = %IPInput
 
 
 func _ready() -> void:
@@ -52,15 +53,34 @@ func _on_level_selected(index: int) -> void:
 
 func _on_host_pressed() -> void:
 	_hide_buttons()
-	_set_status("Waiting for the future player...")
+	var lan := _lan_ip()
+	if lan.is_empty():
+		_set_status("Waiting for the future player...")
+	else:
+		_set_status("Waiting for the future player at %s ..." % lan)
 	MultiplayerManager.become_host()
 
 
 func _on_join_pressed() -> void:
+	var server_ip := ip_input.text.strip_edges()
+	if not server_ip.is_valid_ip_address():
+		_set_status("Invalid host IP — ask the host for their LAN IP")
+		return
 	_hide_buttons()
 	level_select.disabled = true
 	_set_status("Connecting...")
-	MultiplayerManager.join_as_player_2()
+	MultiplayerManager.join_as_player_2(server_ip)
+
+
+## First private IPv4 address of this machine, so the host can read it out
+## to the other player. Empty string if none found.
+func _lan_ip() -> String:
+	for address in IP.get_local_addresses():
+		if address == "127.0.0.1" or address.contains(":"):
+			continue
+		if address.begins_with("192.168.") or address.begins_with("10.") or address.begins_with("172."):
+			return address
+	return ""
 
 
 func _on_peer_connected(_id: int) -> void:

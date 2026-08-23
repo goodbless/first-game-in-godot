@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc3cupgu2g0fo"]
 
 [ext_resource type="Script" uid="uid://daur4t35sfms2" path="res://scripts/ui/loading_screen.gd" id="1_loading"]
+[ext_resource type="Texture2D" uid="uid://b6vv7agxkqjii" path="res://assets/sprites/loading.png" id="2_q4fso"]
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=1284858082]
 layer = 10
@@ -14,13 +15,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.05, 0.05, 0.08, 1)
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1394640793]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_q4fso")
+
 [node name="Label" type="Label" parent="." unique_id=1287029479]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 48
 text = "Synchronizing timelines..."
 horizontal_alignment = 1
 vertical_alignment = 1

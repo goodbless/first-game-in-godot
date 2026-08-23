@@ -172,14 +172,14 @@ func become_host():
 	respawn_all_players()
 
 
-func join_as_player_2():
+func join_as_player_2(server_ip := SERVER_IP):
 	print("Player 2 join (FUTURE era)")
 
 	my_era = Era.FUTURE
 	_refresh_era_visuals()
 	multiplayer_mode_enabled = true
 	var client_peer = ENetMultiplayerPeer.new()
-	client_peer.create_client(SERVER_IP, SERVER_PORT)
+	client_peer.create_client(server_ip, SERVER_PORT)
 
 	multiplayer.multiplayer_peer = client_peer
 

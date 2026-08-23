@@ -1,15 +1,17 @@
-[gd_scene format=4]
+[gd_scene format=3 uid="uid://xojs56ov2mkr"]
 
-[ext_resource type="Script" path="res://scripts/lobby_manager.gd" id="1_lobby"]
+[ext_resource type="Script" uid="uid://71bkgvm78vqi" path="res://scripts/lobby_manager.gd" id="1_lobby"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_fontb"]
+[ext_resource type="Texture2D" uid="uid://b6vv7agxkqjii" path="res://assets/sprites/loading.png" id="2_pc087"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://bixd0qoc1rcq3" path="res://assets/sprites/logo.png" id="5_apkv3"]
 
-[node name="Lobby" type="Node2D"]
+[node name="Lobby" type="Node2D" unique_id=579102570]
 script = ExtResource("1_lobby")
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1189405368]
 
-[node name="LobbyHUD" type="Control" parent="UILayer"]
+[node name="LobbyHUD" type="Control" parent="UILayer" unique_id=1110353926]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -18,74 +20,101 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="UILayer/LobbyHUD"]
+[node name="Background" type="TextureRect" parent="UILayer/LobbyHUD" unique_id=285017003]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.09, 0.09, 0.12, 1)
+texture = ExtResource("2_pc087")
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/LobbyHUD"]
+[node name="ColorRect" type="ColorRect" parent="UILayer/LobbyHUD/Background" unique_id=1634068614]
+layout_mode = 0
+offset_left = 682.0
+offset_top = 516.0
+offset_right = 1249.0
+offset_bottom = 808.0
+color = Color(0.12156863, 0.12156863, 0.12156863, 0.46666667)
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/LobbyHUD" unique_id=1486551206]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -160.0
-offset_right = 160.0
-offset_top = -90.0
-offset_bottom = 90.0
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -2.0
+offset_right = 205.0
+offset_bottom = 358.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="UILayer/LobbyHUD/VBox"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_fontb")
-theme_override_font_sizes/font_size = 48
-text = "PAST & FUTURE"
-horizontal_alignment = 1
-
-[node name="Subtitle" type="Label" parent="UILayer/LobbyHUD/VBox"]
+[node name="Subtitle" type="Label" parent="UILayer/LobbyHUD/VBox" unique_id=776447003]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 16
 text = "a co-op across two eras"
 horizontal_alignment = 1
 
-[node name="HostGame" type="Button" parent="UILayer/LobbyHUD/VBox"]
+[node name="HostGame" type="Button" parent="UILayer/LobbyHUD/VBox" unique_id=60173921]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fontb")
 theme_override_font_sizes/font_size = 24
 text = "Start Game (Past)"
 
-[node name="JoinGame" type="Button" parent="UILayer/LobbyHUD/VBox"]
+[node name="JoinGame" type="Button" parent="UILayer/LobbyHUD/VBox" unique_id=212914192]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fontb")
 theme_override_font_sizes/font_size = 24
 text = "Join Game (Future)"
 
-[node name="LevelLabel" type="Label" parent="UILayer/LobbyHUD/VBox"]
+[node name="IPBox" type="HBoxContainer" parent="UILayer/LobbyHUD/VBox" unique_id=706762714]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IPLabel" type="Label" parent="UILayer/LobbyHUD/VBox/IPBox" unique_id=770444526]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "Host IP:"
+
+[node name="IPInput" type="LineEdit" parent="UILayer/LobbyHUD/VBox/IPBox" unique_id=1001879811]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
+text = "127.0.0.1"
+placeholder_text = "host LAN IP"
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="UILayer/LobbyHUD/VBox" unique_id=94047606]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 16
 text = "Level (host picks):"
 horizontal_alignment = 1
 
-[node name="LevelSelect" type="OptionButton" parent="UILayer/LobbyHUD/VBox"]
+[node name="LevelSelect" type="OptionButton" parent="UILayer/LobbyHUD/VBox" unique_id=1348651729]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fontb")
 theme_override_font_sizes/font_size = 16
 
-[node name="StatusLabel" type="Label" parent="UILayer/LobbyHUD/VBox"]
+[node name="StatusLabel" type="Label" parent="UILayer/LobbyHUD/VBox" unique_id=1536199795]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 16
 text = "Choose your era to begin"
 horizontal_alignment = 1
+
+[node name="Logo" type="Sprite2D" parent="UILayer/LobbyHUD" unique_id=722715281]
+position = Vector2(948, 316)
+texture = ExtResource("5_apkv3")
