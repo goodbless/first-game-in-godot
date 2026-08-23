@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://335p06r25glo"]
+
+[ext_resource type="Texture2D" uid="uid://bajjmurffm44l" path="res://assets/sprites/tree.png" id="1_r6wkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81cba"]
+size = Vector2(290, 53)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1320871816]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1581753507]
+texture = ExtResource("1_r6wkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339441262]
+position = Vector2(-230, 173.5)
+shape = SubResource("RectangleShape2D_81cba")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1619642727]
+position = Vector2(168, 32)
+shape = SubResource("RectangleShape2D_81cba")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=847573669]
+position = Vector2(252, 427)
+shape = SubResource("RectangleShape2D_81cba")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1061898989]
+position = Vector2(0, 294)
+shape = SubResource("RectangleShape2D_81cba")
+one_way_collision = true
