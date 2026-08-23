@@ -15,6 +15,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 2
 
 [node name="FutureGoal" type="Area2D" unique_id=1426790453]
+z_index = 10
 collision_mask = 4
 script = ExtResource("1_sua0y")
 goal_era = 2

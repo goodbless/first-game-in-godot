@@ -3,4 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://p3tlrv2hnp3h" path="res://scenes/objects/future_goal.tscn" id="1_base"]
 
 [node name="PastGoal" unique_id=253492465 instance=ExtResource("1_base")]
+z_index = 9
 goal_era = 1
