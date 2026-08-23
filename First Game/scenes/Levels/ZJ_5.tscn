@@ -3,6 +3,54 @@
 [ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_dfn1d"]
 [ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_gvfly"]
 [ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="3_uuhba"]
+[ext_resource type="PackedScene" uid="uid://335p06r25glo" path="res://scenes/objects/tree.tscn" id="4_uuhba"]
+[ext_resource type="PackedScene" uid="uid://28pd3hcdlsbt" path="res://scenes/objects/seed_box.tscn" id="5_3nx00"]
+[ext_resource type="Script" uid="uid://box2b1658t1eu" path="res://scripts/box_detect.gd" id="6_y543r"]
+
+[sub_resource type="Animation" id="Animation_y543r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(411, 1424)]
+}
+
+[sub_resource type="Animation" id="Animation_gxla2"]
+resource_name = "up"
+length = 5.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0009999999, 4.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(385, 1314), Vector2(385, -35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wdb2n"]
+_data = {
+&"RESET": SubResource("Animation_y543r"),
+&"up": SubResource("Animation_gxla2")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_y543r"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxla2"]
+size = Vector2(1981, 104)
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_dfn1d")]
 
@@ -69,3 +117,30 @@ cycle_time = 0.0
 target_offset = Vector2(0, 0)
 respawn_time = 0.0
 exists_in = 1
+
+[node name="AnimatableBody2D" parent="." index="26" unique_id=1320871816 instance=ExtResource("4_uuhba")]
+position = Vector2(411, 1424)
+exists_in = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" index="7" unique_id=659999185]
+libraries/ = SubResource("AnimationLibrary_wdb2n")
+autoplay = &"RESET"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="AnimatableBody2D" index="8" unique_id=1915433290]
+replication_config = SubResource("SceneReplicationConfig_y543r")
+
+[node name="Box" parent="." index="27" unique_id=2056746295 instance=ExtResource("5_3nx00")]
+position = Vector2(-586, -80)
+
+[node name="Box_detect" type="Area2D" parent="." index="28" unique_id=337029472]
+position = Vector2(-586, -80)
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("6_y543r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box_detect" index="0" unique_id=389397777]
+position = Vector2(1055.5, 742)
+shape = SubResource("RectangleShape2D_gxla2")
+
+[connection signal="body_entered" from="Box_detect" to="Box_detect" method="_on_body_entered"]
+[connection signal="body_entered" from="Box_detect" to="AnimatableBody2D" method="play" flags=6 unbinds=1]

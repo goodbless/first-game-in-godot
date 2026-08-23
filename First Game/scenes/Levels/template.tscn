@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://chn6242x6hgyk"]
 
+[ext_resource type="Script" uid="uid://caedy84ra7fm3" path="res://scripts/scene_bg.gd" id="2_dc63l"]
 [ext_resource type="Texture2D" uid="uid://bbgmye32jesiw" path="res://assets/sprites/sidewall.png" id="2_uagt1"]
 [ext_resource type="Texture2D" uid="uid://fsyoba3sfmwd" path="res://assets/sprites/scene_lab.png" id="2_wjpas"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="6_lwjhc"]
@@ -25,6 +26,7 @@ size = Vector2(1930, 64)
 
 [node name="SceneLab" type="Sprite2D" parent="Level" unique_id=611536403]
 texture = ExtResource("2_wjpas")
+script = ExtResource("2_dc63l")
 
 [node name="LeftWall" type="StaticBody2D" parent="Level" unique_id=1094984701]
 position = Vector2(-944, 0)

@@ -1,13 +1,29 @@
 [gd_scene format=3 uid="uid://335p06r25glo"]
 
+[ext_resource type="Script" uid="uid://8k4pw8mabb4w" path="res://scripts/interactables/tree.gd" id="1_5qchx"]
+[ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
 [ext_resource type="Texture2D" uid="uid://bajjmurffm44l" path="res://assets/sprites/tree.png" id="1_r6wkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81cba"]
 size = Vector2(290, 53)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1320871816]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6wkp"]
+size = Vector2(159, 105)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1581753507]
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1320871816]
+script = ExtResource("1_5qchx")
+
+[node name="EraVisuals" type="Node" parent="."]
+script = ExtResource("2_era")
+
+[node name="PastVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PastVisual" unique_id=1581753507]
+texture = ExtResource("1_r6wkp")
+
+[node name="FutureVisual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FutureVisual"]
 texture = ExtResource("1_r6wkp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339441262]
@@ -26,6 +42,6 @@ shape = SubResource("RectangleShape2D_81cba")
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1061898989]
-position = Vector2(0, 294)
-shape = SubResource("RectangleShape2D_81cba")
+position = Vector2(8.5, 126.5)
+shape = SubResource("RectangleShape2D_r6wkp")
 one_way_collision = true
