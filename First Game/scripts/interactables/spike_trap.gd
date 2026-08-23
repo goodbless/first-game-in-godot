@@ -21,6 +21,7 @@ func _ready() -> void:
 	_initial_visible = visible
 	_apply_existence()
 	body_entered.connect(_on_body_entered)
+	visibility_changed.connect(_on_visibility_changed)
 
 
 ## Restore the state the trap spawned with — a switch may have hidden it
@@ -40,6 +41,14 @@ func _on_body_entered(body) -> void:
 	if multiplayer.multiplayer_peer != null and multiplayer.is_server() and self.is_visible_in_tree():
 		print("Spike trap hit: ", body.name, " — level failed for both")
 		MultiplayerManager.notify_level_failed()
+
+
+## Becoming visible while a body is already inside never emits body_entered
+## (the overlap predates visibility) — sweep current overlaps manually.
+func _on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		for body in get_overlapping_bodies():
+			_on_body_entered(body)
 
 
 func _on_switch_switch_on() -> void:
