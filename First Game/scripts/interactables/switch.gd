@@ -28,6 +28,7 @@ var active := false:
 
 func _ready() -> void:
 	add_to_group("level_resettable")
+	add_to_group("interactables")
 	owner_era = MultiplayerManager.clamp_owner(exists_in, owner_era, name)
 	_apply_existence()
 	_update_state()
@@ -35,6 +36,21 @@ func _ready() -> void:
 
 func _apply_existence() -> void:
 	collision_mask = MultiplayerManager.existence_trigger_mask(exists_in)
+	apply_era_visibility()
+
+
+## Scoped-out era hides the WHOLE switch — body, hint and the ON/OFF lamps,
+## which sit outside PastVisual/FutureVisual and were leaking. Hidden Areas
+## still monitor, and the mask already excludes that era's player anyway.
+func apply_era_visibility() -> void:
+	var mine := MultiplayerManager.my_era
+	match exists_in:
+		Existence.PAST_ONLY:
+			visible = mine == MultiplayerManager.Era.NONE or mine == MultiplayerManager.Era.PAST
+		Existence.FUTURE_ONLY:
+			visible = mine == MultiplayerManager.Era.NONE or mine == MultiplayerManager.Era.FUTURE
+		_:
+			visible = true
 	var era_visuals := get_node_or_null("EraVisuals")
 	if era_visuals != null:
 		era_visuals.apply_era_visibility()

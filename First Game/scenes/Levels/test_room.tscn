@@ -100,19 +100,31 @@ shape = SubResource("CeilingShape")
 position = Vector2(848, 472)
 
 [node name="Floor2" parent="Level" unique_id=1366317735 instance=ExtResource("2_qqxd0")]
-position = Vector2(504, 472)
+position = Vector2(648, 472)
 
 [node name="Floor3" parent="Level" unique_id=2063579164 instance=ExtResource("2_qqxd0")]
-position = Vector2(168, 472)
+position = Vector2(448, 472)
 
 [node name="Floor4" parent="Level" unique_id=1416282274 instance=ExtResource("2_qqxd0")]
-position = Vector2(-168, 472)
+position = Vector2(248, 472)
 
 [node name="Floor5" parent="Level" unique_id=1771218313 instance=ExtResource("2_qqxd0")]
-position = Vector2(-504, 472)
+position = Vector2(48, 472)
 
 [node name="Floor6" parent="Level" unique_id=894614707 instance=ExtResource("2_qqxd0")]
-position = Vector2(-848, 472)
+position = Vector2(-152, 472)
+
+[node name="Floor7" parent="Level" unique_id=298557848 instance=ExtResource("2_qqxd0")]
+position = Vector2(-352, 472)
+
+[node name="Floor8" parent="Level" unique_id=1846974423 instance=ExtResource("2_qqxd0")]
+position = Vector2(-552, 472)
+
+[node name="Floor9" parent="Level" unique_id=639354456 instance=ExtResource("2_qqxd0")]
+position = Vector2(-752, 472)
+
+[node name="Floor10" parent="Level" unique_id=768227702 instance=ExtResource("2_qqxd0")]
+position = Vector2(-952, 472)
 
 [node name="Box" parent="Level" unique_id=2056746295 instance=ExtResource("5_box")]
 position = Vector2(-96, -376)
@@ -156,17 +168,17 @@ position = Vector2(-616, 560)
 shape = SubResource("KillzoneShape")
 
 [node name="PastGoal" parent="." unique_id=1446956518 instance=ExtResource("9_hofti")]
-position = Vector2(643, 45)
+position = Vector2(504, 312)
 
 [node name="FutureGoal" parent="." unique_id=1426790453 instance=ExtResource("10_h4m6d")]
-position = Vector2(619, 117)
+position = Vector2(-416, 312)
 
 [node name="SpikeTrap" parent="." unique_id=1042375586 instance=ExtResource("10_qqxd0")]
 position = Vector2(336, 424)
 collision_mask = 6
 
 [node name="PastSpawn" parent="." unique_id=309091987 instance=ExtResource("11_yn2df")]
-position = Vector2(-85, 189)
+position = Vector2(768, 288)
 
 [node name="FutureSpawn" parent="." unique_id=1424180485 instance=ExtResource("12_hofti")]
 position = Vector2(-717, 269)

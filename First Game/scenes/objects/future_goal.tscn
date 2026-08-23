@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://p3tlrv2hnp3h"]
 
 [ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="1_sua0y"]
+[ext_resource type="Texture2D" uid="uid://bsq1bcfs63hav" path="res://assets/sprites/door01.png" id="2_1vxir"]
+[ext_resource type="Texture2D" uid="uid://clyyx128br568" path="res://assets/sprites/light03.png" id="3_6lbo8"]
+[ext_resource type="Texture2D" uid="uid://b701febismx7q" path="res://assets/sprites/light02.png" id="4_x4a8n"]
+[ext_resource type="Texture2D" uid="uid://cpl4ddk3a6lfy" path="res://assets/sprites/light01.png" id="5_yxwv1"]
 
 [sub_resource type="RectangleShape2D" id="GoalShape"]
-size = Vector2(112, 144)
+size = Vector2(144, 288)
 
-[sub_resource type="PlaceholderTexture2D" id="GoalFlagTex"]
-size = Vector2(112, 144)
+[sub_resource type="SceneReplicationConfig" id="GoalSync"]
+properties/0/path = NodePath(".:occupied")
+properties/0/spawn = true
+properties/0/replication_mode = 2
 
 [node name="FutureGoal" type="Area2D" unique_id=1426790453]
 collision_mask = 4
@@ -17,5 +23,25 @@ goal_era = 2
 shape = SubResource("GoalShape")
 
 [node name="Flag" type="Sprite2D" parent="." unique_id=885829695]
-modulate = Color(0.3, 0.9, 1, 0.75)
-texture = SubResource("GoalFlagTex")
+texture = ExtResource("2_1vxir")
+
+[node name="red_off" type="Sprite2D" parent="." unique_id=153213345]
+position = Vector2(-24, -88)
+texture = ExtResource("3_6lbo8")
+
+[node name="red_on" type="Sprite2D" parent="." unique_id=470030299]
+visible = false
+position = Vector2(-24, -88)
+texture = ExtResource("4_x4a8n")
+
+[node name="blue_off" type="Sprite2D" parent="." unique_id=827211026]
+position = Vector2(24, -88)
+texture = ExtResource("3_6lbo8")
+
+[node name="blue_on" type="Sprite2D" parent="." unique_id=1210827561]
+visible = false
+position = Vector2(24, -88)
+texture = ExtResource("5_yxwv1")
+
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="." unique_id=103523781]
+replication_config = SubResource("GoalSync")

@@ -1,20 +1,6 @@
 [gd_scene format=3 uid="uid://bw6gomvbrnoah"]
 
-[ext_resource type="Script" uid="uid://b366vfldudqpa" path="res://scripts/goal_zone.gd" id="1_yhw4v"]
+[ext_resource type="PackedScene" uid="uid://p3tlrv2hnp3h" path="res://scenes/objects/future_goal.tscn" id="1_base"]
 
-[sub_resource type="RectangleShape2D" id="GoalShape"]
-size = Vector2(112, 144)
-
-[sub_resource type="PlaceholderTexture2D" id="GoalFlagTex"]
-size = Vector2(112, 144)
-
-[node name="PastGoal" type="Area2D" unique_id=1446956518]
-collision_mask = 2
-script = ExtResource("1_yhw4v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1622213477]
-shape = SubResource("GoalShape")
-
-[node name="Flag" type="Sprite2D" parent="." unique_id=1411991964]
-modulate = Color(1, 0.85, 0.3, 0.75)
-texture = SubResource("GoalFlagTex")
+[node name="PastGoal" unique_id=253492465 instance=ExtResource("1_base")]
+goal_era = 1
