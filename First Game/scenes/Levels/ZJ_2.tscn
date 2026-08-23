@@ -114,10 +114,10 @@ position = Vector2(-616, 560)
 shape = SubResource("KillzoneShape")
 
 [node name="PastSpawn" parent="." unique_id=309091987 instance=ExtResource("6_x17k3")]
-position = Vector2(-285, 377)
+position = Vector2(-700, 382)
 
 [node name="FutureSpawn" parent="." unique_id=1424180485 instance=ExtResource("7_3qubw")]
-position = Vector2(-489, 384)
+position = Vector2(-700, 382)
 
 [node name="Floor9" parent="." unique_id=2063579164 instance=ExtResource("2_is81v")]
 position = Vector2(800, 499)
@@ -423,95 +423,26 @@ position = Vector2(402, -150)
 owner_era = 1
 exists_in = 1
 
-[node name="Switch32" parent="." unique_id=636219586 instance=ExtResource("3_et0up")]
-position = Vector2(600, -150)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch33" parent="." unique_id=1524418895 instance=ExtResource("3_et0up")]
-position = Vector2(798, -151)
-owner_era = 1
-exists_in = 1
-
 [node name="Switch34" parent="." unique_id=1352826592 instance=ExtResource("3_et0up")]
 position = Vector2(-798, -148)
 owner_era = 1
 exists_in = 1
 
-[node name="Floor30" parent="." unique_id=998792762 instance=ExtResource("2_is81v")]
-position = Vector2(800, -334)
-
-[node name="Floor35" parent="." unique_id=2021739562 instance=ExtResource("2_is81v")]
-position = Vector2(600, -334)
-
 [node name="Door4" parent="." unique_id=1527617780 instance=ExtResource("4_yog2h")]
-position = Vector2(276, -317)
-rotation = 1.5707964
+position = Vector2(609, -366)
+rotation = 3.1415927
 exists_in = 2
 
 [node name="Door12" parent="." unique_id=1980082691 instance=ExtResource("4_yog2h")]
-position = Vector2(276, -317)
-rotation = 1.5707964
+position = Vector2(609, -366)
+rotation = 3.1415927
 exists_in = 1
-
-[node name="Floor37" parent="." unique_id=1324705185 instance=ExtResource("2_is81v")]
-position = Vector2(200, -334)
-
-[node name="Floor42" parent="." unique_id=1141671619 instance=ExtResource("2_is81v")]
-position = Vector2(0, -334)
-
-[node name="Floor38" parent="." unique_id=2063991437 instance=ExtResource("2_is81v")]
-position = Vector2(-200, -334)
 
 [node name="PastGoal" parent="." unique_id=1446956518 instance=ExtResource("4_80067")]
-position = Vector2(-197, -497)
+position = Vector2(746, -280)
 
 [node name="FutureGoal" parent="." unique_id=1426790453 instance=ExtResource("5_pihc2")]
-position = Vector2(-195, -500)
-
-[node name="Floor39" parent="." unique_id=1838579358 instance=ExtResource("2_is81v")]
-position = Vector2(-400, -334)
-
-[node name="Floor40" parent="." unique_id=1146326702 instance=ExtResource("2_is81v")]
-position = Vector2(-600, -334)
-
-[node name="Floor41" parent="." unique_id=1097829992 instance=ExtResource("2_is81v")]
-position = Vector2(-800, -334)
-
-[node name="Switch29" parent="." unique_id=1544336588 instance=ExtResource("3_et0up")]
-position = Vector2(-592, -366)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch35" parent="." unique_id=2036901447 instance=ExtResource("3_et0up")]
-position = Vector2(-394, -367)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch37" parent="." unique_id=1211821950 instance=ExtResource("3_et0up")]
-position = Vector2(204, -367)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch38" parent="." unique_id=1709793841 instance=ExtResource("3_et0up")]
-position = Vector2(-7, -370)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch39" parent="." unique_id=683430169 instance=ExtResource("3_et0up")]
-position = Vector2(600, -368)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch40" parent="." unique_id=1073860083 instance=ExtResource("3_et0up")]
-position = Vector2(798, -369)
-owner_era = 1
-exists_in = 1
-
-[node name="Switch41" parent="." unique_id=1673773414 instance=ExtResource("3_et0up")]
-position = Vector2(-798, -366)
-owner_era = 1
-exists_in = 1
+position = Vector2(748, -283)
 
 [node name="BrokenSwitch" parent="." unique_id=389205029 instance=ExtResource("5_et0up")]
 position = Vector2(-805, -170)
@@ -531,30 +462,6 @@ exists_in = 2
 
 [node name="BrokenSwitch18" parent="." unique_id=2109733747 instance=ExtResource("5_et0up")]
 position = Vector2(406.5, -166.5)
-exists_in = 2
-
-[node name="BrokenSwitch21" parent="." unique_id=1044763680 instance=ExtResource("5_et0up")]
-position = Vector2(591.5, -168.5)
-exists_in = 2
-
-[node name="BrokenSwitch22" parent="." unique_id=1566502905 instance=ExtResource("5_et0up")]
-position = Vector2(799.5, -165.5)
-exists_in = 2
-
-[node name="BrokenSwitch23" parent="." unique_id=1440427359 instance=ExtResource("5_et0up")]
-position = Vector2(-7.5, -385.5)
-exists_in = 2
-
-[node name="BrokenSwitch24" parent="." unique_id=312309413 instance=ExtResource("5_et0up")]
-position = Vector2(200.5, -382.5)
-exists_in = 2
-
-[node name="BrokenSwitch25" parent="." unique_id=1641770008 instance=ExtResource("5_et0up")]
-position = Vector2(591.5, -384.5)
-exists_in = 2
-
-[node name="BrokenSwitch26" parent="." unique_id=1940547296 instance=ExtResource("5_et0up")]
-position = Vector2(799.5, -381.5)
 exists_in = 2
 
 [node name="BrokenSwitch3" parent="." unique_id=1308719353 instance=ExtResource("5_et0up")]
@@ -645,115 +552,65 @@ exists_in = 2
 position = Vector2(794, 449)
 exists_in = 2
 
-[node name="BrokenSwitch9" parent="." unique_id=1274877691 instance=ExtResource("5_et0up")]
-position = Vector2(-802.5, -387.5)
-exists_in = 2
-
-[node name="BrokenSwitch10" parent="." unique_id=1309618573 instance=ExtResource("5_et0up")]
-position = Vector2(-594.5, -384.5)
-exists_in = 2
-
-[node name="BrokenSwitch11" parent="." unique_id=840583473 instance=ExtResource("5_et0up")]
-position = Vector2(-399, -385)
-exists_in = 2
-
-[node name="ResetGroup" parent="." unique_id=55775735 instance=ExtResource("12_tm7x6")]
-visible = false
-position = Vector2(-1275, 68)
-
-[node name="SpikeTrap16" parent="ResetGroup" unique_id=1259784588 instance=ExtResource("12_aavmj")]
-position = Vector2(433, 391)
-
-[node name="SpikeTrap9" parent="ResetGroup" unique_id=1331045008 instance=ExtResource("12_aavmj")]
-position = Vector2(1439, 391)
-
-[node name="SpikeTrap20" parent="ResetGroup" unique_id=1230326422 instance=ExtResource("12_aavmj")]
-position = Vector2(1327, 391)
-
-[node name="SpikeTrap22" parent="ResetGroup" unique_id=1237739229 instance=ExtResource("12_aavmj")]
-position = Vector2(1214, 391)
-
-[node name="SpikeTrap10" parent="ResetGroup" unique_id=1254197761 instance=ExtResource("12_aavmj")]
-position = Vector2(1550, 391)
-
-[node name="SpikeTrap11" parent="ResetGroup" unique_id=154611816 instance=ExtResource("12_aavmj")]
-position = Vector2(1662, 391)
-
-[node name="SpikeTrap12" parent="ResetGroup" unique_id=1816512904 instance=ExtResource("12_aavmj")]
-position = Vector2(1773, 391)
-
-[node name="SpikeTrap13" parent="ResetGroup" unique_id=1371356205 instance=ExtResource("12_aavmj")]
-position = Vector2(1885, 391)
-
-[node name="SpikeTrap14" parent="ResetGroup" unique_id=719796091 instance=ExtResource("12_aavmj")]
-position = Vector2(1996, 391)
-
-[node name="SpikeTrap15" parent="ResetGroup" unique_id=1417326788 instance=ExtResource("12_aavmj")]
-position = Vector2(2108, 391)
-
-[node name="SpikeTrap23" parent="ResetGroup" unique_id=510535615 instance=ExtResource("12_aavmj")]
-position = Vector2(544, 392)
-
-[node name="SpikeTrap24" parent="ResetGroup" unique_id=1338339229 instance=ExtResource("12_aavmj")]
-position = Vector2(656, 391)
-
-[node name="SpikeTrap26" parent="ResetGroup" unique_id=758563665 instance=ExtResource("12_aavmj")]
-position = Vector2(767, 391)
-
-[node name="SpikeTrap27" parent="ResetGroup" unique_id=989373691 instance=ExtResource("12_aavmj")]
-position = Vector2(879, 391)
-
-[node name="SpikeTrap28" parent="ResetGroup" unique_id=1912728630 instance=ExtResource("12_aavmj")]
-position = Vector2(990, 391)
-
-[node name="SpikeTrap29" parent="ResetGroup" unique_id=1356500915 instance=ExtResource("12_aavmj")]
-position = Vector2(1102, 391)
-
 [node name="ResetGroup2" parent="." unique_id=243716234 instance=ExtResource("12_tm7x6")]
 visible = false
 position = Vector2(-1250, 180)
 
 [node name="SpikeTrap21" parent="ResetGroup2" unique_id=1414106800 instance=ExtResource("12_aavmj")]
 position = Vector2(1308, -119)
+exists_in = 1
 
 [node name="SpikeTrap22" parent="ResetGroup2" unique_id=1956155693 instance=ExtResource("12_aavmj")]
 position = Vector2(1195, -119)
+exists_in = 1
 
 [node name="SpikeTrap29" parent="ResetGroup2" unique_id=845802903 instance=ExtResource("12_aavmj")]
 position = Vector2(1643, -119)
+exists_in = 1
 
 [node name="SpikeTrap30" parent="ResetGroup2" unique_id=79824191 instance=ExtResource("12_aavmj")]
 position = Vector2(1754, -119)
+exists_in = 1
 
 [node name="SpikeTrap31" parent="ResetGroup2" unique_id=1901847847 instance=ExtResource("12_aavmj")]
 position = Vector2(1866, -119)
+exists_in = 1
 
 [node name="SpikeTrap32" parent="ResetGroup2" unique_id=68297676 instance=ExtResource("12_aavmj")]
 position = Vector2(1977, -119)
+exists_in = 1
 
 [node name="SpikeTrap33" parent="ResetGroup2" unique_id=1607138598 instance=ExtResource("12_aavmj")]
 position = Vector2(2089, -119)
+exists_in = 1
 
 [node name="SpikeTrap34" parent="ResetGroup2" unique_id=1760900221 instance=ExtResource("12_aavmj")]
 position = Vector2(414, -119)
+exists_in = 1
 
 [node name="SpikeTrap35" parent="ResetGroup2" unique_id=1281178612 instance=ExtResource("12_aavmj")]
 position = Vector2(525, -119)
+exists_in = 1
 
 [node name="SpikeTrap36" parent="ResetGroup2" unique_id=2012621396 instance=ExtResource("12_aavmj")]
 position = Vector2(637, -119)
+exists_in = 1
 
 [node name="SpikeTrap37" parent="ResetGroup2" unique_id=2075613967 instance=ExtResource("12_aavmj")]
 position = Vector2(748, -119)
+exists_in = 1
 
 [node name="SpikeTrap38" parent="ResetGroup2" unique_id=1834389389 instance=ExtResource("12_aavmj")]
 position = Vector2(860, -119)
+exists_in = 1
 
 [node name="SpikeTrap39" parent="ResetGroup2" unique_id=1217846543 instance=ExtResource("12_aavmj")]
 position = Vector2(971, -119)
+exists_in = 1
 
 [node name="SpikeTrap40" parent="ResetGroup2" unique_id=388899784 instance=ExtResource("12_aavmj")]
 position = Vector2(1083, -119)
+exists_in = 1
 
 [node name="ResetGroup3" parent="." unique_id=544115676 instance=ExtResource("12_tm7x6")]
 visible = false
@@ -761,48 +618,63 @@ position = Vector2(-1346, -29)
 
 [node name="SpikeTrap25" parent="ResetGroup3" unique_id=1716810576 instance=ExtResource("12_aavmj")]
 position = Vector2(1513, -346)
+exists_in = 1
 
 [node name="SpikeTrap26" parent="ResetGroup3" unique_id=198611356 instance=ExtResource("12_aavmj")]
 position = Vector2(1401, -346)
+exists_in = 1
 
 [node name="SpikeTrap27" parent="ResetGroup3" unique_id=898482091 instance=ExtResource("12_aavmj")]
 position = Vector2(1288, -346)
+exists_in = 1
 
 [node name="SpikeTrap28" parent="ResetGroup3" unique_id=231577558 instance=ExtResource("12_aavmj")]
 position = Vector2(1624, -346)
+exists_in = 1
 
 [node name="SpikeTrap54" parent="ResetGroup3" unique_id=1157933797 instance=ExtResource("12_aavmj")]
 position = Vector2(1906, -346)
+exists_in = 1
 
 [node name="SpikeTrap55" parent="ResetGroup3" unique_id=1564628235 instance=ExtResource("12_aavmj")]
 position = Vector2(1959, -346)
+exists_in = 1
 
 [node name="SpikeTrap56" parent="ResetGroup3" unique_id=597350421 instance=ExtResource("12_aavmj")]
 position = Vector2(2070, -346)
+exists_in = 1
 
 [node name="SpikeTrap57" parent="ResetGroup3" unique_id=346325815 instance=ExtResource("12_aavmj")]
 position = Vector2(2182, -346)
+exists_in = 1
 
 [node name="SpikeTrap58" parent="ResetGroup3" unique_id=1514341335 instance=ExtResource("12_aavmj")]
 position = Vector2(507, -346)
+exists_in = 1
 
 [node name="SpikeTrap59" parent="ResetGroup3" unique_id=1491738335 instance=ExtResource("12_aavmj")]
 position = Vector2(618, -346)
+exists_in = 1
 
 [node name="SpikeTrap60" parent="ResetGroup3" unique_id=2145656828 instance=ExtResource("12_aavmj")]
 position = Vector2(730, -346)
+exists_in = 1
 
 [node name="SpikeTrap61" parent="ResetGroup3" unique_id=1200346355 instance=ExtResource("12_aavmj")]
 position = Vector2(841, -346)
+exists_in = 1
 
 [node name="SpikeTrap62" parent="ResetGroup3" unique_id=1062174928 instance=ExtResource("12_aavmj")]
 position = Vector2(953, -346)
+exists_in = 1
 
 [node name="SpikeTrap63" parent="ResetGroup3" unique_id=1644120707 instance=ExtResource("12_aavmj")]
 position = Vector2(1064, -346)
+exists_in = 1
 
 [node name="SpikeTrap64" parent="ResetGroup3" unique_id=1199659163 instance=ExtResource("12_aavmj")]
 position = Vector2(1176, -346)
+exists_in = 1
 
 [node name="ResetGroup4" parent="." unique_id=369794269 instance=ExtResource("12_tm7x6")]
 visible = false
@@ -811,106 +683,222 @@ position = Vector2(-1446, 109)
 [node name="SpikeTrap19" parent="ResetGroup4" unique_id=205281328 instance=ExtResource("12_aavmj")]
 visible = false
 position = Vector2(1611, -265)
+exists_in = 1
 
 [node name="SpikeTrap23" parent="ResetGroup4" unique_id=1515738034 instance=ExtResource("12_aavmj")]
 position = Vector2(1499, -265)
+exists_in = 1
 
 [node name="SpikeTrap24" parent="ResetGroup4" unique_id=2145782183 instance=ExtResource("12_aavmj")]
 position = Vector2(1386, -265)
+exists_in = 1
 
 [node name="SpikeTrap20" parent="ResetGroup4" unique_id=2031127723 instance=ExtResource("12_aavmj")]
 position = Vector2(1722, -265)
+exists_in = 1
 
 [node name="SpikeTrap41" parent="ResetGroup4" unique_id=21047625 instance=ExtResource("12_aavmj")]
 position = Vector2(1834, -265)
+exists_in = 1
 
 [node name="SpikeTrap42" parent="ResetGroup4" unique_id=1037199529 instance=ExtResource("12_aavmj")]
 position = Vector2(1945, -265)
+exists_in = 1
 
 [node name="SpikeTrap43" parent="ResetGroup4" unique_id=1658706051 instance=ExtResource("12_aavmj")]
 position = Vector2(2057, -265)
+exists_in = 1
 
 [node name="SpikeTrap44" parent="ResetGroup4" unique_id=1911706015 instance=ExtResource("12_aavmj")]
 position = Vector2(2168, -265)
+exists_in = 1
 
 [node name="SpikeTrap45" parent="ResetGroup4" unique_id=1507880915 instance=ExtResource("12_aavmj")]
 position = Vector2(2280, -265)
+exists_in = 1
 
 [node name="SpikeTrap46" parent="ResetGroup4" unique_id=1863886561 instance=ExtResource("12_aavmj")]
 position = Vector2(605, -265)
+exists_in = 1
 
 [node name="SpikeTrap47" parent="ResetGroup4" unique_id=1453022795 instance=ExtResource("12_aavmj")]
 position = Vector2(716, -265)
+exists_in = 1
 
 [node name="SpikeTrap48" parent="ResetGroup4" unique_id=1534644659 instance=ExtResource("12_aavmj")]
 position = Vector2(828, -265)
+exists_in = 1
 
 [node name="SpikeTrap49" parent="ResetGroup4" unique_id=1418640268 instance=ExtResource("12_aavmj")]
 position = Vector2(886, -265)
+exists_in = 1
 
 [node name="SpikeTrap51" parent="ResetGroup4" unique_id=134871912 instance=ExtResource("12_aavmj")]
 position = Vector2(1162, -265)
+exists_in = 1
 
 [node name="SpikeTrap52" parent="ResetGroup4" unique_id=1072514519 instance=ExtResource("12_aavmj")]
 position = Vector2(1274, -265)
+exists_in = 1
 
-[node name="ResetGroup5" parent="." unique_id=91383005 instance=ExtResource("12_tm7x6")]
+[node name="SpikeTrap18" parent="." unique_id=1247310448 instance=ExtResource("12_aavmj")]
 visible = false
-position = Vector2(-1371, -409)
+position = Vector2(172, 262)
+exists_in = 1
 
-[node name="SpikeTrap17" parent="ResetGroup5" unique_id=1247310448 instance=ExtResource("12_aavmj")]
+[node name="SpikeTrap18" parent="SpikeTrap18" unique_id=310404186 instance=ExtResource("12_aavmj")]
 visible = false
-position = Vector2(1543, 671)
+position = Vector2(111, 0)
+exists_in = 1
 
-[node name="SpikeTrap18" parent="ResetGroup5" unique_id=310404186 instance=ExtResource("12_aavmj")]
-position = Vector2(1654, 671)
+[node name="SpikeTrap29" parent="SpikeTrap18" unique_id=987773761 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(223, 0)
+exists_in = 1
 
-[node name="SpikeTrap29" parent="ResetGroup5" unique_id=987773761 instance=ExtResource("12_aavmj")]
-position = Vector2(1766, 671)
+[node name="SpikeTrap30" parent="SpikeTrap18" unique_id=520776425 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(334, 0)
+exists_in = 1
 
-[node name="SpikeTrap30" parent="ResetGroup5" unique_id=520776425 instance=ExtResource("12_aavmj")]
-position = Vector2(1877, 671)
+[node name="SpikeTrap31" parent="SpikeTrap18" unique_id=833238526 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(446, 0)
+exists_in = 1
 
-[node name="SpikeTrap31" parent="ResetGroup5" unique_id=833238526 instance=ExtResource("12_aavmj")]
-position = Vector2(1989, 671)
+[node name="SpikeTrap32" parent="SpikeTrap18" unique_id=848856799 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(557, 0)
+exists_in = 1
 
-[node name="SpikeTrap32" parent="ResetGroup5" unique_id=848856799 instance=ExtResource("12_aavmj")]
-position = Vector2(2100, 671)
+[node name="SpikeTrap33" parent="SpikeTrap18" unique_id=127502693 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(669, 0)
+exists_in = 1
 
-[node name="SpikeTrap33" parent="ResetGroup5" unique_id=127502693 instance=ExtResource("12_aavmj")]
-position = Vector2(2212, 671)
+[node name="SpikeTrap34" parent="SpikeTrap18" unique_id=1256208600 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-1006, 0)
+exists_in = 1
 
-[node name="SpikeTrap34" parent="ResetGroup5" unique_id=1256208600 instance=ExtResource("12_aavmj")]
-position = Vector2(537, 671)
+[node name="SpikeTrap35" parent="SpikeTrap18" unique_id=1871372220 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-895, 0)
+exists_in = 1
 
-[node name="SpikeTrap35" parent="ResetGroup5" unique_id=1871372220 instance=ExtResource("12_aavmj")]
-position = Vector2(648, 671)
+[node name="SpikeTrap36" parent="SpikeTrap18" unique_id=437521103 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-783, 0)
+exists_in = 1
 
-[node name="SpikeTrap36" parent="ResetGroup5" unique_id=437521103 instance=ExtResource("12_aavmj")]
-position = Vector2(760, 671)
+[node name="SpikeTrap37" parent="SpikeTrap18" unique_id=549724743 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-672, 0)
+exists_in = 1
 
-[node name="SpikeTrap37" parent="ResetGroup5" unique_id=549724743 instance=ExtResource("12_aavmj")]
-position = Vector2(871, 671)
+[node name="SpikeTrap38" parent="SpikeTrap18" unique_id=1260506722 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-560, 0)
+exists_in = 1
 
-[node name="SpikeTrap38" parent="ResetGroup5" unique_id=1260506722 instance=ExtResource("12_aavmj")]
-position = Vector2(983, 671)
+[node name="SpikeTrap39" parent="SpikeTrap18" unique_id=789005442 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-449, 0)
+exists_in = 1
 
-[node name="SpikeTrap39" parent="ResetGroup5" unique_id=789005442 instance=ExtResource("12_aavmj")]
-position = Vector2(1094, 671)
+[node name="SpikeTrap40" parent="SpikeTrap18" unique_id=242202473 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-337, 0)
+exists_in = 1
 
-[node name="SpikeTrap40" parent="ResetGroup5" unique_id=242202473 instance=ExtResource("12_aavmj")]
-position = Vector2(1206, 671)
+[node name="SpikeTrap17" parent="." unique_id=806943503 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(-842, 459)
 
-[connection signal="switch_on" from="Switch" to="ResetGroup" method="show"]
-[connection signal="switch_on" from="Switch2" to="ResetGroup" method="show"]
-[connection signal="switch_on" from="Switch3" to="ResetGroup" method="show"]
-[connection signal="switch_on" from="Switch4" to="ResetGroup" method="show"]
-[connection signal="switch_on" from="Switch5" to="ResetGroup" method="show"]
+[node name="SpikeTrap9" parent="SpikeTrap17" unique_id=672059626 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1006, 0)
+exists_in = 1
+
+[node name="SpikeTrap20" parent="SpikeTrap17" unique_id=1283223486 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(894, 0)
+exists_in = 1
+
+[node name="SpikeTrap22" parent="SpikeTrap17" unique_id=504666811 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(781, 0)
+exists_in = 1
+
+[node name="SpikeTrap10" parent="SpikeTrap17" unique_id=1999323086 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1117, 0)
+exists_in = 1
+
+[node name="SpikeTrap11" parent="SpikeTrap17" unique_id=1020642677 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1229, 0)
+exists_in = 1
+
+[node name="SpikeTrap12" parent="SpikeTrap17" unique_id=441746563 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1340, 0)
+exists_in = 1
+
+[node name="SpikeTrap13" parent="SpikeTrap17" unique_id=713319172 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1452, 0)
+exists_in = 1
+
+[node name="SpikeTrap14" parent="SpikeTrap17" unique_id=1470756357 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1563, 0)
+exists_in = 1
+
+[node name="SpikeTrap15" parent="SpikeTrap17" unique_id=1758666497 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(1675, 0)
+exists_in = 1
+
+[node name="SpikeTrap23" parent="SpikeTrap17" unique_id=654277836 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(111, 1)
+exists_in = 1
+
+[node name="SpikeTrap24" parent="SpikeTrap17" unique_id=1372264016 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(223, 0)
+exists_in = 1
+
+[node name="SpikeTrap26" parent="SpikeTrap17" unique_id=524764769 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(334, 0)
+exists_in = 1
+
+[node name="SpikeTrap27" parent="SpikeTrap17" unique_id=1769081071 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(446, 0)
+exists_in = 1
+
+[node name="SpikeTrap28" parent="SpikeTrap17" unique_id=215351965 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(557, 0)
+exists_in = 1
+
+[node name="SpikeTrap29" parent="SpikeTrap17" unique_id=1545927603 instance=ExtResource("12_aavmj")]
+visible = false
+position = Vector2(669, 0)
+exists_in = 1
+
+[connection signal="switch_on" from="Switch" to="SpikeTrap17" method="show"]
+[connection signal="switch_on" from="Switch2" to="SpikeTrap17" method="show"]
+[connection signal="switch_on" from="Switch3" to="SpikeTrap17" method="show"]
+[connection signal="switch_on" from="Switch4" to="SpikeTrap17" method="show"]
+[connection signal="switch_on" from="Switch5" to="SpikeTrap17" method="show"]
 [connection signal="switch_changed" from="Switch6" to="Door9" method="set_open"]
 [connection signal="switch_changed" from="Switch42" to="Door" method="set_open"]
-[connection signal="switch_on" from="Switch7" to="ResetGroup" method="show"]
-[connection signal="switch_on" from="Switch8" to="ResetGroup" method="show"]
-[connection signal="switch_on" from="Switch9" to="ResetGroup" method="show"]
+[connection signal="switch_on" from="Switch7" to="SpikeTrap17" method="show"]
+[connection signal="switch_on" from="Switch8" to="SpikeTrap17" method="show"]
 [connection signal="switch_changed" from="Switch10" to="Door10" method="set_open"]
 [connection signal="switch_changed" from="Switch43" to="Door2" method="set_open"]
 [connection signal="switch_changed" from="Switch23" to="Door11" method="set_open"]
