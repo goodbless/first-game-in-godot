@@ -41,12 +41,34 @@ func clamp_owner(existence: int, owner_era: int, object_name: String) -> int:
 
 const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"
-const LEVELS_DIR := "res://scenes/Levels"
+const LOBBY_SCENE := "res://scenes/lobby.tscn"
 
-## Discovered level scenes, sorted by filename. Refreshed on lobby load —
-## drop a .tscn into scenes/Levels/ and it shows up in the lobby picker.
+## Configured level list — edit res://config/level_list.tres in the Inspector
+## to reorder, rename, add or remove levels. The list is the single source of
+## truth for the lobby picker and the next-level progression.
+const LEVEL_LIST: LevelList = preload("res://config/level_list.tres")
+
+## Level scene paths in configured order, plus their display names.
 var levels: Array[String] = []
+var level_names: Array[String] = []
 var _selected_level := 0
+
+
+func _ready() -> void:
+	_load_levels()
+
+
+func _load_levels() -> void:
+	levels.clear()
+	level_names.clear()
+	for def in LEVEL_LIST.levels:
+		if def == null or def.scene == null:
+			push_warning("LevelList entry without a scene — skipped")
+			continue
+		levels.append(def.scene.resource_path)
+		level_names.append(def.display_name())
+	_selected_level = clampi(_selected_level, 0, maxi(levels.size() - 1, 0))
+
 
 var past_player_scene: PackedScene = preload("res://scenes/multiplayer_player.tscn")
 var future_player_scene: PackedScene = preload("res://scenes/multiplayer_player_2.tscn")
@@ -72,7 +94,7 @@ func _process(_delta: float) -> void:
 	if scene == null or scene.scene_file_path == _last_scene_path:
 		return
 	_last_scene_path = scene.scene_file_path
-	if scene.scene_file_path.begins_with(LEVELS_DIR):
+	if levels.has(scene.scene_file_path):
 		_on_level_scene_loaded(scene)
 
 
@@ -142,8 +164,10 @@ func become_host():
 
 	multiplayer.multiplayer_peer = server_peer
 
-	multiplayer.peer_connected.connect(_add_player_to_game)
-	multiplayer.peer_disconnected.connect(_del_player)
+	if not multiplayer.peer_connected.is_connected(_add_player_to_game):
+		multiplayer.peer_connected.connect(_add_player_to_game)
+	if not multiplayer.peer_disconnected.is_connected(_del_player):
+		multiplayer.peer_disconnected.connect(_del_player)
 
 	respawn_all_players()
 
@@ -233,23 +257,6 @@ func _del_player(id):
 
 ## --- Level flow (server-authoritative) ---
 
-func refresh_levels() -> void:
-	levels.clear()
-	var dir := DirAccess.open(LEVELS_DIR)
-	if dir == null:
-		push_warning("No levels directory found: %s" % LEVELS_DIR)
-		return
-	dir.list_dir_begin()
-	var file := dir.get_next()
-	while file != "":
-		if file.ends_with(".tscn"):
-			levels.append(LEVELS_DIR + "/" + file)
-		file = dir.get_next()
-	dir.list_dir_end()
-	levels.sort()
-	_selected_level = clampi(_selected_level, 0, maxi(levels.size() - 1, 0))
-
-
 func selected_level() -> int:
 	return _selected_level
 
@@ -281,8 +288,11 @@ func notify_level_failed():
 
 func notify_level_complete():
 	if multiplayer.is_server():
-		var next := (_current_level + 1) % maxi(levels.size(), 1)
-		_goto_level.rpc(next)
+		var next := _current_level + 1
+		if next < levels.size():
+			_goto_level.rpc(next)
+		else:
+			_return_to_lobby.rpc()
 
 
 @rpc("call_local", "reliable")
@@ -293,6 +303,25 @@ func _reset_level():
 	for node in get_tree().get_nodes_in_group("level_resettable"):
 		if node.has_method("reset_level"):
 			node.reset_level()
+
+
+## All levels done: drop the connection and reset state so the lobby's
+## host/join flow starts fresh on both peers. The server keeps its peer
+## alive for a moment so the reliable rpc flushes to clients before close.
+@rpc("call_local", "reliable")
+func _return_to_lobby() -> void:
+	host_mode_enabled = false
+	multiplayer_mode_enabled = false
+	my_era = Era.NONE
+	_player_spawn_node = null
+	get_tree().change_scene_to_file.call_deferred(LOBBY_SCENE)
+
+	if multiplayer.multiplayer_peer == null:
+		return
+	if multiplayer.is_server():
+		await get_tree().create_timer(1.0).timeout
+	multiplayer.multiplayer_peer.close()
+	multiplayer.multiplayer_peer = null
 
 
 @rpc("call_local", "reliable")

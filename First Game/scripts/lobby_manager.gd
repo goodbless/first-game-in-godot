@@ -1,8 +1,8 @@
 extends Node
 
 ## Start screen / lobby: players connect here, the host picks a level,
-## then both enter it together. Levels are auto-discovered from
-## scenes/Levels/ — drop a .tscn there and it appears in the picker.
+## then both enter it together. The level order comes from
+## res://config/level_list.tres (see MultiplayerManager._load_levels).
 
 const START_DELAY := 1.2  # seconds between "both connected" and the level switch
 
@@ -28,14 +28,13 @@ func _ready() -> void:
 	if OS.has_feature("dedicated_server"):
 		MultiplayerManager.become_host()
 
-	MultiplayerManager.refresh_levels()
 	_populate_levels()
 
 
 func _populate_levels() -> void:
 	level_select.clear()
-	for path in MultiplayerManager.levels:
-		level_select.add_item(path.get_file().get_basename())
+	for level_name in MultiplayerManager.level_names:
+		level_select.add_item(level_name)
 	if MultiplayerManager.levels.size() > 0:
 		level_select.select(MultiplayerManager.selected_level())
 
@@ -68,7 +67,7 @@ func _on_peer_connected(_id: int) -> void:
 	if not multiplayer.is_server() or _starting:
 		return
 	_starting = true
-	var level_name := MultiplayerManager.levels[MultiplayerManager.selected_level()].get_file().get_basename()
+	var level_name := MultiplayerManager.level_names[MultiplayerManager.selected_level()]
 	_set_status.rpc("Both eras connected — starting %s..." % level_name)
 	await get_tree().create_timer(START_DELAY).timeout
 	MultiplayerManager.start_game()
