@@ -138,6 +138,7 @@ radius = 28.0
 height = 114.0
 
 [node name="MultiplayerPlayer" type="CharacterBody2D" unique_id=1821475338]
+z_index = 2
 collision_layer = 2
 script = ExtResource("1_ks7j2")
 max_speed = 300.0
