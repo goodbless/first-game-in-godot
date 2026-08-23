@@ -168,6 +168,7 @@ position = Vector2(-616, 560)
 shape = SubResource("KillzoneShape")
 
 [node name="PastGoal" parent="." unique_id=1446956518 instance=ExtResource("9_hofti")]
+z_index = 0
 position = Vector2(504, 312)
 
 [node name="FutureGoal" parent="." unique_id=1426790453 instance=ExtResource("10_h4m6d")]
@@ -187,7 +188,6 @@ position = Vector2(-717, 269)
 position = Vector2(360, 176)
 target_offset = Vector2(-162.14381, 151.13995)
 crumble_time = 3.0
-exists_in = 1
 
 [connection signal="switch_changed" from="Level/Switch" to="Level/Door" method="set_open"]
 [connection signal="switch_off" from="Level/Switch" to="SpikeTrap" method="hide"]

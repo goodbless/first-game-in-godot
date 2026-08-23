@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dosm1i6nbnb7o" path="res://scripts/era_visuals.gd" id="2_era"]
 [ext_resource type="Texture2D" uid="uid://ctfl4xfw2w15v" path="res://assets/sprites/platform.png" id="3_tex"]
 [ext_resource type="Texture2D" uid="uid://cjm1jtutxv1hj" path="res://assets/sprites/Platform_future.png" id="4_rvvxj"]
+[ext_resource type="Texture2D" uid="uid://dx61xw2pjqeva" path="res://assets/sprites/Platform_broken.png" id="5_le13s"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v2"]
 properties/0/path = NodePath(".:_t_sync")
@@ -41,14 +42,22 @@ texture = ExtResource("3_tex")
 [node name="Sprite2D" type="Sprite2D" parent="FutureVisual" unique_id=2004409529]
 texture = ExtResource("4_rvvxj")
 
+[node name="PlatformBroken" type="Sprite2D" parent="FutureVisual" unique_id=95812227]
+visible = false
+position = Vector2(-2, 2.0000076)
+scale = Vector2(0.85377353, 0.85377353)
+texture = ExtResource("5_le13s")
+
 [node name="RiderSensor" type="Area2D" parent="." unique_id=1212782785]
 position = Vector2(0, -49)
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiderSensor" unique_id=665584340]
+visible = false
 shape = SubResource("RiderSensorShape")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410398815]
+visible = false
 position = Vector2(0, -5)
 shape = SubResource("PlatformShape")
 one_way_collision = true

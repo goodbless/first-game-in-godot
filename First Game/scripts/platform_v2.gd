@@ -21,7 +21,11 @@ extends AnimatableBody2D
 		target_offset = value
 		if Engine.is_editor_hint() and is_inside_tree():
 			queue_redraw()
-@export var crumble_time := 0.0         ## countdown length after first touch; 0 = solid
+@export var crumble_time := 0.0:        ## countdown length after first touch; 0 = solid
+	set(value):
+		crumble_time = value
+		if is_inside_tree():
+			_apply_crumble_visual()
 @export var respawn_time := 3.0         ## seconds before a broken platform returns; <= 0 = only level reset restores it
 
 enum Existence { BOTH, PAST_ONLY, FUTURE_ONLY }
@@ -74,10 +78,12 @@ var warning := false:
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
+		_apply_crumble_visual()
 		return
 	add_to_group("level_resettable")
 	_origin = position
 	_is_moving = target_offset.length() > STATIC_EPSILON and cycle_time > 0.0
+	_apply_crumble_visual()
 	_apply_existence()
 
 
@@ -92,6 +98,7 @@ func _apply_existence() -> void:
 	var era_visuals := get_node_or_null("EraVisuals")
 	if era_visuals != null:
 		era_visuals.apply_era_visibility()
+	
 
 
 func _draw() -> void:
@@ -178,9 +185,27 @@ func _has_rider() -> bool:
 	return false
 
 
+## Future-era skin in use: crumble platforms (crumble_time > 0) must show
+## FutureVisual/PlatformBroken; solid ones keep the plain future sprite.
+func _active_future_sprite() -> Sprite2D:
+	if crumble_time > 0.0:
+		return get_node_or_null("FutureVisual/PlatformBroken") as Sprite2D
+	return get_node_or_null("FutureVisual/Sprite2D") as Sprite2D
+
+
+func _apply_crumble_visual() -> void:
+	var plain := get_node_or_null("FutureVisual/Sprite2D") as Sprite2D
+	var ruined := get_node_or_null("FutureVisual/PlatformBroken") as Sprite2D
+	var ruined_skin := crumble_time > 0.0
+	if plain != null:
+		plain.visible = not ruined_skin
+	if ruined != null:
+		ruined.visible = ruined_skin
+
+
 func _apply_broken() -> void:
 	collision_layer = 0 if broken else _base_collision_layer
-	for sprite in [get_node_or_null("PastVisual/Sprite2D"), get_node_or_null("FutureVisual/Sprite2D")]:
+	for sprite in [get_node_or_null("PastVisual/Sprite2D"), _active_future_sprite()]:
 		if sprite != null:
 			sprite.visible = not broken
 
@@ -189,12 +214,12 @@ func _update_flicker(delta: float) -> void:
 	if warning and not broken:
 		_flicker_t += delta * 25.0
 		var alpha := 0.55 + 0.45 * sin(_flicker_t)
-		for sprite in [get_node_or_null("PastVisual/Sprite2D"), get_node_or_null("FutureVisual/Sprite2D")]:
+		for sprite in [get_node_or_null("PastVisual/Sprite2D"), _active_future_sprite()]:
 			if sprite != null:
 				sprite.self_modulate.a = alpha
 	else:
 		_flicker_t = 0.0
-		for sprite in [get_node_or_null("PastVisual/Sprite2D"), get_node_or_null("FutureVisual/Sprite2D")]:
+		for sprite in [get_node_or_null("PastVisual/Sprite2D"), _active_future_sprite()]:
 			if sprite != null:
 				sprite.self_modulate.a = 1.0
 
