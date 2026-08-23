@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bh554532pbgj5"]
+
+[ext_resource type="PackedScene" uid="uid://chn6242x6hgyk" path="res://scenes/Levels/template.tscn" id="1_dfn1d"]
+[ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_gvfly"]
+[ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="3_uuhba"]
+
+[node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_dfn1d")]
+
+[node name="PastGoal" parent="." index="6" unique_id=1446956518]
+position = Vector2(783, -163)
+
+[node name="FutureGoal" parent="." index="7" unique_id=1426790453]
+position = Vector2(783, -166)
+
+[node name="PastSpawn" parent="." index="8" unique_id=309091987]
+position = Vector2(-781, -89)
+
+[node name="FutureSpawn" parent="." index="9" unique_id=1424180485]
+position = Vector2(-809, -99)
+
+[node name="Floor21" parent="." index="10" unique_id=2063579164 instance=ExtResource("2_gvfly")]
+position = Vector2(-603, 152)
+
+[node name="Floor22" parent="." index="11" unique_id=849462067 instance=ExtResource("2_gvfly")]
+position = Vector2(-803, 152)
+
+[node name="Floor18" parent="." index="12" unique_id=67370684 instance=ExtResource("2_gvfly")]
+position = Vector2(-403, 104)
+
+[node name="Floor19" parent="." index="13" unique_id=651572186 instance=ExtResource("2_gvfly")]
+position = Vector2(-603, 104)
+
+[node name="Floor20" parent="." index="14" unique_id=101738249 instance=ExtResource("2_gvfly")]
+position = Vector2(-803, 104)
+
+[node name="Floor4" parent="." index="15" unique_id=1013044932 instance=ExtResource("2_gvfly")]
+position = Vector2(-203, 55)
+
+[node name="Floor15" parent="." index="16" unique_id=520798112 instance=ExtResource("2_gvfly")]
+position = Vector2(-403, 55)
+
+[node name="Floor16" parent="." index="17" unique_id=75560713 instance=ExtResource("2_gvfly")]
+position = Vector2(-603, 55)
+
+[node name="Floor17" parent="." index="18" unique_id=958292716 instance=ExtResource("2_gvfly")]
+position = Vector2(-803, 55)
+
+[node name="Floor11" parent="." index="19" unique_id=2088074374 instance=ExtResource("2_gvfly")]
+position = Vector2(-3, 6)
+
+[node name="Floor23" parent="." index="20" unique_id=1827338397 instance=ExtResource("2_gvfly")]
+position = Vector2(783, -1)
+
+[node name="Floor3" parent="." index="21" unique_id=216317342 instance=ExtResource("2_gvfly")]
+position = Vector2(-203, 6)
+
+[node name="Floor12" parent="." index="22" unique_id=1840886989 instance=ExtResource("2_gvfly")]
+position = Vector2(-403, 6)
+
+[node name="Floor13" parent="." index="23" unique_id=494656398 instance=ExtResource("2_gvfly")]
+position = Vector2(-603, 6)
+
+[node name="Floor14" parent="." index="24" unique_id=316051997 instance=ExtResource("2_gvfly")]
+position = Vector2(-803, 6)
+
+[node name="PlatformV2" parent="." index="25" unique_id=1733860117 instance=ExtResource("3_uuhba")]
+position = Vector2(419, 23)
+cycle_time = 0.0
+target_offset = Vector2(0, 0)
+respawn_time = 0.0
+exists_in = 1

@@ -265,8 +265,17 @@ func start_game() -> void:
 	_goto_level.rpc(_selected_level)
 
 
+## Physics tick of the last level fail — several traps can kill in the same
+## tick (both players, overlapping traps, visibility sweeps); reset once.
+var _last_fail_frame := -1
+
+
 func notify_level_failed():
 	if multiplayer.is_server():
+		var frame := Engine.get_physics_frames()
+		if frame == _last_fail_frame:
+			return
+		_last_fail_frame = frame
 		_reset_level.rpc()
 
 
