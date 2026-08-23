@@ -1,0 +1,570 @@
+[gd_scene format=3 uid="uid://dgki1nx3fqgsg"]
+
+[ext_resource type="PackedScene" uid="uid://1wrfuxn3tep2" path="res://scenes/objects/spike_trap.tscn" id="1_cop7a"]
+[ext_resource type="PackedScene" uid="uid://cliik6xx7aynh" path="res://scenes/objects/floor.tscn" id="2_jtmp4"]
+
+[node name="Node2D" type="Node2D" unique_id=1210415785]
+
+[node name="Floor" parent="." unique_id=2063579164 instance=ExtResource("2_jtmp4")]
+position = Vector2(1016, 320)
+
+[node name="Floor" parent="Floor" unique_id=623134683 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, 192)
+
+[node name="Floor2" parent="Floor" unique_id=426095025 instance=ExtResource("2_jtmp4")]
+position = Vector2(-200, 192)
+
+[node name="Floor3" parent="Floor" unique_id=1638449696 instance=ExtResource("2_jtmp4")]
+position = Vector2(-400, 192)
+
+[node name="Floor4" parent="Floor" unique_id=89067401 instance=ExtResource("2_jtmp4")]
+position = Vector2(-600, 193)
+
+[node name="Floor5" parent="Floor" unique_id=1711905992 instance=ExtResource("2_jtmp4")]
+position = Vector2(-800, 193)
+
+[node name="Floor6" parent="Floor" unique_id=1000660942 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1000, 193)
+
+[node name="Floor7" parent="Floor" unique_id=1184099489 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1200, 193)
+
+[node name="Floor8" parent="Floor" unique_id=338676300 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1400, 193)
+
+[node name="Floor9" parent="Floor" unique_id=1729211523 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1600, 193)
+
+[node name="Floor10" parent="Floor" unique_id=1005291993 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1800, 193)
+
+[node name="Floor" parent="Floor/Floor10" unique_id=1428800924 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor2" parent="Floor/Floor10" unique_id=987085594 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor3" parent="Floor/Floor10" unique_id=1418070745 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -48)
+
+[node name="Floor4" parent="Floor/Floor10" unique_id=789614327 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor5" parent="Floor/Floor10" unique_id=290967643 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor6" parent="Floor/Floor10" unique_id=52796677 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor7" parent="Floor/Floor10" unique_id=667771965 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor8" parent="Floor/Floor10" unique_id=497826966 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor9" parent="Floor/Floor10" unique_id=640512318 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor10" parent="Floor/Floor10" unique_id=740809906 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -47)
+
+[node name="Floor12" parent="Floor/Floor10" unique_id=1284269400 instance=ExtResource("2_jtmp4")]
+position = Vector2(-200, 0)
+
+[node name="Floor" parent="Floor/Floor10/Floor12" unique_id=42429267 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -96)
+
+[node name="Floor2" parent="Floor/Floor10/Floor12" unique_id=318432632 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -96)
+
+[node name="Floor3" parent="Floor/Floor10/Floor12" unique_id=1623306666 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -96)
+
+[node name="Floor4" parent="Floor/Floor10/Floor12" unique_id=772468488 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -95)
+
+[node name="Floor5" parent="Floor/Floor10/Floor12" unique_id=8089795 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -95)
+
+[node name="Floor6" parent="Floor/Floor10/Floor12" unique_id=1402864982 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -95)
+
+[node name="Floor7" parent="Floor/Floor10/Floor12" unique_id=249589437 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -95)
+
+[node name="Floor8" parent="Floor/Floor10/Floor12" unique_id=1719687324 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -95)
+
+[node name="Floor9" parent="Floor/Floor10/Floor12" unique_id=1019250630 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -95)
+
+[node name="Floor10" parent="Floor/Floor10/Floor12" unique_id=815625604 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -95)
+
+[node name="Floor11" parent="Floor/Floor10/Floor12" unique_id=46798862 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -95)
+
+[node name="Floor" parent="Floor/Floor10/Floor12/Floor11" unique_id=1059827607 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -48)
+
+[node name="Floor2" parent="Floor/Floor10/Floor12/Floor11" unique_id=1778512538 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor3" parent="Floor/Floor10/Floor12/Floor11" unique_id=943641237 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor4" parent="Floor/Floor10/Floor12/Floor11" unique_id=891538904 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -47)
+
+[node name="Floor5" parent="Floor/Floor10/Floor12/Floor11" unique_id=2018226492 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor6" parent="Floor/Floor10/Floor12/Floor11" unique_id=738197699 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor7" parent="Floor/Floor10/Floor12/Floor11" unique_id=1437854973 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor8" parent="Floor/Floor10/Floor12/Floor11" unique_id=1063433500 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor9" parent="Floor/Floor10/Floor12/Floor11" unique_id=330382257 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor10" parent="Floor/Floor10/Floor12/Floor11" unique_id=1895956496 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor2" parent="." unique_id=926503287 instance=ExtResource("2_jtmp4")]
+position = Vector2(816, 320)
+
+[node name="Floor3" parent="." unique_id=1364932789 instance=ExtResource("2_jtmp4")]
+position = Vector2(616, 320)
+
+[node name="Floor4" parent="." unique_id=784259175 instance=ExtResource("2_jtmp4")]
+position = Vector2(416, 321)
+
+[node name="Floor5" parent="." unique_id=1521208349 instance=ExtResource("2_jtmp4")]
+position = Vector2(216, 321)
+
+[node name="Floor6" parent="." unique_id=311389561 instance=ExtResource("2_jtmp4")]
+position = Vector2(16, 321)
+
+[node name="Floor7" parent="." unique_id=1244454924 instance=ExtResource("2_jtmp4")]
+position = Vector2(-184, 321)
+
+[node name="Floor8" parent="." unique_id=1188000944 instance=ExtResource("2_jtmp4")]
+position = Vector2(-384, 321)
+
+[node name="Floor9" parent="." unique_id=1262497980 instance=ExtResource("2_jtmp4")]
+position = Vector2(-584, 321)
+
+[node name="Floor10" parent="." unique_id=754408394 instance=ExtResource("2_jtmp4")]
+position = Vector2(-784, 321)
+
+[node name="Floor" parent="Floor10" unique_id=1335885519 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor2" parent="Floor10" unique_id=223045266 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor3" parent="Floor10" unique_id=1335712720 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -48)
+
+[node name="Floor4" parent="Floor10" unique_id=1684051264 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor5" parent="Floor10" unique_id=1744563062 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor6" parent="Floor10" unique_id=202995777 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor7" parent="Floor10" unique_id=993430605 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor8" parent="Floor10" unique_id=915539922 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor9" parent="Floor10" unique_id=2076424801 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor10" parent="Floor10" unique_id=311307126 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -47)
+
+[node name="Floor12" parent="Floor10" unique_id=191769986 instance=ExtResource("2_jtmp4")]
+position = Vector2(-200, 0)
+
+[node name="Floor" parent="Floor10/Floor12" unique_id=1732832626 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -96)
+
+[node name="Floor2" parent="Floor10/Floor12" unique_id=2062681645 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -96)
+
+[node name="Floor3" parent="Floor10/Floor12" unique_id=809146483 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -96)
+
+[node name="Floor4" parent="Floor10/Floor12" unique_id=641952770 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -95)
+
+[node name="Floor5" parent="Floor10/Floor12" unique_id=1364822763 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -95)
+
+[node name="Floor6" parent="Floor10/Floor12" unique_id=1527288299 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -95)
+
+[node name="Floor7" parent="Floor10/Floor12" unique_id=2027925008 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -95)
+
+[node name="Floor8" parent="Floor10/Floor12" unique_id=1310347094 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -95)
+
+[node name="Floor9" parent="Floor10/Floor12" unique_id=813044710 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -95)
+
+[node name="Floor10" parent="Floor10/Floor12" unique_id=2002935776 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -95)
+
+[node name="Floor11" parent="Floor10/Floor12" unique_id=1632771634 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -95)
+
+[node name="Floor" parent="Floor10/Floor12/Floor11" unique_id=1158047644 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -48)
+
+[node name="Floor2" parent="Floor10/Floor12/Floor11" unique_id=771911142 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor3" parent="Floor10/Floor12/Floor11" unique_id=1174007276 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor4" parent="Floor10/Floor12/Floor11" unique_id=850133438 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -47)
+
+[node name="Floor5" parent="Floor10/Floor12/Floor11" unique_id=1123389456 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor6" parent="Floor10/Floor12/Floor11" unique_id=1290517477 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor7" parent="Floor10/Floor12/Floor11" unique_id=1123584794 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor8" parent="Floor10/Floor12/Floor11" unique_id=617711314 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor9" parent="Floor10/Floor12/Floor11" unique_id=2140116054 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor10" parent="Floor10/Floor12/Floor11" unique_id=916325821 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor11" parent="Floor10" unique_id=795814101 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -384)
+
+[node name="Floor" parent="Floor10/Floor11" unique_id=1224479785 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, 192)
+
+[node name="Floor2" parent="Floor10/Floor11" unique_id=803757591 instance=ExtResource("2_jtmp4")]
+position = Vector2(-200, 192)
+
+[node name="Floor3" parent="Floor10/Floor11" unique_id=1761099855 instance=ExtResource("2_jtmp4")]
+position = Vector2(-400, 192)
+
+[node name="Floor4" parent="Floor10/Floor11" unique_id=1794213121 instance=ExtResource("2_jtmp4")]
+position = Vector2(-600, 193)
+
+[node name="Floor5" parent="Floor10/Floor11" unique_id=2089170962 instance=ExtResource("2_jtmp4")]
+position = Vector2(-800, 193)
+
+[node name="Floor6" parent="Floor10/Floor11" unique_id=1314823534 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1000, 193)
+
+[node name="Floor7" parent="Floor10/Floor11" unique_id=395686943 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1200, 193)
+
+[node name="Floor8" parent="Floor10/Floor11" unique_id=270028073 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1400, 193)
+
+[node name="Floor9" parent="Floor10/Floor11" unique_id=1340457929 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1600, 193)
+
+[node name="Floor10" parent="Floor10/Floor11" unique_id=736409950 instance=ExtResource("2_jtmp4")]
+position = Vector2(-1800, 193)
+
+[node name="Floor" parent="Floor10/Floor11/Floor10" unique_id=2125294653 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor2" parent="Floor10/Floor11/Floor10" unique_id=1519124064 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor3" parent="Floor10/Floor11/Floor10" unique_id=1739316835 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -48)
+
+[node name="Floor4" parent="Floor10/Floor11/Floor10" unique_id=2087889422 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor5" parent="Floor10/Floor11/Floor10" unique_id=556872000 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor6" parent="Floor10/Floor11/Floor10" unique_id=473981703 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor7" parent="Floor10/Floor11/Floor10" unique_id=1647362494 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor8" parent="Floor10/Floor11/Floor10" unique_id=1903233147 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor9" parent="Floor10/Floor11/Floor10" unique_id=2004601908 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor10" parent="Floor10/Floor11/Floor10" unique_id=485926809 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -47)
+
+[node name="Floor12" parent="Floor10/Floor11/Floor10" unique_id=1578699435 instance=ExtResource("2_jtmp4")]
+position = Vector2(-200, 0)
+
+[node name="Floor" parent="Floor10/Floor11/Floor10/Floor12" unique_id=2122558908 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -96)
+
+[node name="Floor2" parent="Floor10/Floor11/Floor10/Floor12" unique_id=859474059 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -96)
+
+[node name="Floor3" parent="Floor10/Floor11/Floor10/Floor12" unique_id=474949061 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -96)
+
+[node name="Floor4" parent="Floor10/Floor11/Floor10/Floor12" unique_id=1631523814 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -95)
+
+[node name="Floor5" parent="Floor10/Floor11/Floor10/Floor12" unique_id=1691606864 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -95)
+
+[node name="Floor6" parent="Floor10/Floor11/Floor10/Floor12" unique_id=1565643521 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -95)
+
+[node name="Floor7" parent="Floor10/Floor11/Floor10/Floor12" unique_id=738591465 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -95)
+
+[node name="Floor8" parent="Floor10/Floor11/Floor10/Floor12" unique_id=435409840 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -95)
+
+[node name="Floor9" parent="Floor10/Floor11/Floor10/Floor12" unique_id=1528202364 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -95)
+
+[node name="Floor10" parent="Floor10/Floor11/Floor10/Floor12" unique_id=1371405807 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -95)
+
+[node name="Floor11" parent="Floor10/Floor11/Floor10/Floor12" unique_id=522474574 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -95)
+
+[node name="Floor" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=150538657 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -48)
+
+[node name="Floor2" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=1561023585 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor3" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=649152895 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor4" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=497622097 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -47)
+
+[node name="Floor5" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=641828183 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor6" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=1035074334 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor7" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=1344972561 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor8" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=44680801 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor9" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=1608720412 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor10" parent="Floor10/Floor11/Floor10/Floor12/Floor11" unique_id=208484104 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor13" parent="Floor10" unique_id=689227926 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -384)
+
+[node name="Floor14" parent="Floor10" unique_id=1667183839 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -384)
+
+[node name="Floor15" parent="Floor10" unique_id=1305284510 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -383)
+
+[node name="Floor16" parent="Floor10" unique_id=1391083338 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -383)
+
+[node name="Floor17" parent="Floor10" unique_id=777410268 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -383)
+
+[node name="Floor18" parent="Floor10" unique_id=821430665 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -383)
+
+[node name="Floor19" parent="Floor10" unique_id=1481192742 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -383)
+
+[node name="Floor20" parent="Floor10" unique_id=287109972 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -383)
+
+[node name="Floor21" parent="Floor10" unique_id=654459923 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -383)
+
+[node name="Floor" parent="Floor10/Floor21" unique_id=1337089208 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor2" parent="Floor10/Floor21" unique_id=1385700196 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor3" parent="Floor10/Floor21" unique_id=133194374 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -48)
+
+[node name="Floor4" parent="Floor10/Floor21" unique_id=968318004 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor5" parent="Floor10/Floor21" unique_id=957076060 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor6" parent="Floor10/Floor21" unique_id=725311592 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor7" parent="Floor10/Floor21" unique_id=1064653995 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor8" parent="Floor10/Floor21" unique_id=1020937777 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor9" parent="Floor10/Floor21" unique_id=2012883333 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="Floor10" parent="Floor10/Floor21" unique_id=1486856420 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -47)
+
+[node name="Floor12" parent="Floor10/Floor21" unique_id=1709901724 instance=ExtResource("2_jtmp4")]
+position = Vector2(-200, 0)
+
+[node name="Floor" parent="Floor10/Floor21/Floor12" unique_id=1836319080 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -96)
+
+[node name="Floor2" parent="Floor10/Floor21/Floor12" unique_id=327263751 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -96)
+
+[node name="Floor3" parent="Floor10/Floor21/Floor12" unique_id=1858168195 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -96)
+
+[node name="Floor4" parent="Floor10/Floor21/Floor12" unique_id=1378482290 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -95)
+
+[node name="Floor5" parent="Floor10/Floor21/Floor12" unique_id=636965309 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -95)
+
+[node name="Floor6" parent="Floor10/Floor21/Floor12" unique_id=958566335 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -95)
+
+[node name="Floor7" parent="Floor10/Floor21/Floor12" unique_id=1635650082 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -95)
+
+[node name="Floor8" parent="Floor10/Floor21/Floor12" unique_id=1058402565 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -95)
+
+[node name="Floor9" parent="Floor10/Floor21/Floor12" unique_id=106281562 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -95)
+
+[node name="Floor10" parent="Floor10/Floor21/Floor12" unique_id=417298961 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -95)
+
+[node name="Floor11" parent="Floor10/Floor21/Floor12" unique_id=278723848 instance=ExtResource("2_jtmp4")]
+position = Vector2(0, -95)
+
+[node name="Floor" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1770084220 instance=ExtResource("2_jtmp4")]
+position = Vector2(2000, -48)
+
+[node name="Floor2" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1483572019 instance=ExtResource("2_jtmp4")]
+position = Vector2(1800, -48)
+
+[node name="Floor3" parent="Floor10/Floor21/Floor12/Floor11" unique_id=715019036 instance=ExtResource("2_jtmp4")]
+position = Vector2(1600, -48)
+
+[node name="Floor4" parent="Floor10/Floor21/Floor12/Floor11" unique_id=326502611 instance=ExtResource("2_jtmp4")]
+position = Vector2(1400, -47)
+
+[node name="Floor5" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1948775241 instance=ExtResource("2_jtmp4")]
+position = Vector2(1200, -47)
+
+[node name="Floor6" parent="Floor10/Floor21/Floor12/Floor11" unique_id=642498467 instance=ExtResource("2_jtmp4")]
+position = Vector2(1000, -47)
+
+[node name="Floor7" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1930365477 instance=ExtResource("2_jtmp4")]
+position = Vector2(800, -47)
+
+[node name="Floor8" parent="Floor10/Floor21/Floor12/Floor11" unique_id=691922347 instance=ExtResource("2_jtmp4")]
+position = Vector2(600, -47)
+
+[node name="Floor9" parent="Floor10/Floor21/Floor12/Floor11" unique_id=2075715058 instance=ExtResource("2_jtmp4")]
+position = Vector2(400, -47)
+
+[node name="Floor10" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1846687763 instance=ExtResource("2_jtmp4")]
+position = Vector2(200, -47)
+
+[node name="SpikeTrap" parent="Floor10/Floor21/Floor12/Floor11" unique_id=806943503 instance=ExtResource("1_cop7a")]
+position = Vector2(-144, -91)
+
+[node name="SpikeTrap2" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1993498973 instance=ExtResource("1_cop7a")]
+position = Vector2(-16, -91)
+
+[node name="SpikeTrap3" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1173685271 instance=ExtResource("1_cop7a")]
+position = Vector2(112, -91)
+
+[node name="SpikeTrap4" parent="Floor10/Floor21/Floor12/Floor11" unique_id=328011188 instance=ExtResource("1_cop7a")]
+position = Vector2(240, -91)
+
+[node name="SpikeTrap5" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1269839647 instance=ExtResource("1_cop7a")]
+position = Vector2(368, -91)
+
+[node name="SpikeTrap6" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1287524018 instance=ExtResource("1_cop7a")]
+position = Vector2(496, -91)
+
+[node name="SpikeTrap7" parent="Floor10/Floor21/Floor12/Floor11" unique_id=390785845 instance=ExtResource("1_cop7a")]
+position = Vector2(624, -91)
+
+[node name="SpikeTrap8" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1563698932 instance=ExtResource("1_cop7a")]
+position = Vector2(752, -91)
+
+[node name="SpikeTrap9" parent="Floor10/Floor21/Floor12/Floor11" unique_id=1585235935 instance=ExtResource("1_cop7a")]
+position = Vector2(880, -91)
+
+[node name="SpikeTrap10" parent="Floor10/Floor21/Floor12/Floor11" unique_id=611413396 instance=ExtResource("1_cop7a")]
+position = Vector2(1008, -91)
+
+[node name="SpikeTrap" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=1398588042 instance=ExtResource("1_cop7a")]
+position = Vector2(128, 0)
+
+[node name="SpikeTrap2" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=349617403 instance=ExtResource("1_cop7a")]
+position = Vector2(256, 0)
+
+[node name="SpikeTrap3" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=621755606 instance=ExtResource("1_cop7a")]
+position = Vector2(384, 0)
+
+[node name="SpikeTrap4" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=1132834513 instance=ExtResource("1_cop7a")]
+position = Vector2(512, 0)
+
+[node name="SpikeTrap5" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=1084309932 instance=ExtResource("1_cop7a")]
+position = Vector2(640, 0)
+
+[node name="SpikeTrap6" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=2131164760 instance=ExtResource("1_cop7a")]
+position = Vector2(768, 0)
+
+[node name="SpikeTrap7" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=277796611 instance=ExtResource("1_cop7a")]
+position = Vector2(896, 0)
+
+[node name="SpikeTrap8" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=1410057972 instance=ExtResource("1_cop7a")]
+position = Vector2(1024, 0)
+
+[node name="SpikeTrap9" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=305525974 instance=ExtResource("1_cop7a")]
+position = Vector2(1152, 0)
+
+[node name="SpikeTrap10" parent="Floor10/Floor21/Floor12/Floor11/SpikeTrap10" unique_id=247398957 instance=ExtResource("1_cop7a")]
+position = Vector2(1280, 0)
