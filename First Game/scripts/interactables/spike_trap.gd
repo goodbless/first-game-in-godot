@@ -38,7 +38,7 @@ func _apply_existence() -> void:
 
 
 func _on_body_entered(body) -> void:
-	if multiplayer.multiplayer_peer != null and multiplayer.is_server() and self.is_visible_in_tree():
+	if multiplayer.multiplayer_peer != null and multiplayer.is_server():
 		print("Spike trap hit: ", body.name, " — level failed for both")
 		MultiplayerManager.notify_level_failed()
 
@@ -46,9 +46,10 @@ func _on_body_entered(body) -> void:
 ## Becoming visible while a body is already inside never emits body_entered
 ## (the overlap predates visibility) — sweep current overlaps manually.
 func _on_visibility_changed() -> void:
-	if is_visible_in_tree():
-		for body in get_overlapping_bodies():
-			_on_body_entered(body)
+	pass
+	#if is_visible_in_tree():
+		#for body in get_overlapping_bodies():
+			#_on_body_entered(body)
 
 
 func _on_switch_switch_on() -> void:

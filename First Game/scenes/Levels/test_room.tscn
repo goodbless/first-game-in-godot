@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" path="res://scenes/components/past_spawn.tscn" id="11_yn2df"]
 [ext_resource type="PackedScene" path="res://scenes/components/future_spawn.tscn" id="12_hofti"]
 [ext_resource type="PackedScene" uid="uid://c5y55kw4kit31" path="res://scenes/objects/platform_v2.tscn" id="12_yn2df"]
+[ext_resource type="PackedScene" uid="uid://dyndnficfalcm" path="res://scenes/objects/reset_group.tscn" id="15_2cma6"]
+[ext_resource type="PackedScene" uid="uid://335p06r25glo" path="res://scenes/objects/tree.tscn" id="17_whpco"]
 
 [sub_resource type="RectangleShape2D" id="WallShape"]
 size = Vector2(100, 1080)
@@ -127,10 +129,10 @@ position = Vector2(-752, 472)
 position = Vector2(-952, 472)
 
 [node name="Box" parent="Level" unique_id=2056746295 instance=ExtResource("5_box")]
-position = Vector2(-96, -376)
+position = Vector2(-696, -136)
 
 [node name="Box2" parent="Level" unique_id=1940846343 instance=ExtResource("5_box")]
-position = Vector2(-216, 392)
+position = Vector2(-712, 264)
 
 [node name="PlatformV2" parent="Level" unique_id=2085541356 instance=ExtResource("12_yn2df")]
 position = Vector2(-712, 368)
@@ -146,8 +148,10 @@ position = Vector2(-32, 432)
 owner_era = 1
 
 [node name="Door" parent="Level" unique_id=87996404 instance=ExtResource("7_hofti")]
-position = Vector2(400, 432)
+position = Vector2(-288, 424)
 open = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level" unique_id=83716691]
 
 [node name="Objects" type="Node2D" parent="." unique_id=2077598514]
 
@@ -169,26 +173,40 @@ shape = SubResource("KillzoneShape")
 
 [node name="PastGoal" parent="." unique_id=1446956518 instance=ExtResource("9_hofti")]
 z_index = 0
-position = Vector2(504, 312)
+position = Vector2(824, -352)
 
 [node name="FutureGoal" parent="." unique_id=1426790453 instance=ExtResource("10_h4m6d")]
 position = Vector2(-416, 312)
 
-[node name="SpikeTrap" parent="." unique_id=1042375586 instance=ExtResource("10_qqxd0")]
-position = Vector2(72, 424)
-collision_mask = 6
-
 [node name="PastSpawn" parent="." unique_id=309091987 instance=ExtResource("11_yn2df")]
-position = Vector2(280, 344)
+position = Vector2(-136, 376)
 
 [node name="FutureSpawn" parent="." unique_id=1424180485 instance=ExtResource("12_hofti")]
 position = Vector2(-717, 269)
 
 [node name="PlatformV2" parent="." unique_id=872996148 instance=ExtResource("12_yn2df")]
-position = Vector2(360, 176)
-target_offset = Vector2(-162.14381, 151.13995)
+position = Vector2(120, -256)
+target_offset = Vector2(-353.0359, 364.24326)
 crumble_time = 3.0
 
+[node name="ResetGroup" parent="." unique_id=55775735 instance=ExtResource("15_2cma6")]
+position = Vector2(112, 0)
+
+[node name="SpikeTrap" parent="ResetGroup" unique_id=1042375586 instance=ExtResource("10_qqxd0")]
+position = Vector2(-576, -304)
+collision_mask = 6
+
+[node name="SpikeTrap2" parent="ResetGroup" unique_id=806943503 instance=ExtResource("10_qqxd0")]
+position = Vector2(-688, -304)
+collision_mask = 6
+
+[node name="SpikeTrap3" parent="ResetGroup" unique_id=125359553 instance=ExtResource("10_qqxd0")]
+position = Vector2(-464, -304)
+collision_mask = 6
+
+[node name="AnimatableBody2D" parent="." unique_id=1320871816 instance=ExtResource("17_whpco")]
+position = Vector2(480, 1248)
+
 [connection signal="switch_changed" from="Level/Switch" to="Level/Door" method="set_open"]
-[connection signal="switch_off" from="Level/Switch" to="SpikeTrap" method="hide"]
-[connection signal="switch_on" from="Level/Switch" to="SpikeTrap" method="show"]
+[connection signal="switch_off" from="Level/Switch" to="ResetGroup" method="show"]
+[connection signal="switch_on" from="Level/Switch" to="ResetGroup" method="hide"]
