@@ -8,24 +8,27 @@
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_c76ud")]
 
 [node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
-position = Vector2(-111, -4)
+position = Vector2(-16, 0)
 scale = Vector2(1, 1.6799996)
 
-[node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
-position = Vector2(111, 0)
-scale = Vector2(1, 1.76)
+[node name="Floor" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="6" unique_id=2063579164 instance=ExtResource("2_64w07")]
+position = Vector2(1784, 14)
 
-[node name="Floor" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="1" unique_id=2063579164 instance=ExtResource("2_64w07")]
-position = Vector2(-58, 14)
+[node name="Floor13" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="7" unique_id=74006540 instance=ExtResource("2_64w07")]
+position = Vector2(1584, 14)
+
+[node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
+position = Vector2(8, 0)
+scale = Vector2(1, 1.76)
 
 [node name="CollisionShape2D" parent="Level/Ceiling" parent_id_path=PackedInt32Array(970822897) index="0" unique_id=224563774]
 position = Vector2(0, -261)
 
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(850, -101)
+position = Vector2(792, -152)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(853, -101)
+position = Vector2(792, -152)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
 position = Vector2(-687, 268)
@@ -112,6 +115,3 @@ exists_in = 1
 
 [node name="Box" parent="." index="29" unique_id=2056746295 instance=ExtResource("4_atu60")]
 position = Vector2(-49, -318)
-
-[node name="Floor13" parent="." index="30" unique_id=74006540 instance=ExtResource("2_64w07")]
-position = Vector2(640, 14)

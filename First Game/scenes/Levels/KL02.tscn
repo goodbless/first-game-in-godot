@@ -7,10 +7,10 @@
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_bcxvw")]
 
 [node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
-position = Vector2(-113, 0)
+position = Vector2(-16, 0)
 
 [node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
-position = Vector2(111, 0)
+position = Vector2(8, 0)
 
 [node name="Players" parent="." index="3" unique_id=779539851]
 position = Vector2(-1094, -225)
@@ -64,10 +64,10 @@ position = Vector2(1352, -467)
 position = Vector2(1153, -467)
 
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(845, -17)
+position = Vector2(792, -70)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(846, -18)
+position = Vector2(792, -69)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
 position = Vector2(-738, -59)

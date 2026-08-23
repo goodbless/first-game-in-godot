@@ -8,11 +8,11 @@
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_sj74j")]
 
 [node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
-position = Vector2(-109, 0)
+position = Vector2(-16, 0)
 scale = Vector2(1, 1.5999994)
 
 [node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
-position = Vector2(107, 0)
+position = Vector2(8, 0)
 scale = Vector2(1, 2.0400014)
 
 [node name="Floor" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="1" unique_id=2063579164 instance=ExtResource("2_j812l")]
@@ -111,10 +111,10 @@ position = Vector2(-1350, -33)
 position = Vector2(0, -265)
 
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(841, -340)
+position = Vector2(816, -400)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(843, -343)
+position = Vector2(816, -400)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
 position = Vector2(-716, 268)

@@ -5,20 +5,29 @@
 
 [node name="TestRoom" unique_id=1611006981 instance=ExtResource("1_v76g4")]
 
-[node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2044048087]
-position = Vector2(-113, 2)
+[node name="Floor13" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="0" unique_id=2124983996 instance=ExtResource("2_03r3m")]
+position = Vector2(1840, 61)
+
+[node name="Floor8" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="1" unique_id=2120449341 instance=ExtResource("2_03r3m")]
+position = Vector2(1640, 61)
+
+[node name="Floor7" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="2" unique_id=1459251685 instance=ExtResource("2_03r3m")]
+position = Vector2(1439, 61)
+
+[node name="CollisionShape2D" parent="Level/LeftWall" parent_id_path=PackedInt32Array(1094984701) index="3" unique_id=2044048087]
+position = Vector2(-16, 5)
 
 [node name="CollisionShape2D" parent="Level/RightWall" parent_id_path=PackedInt32Array(610959921) index="0" unique_id=953928271]
-position = Vector2(110, 0)
+position = Vector2(8, 0)
 
 [node name="CollisionShape2D" parent="Killzone" parent_id_path=PackedInt32Array(975202292) index="1" unique_id=1786211310]
 position = Vector2(0, 125)
 
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(763, -61)
+position = Vector2(763, -104)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(763, -61)
+position = Vector2(763, -104)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
 position = Vector2(-739, 6)
@@ -51,22 +60,13 @@ position = Vector2(-112, 284)
 position = Vector2(-312, 284)
 
 [node name="Floor3" parent="." index="18" unique_id=572021158 instance=ExtResource("2_03r3m")]
-position = Vector2(-371, -19)
+position = Vector2(-376, -10)
 
 [node name="Floor5" parent="." index="19" unique_id=153183574 instance=ExtResource("2_03r3m")]
 position = Vector2(62, -18)
 
-[node name="Floor13" parent="." index="20" unique_id=2124983996 instance=ExtResource("2_03r3m")]
-position = Vector2(896, 61)
-
-[node name="Floor8" parent="." index="21" unique_id=2120449341 instance=ExtResource("2_03r3m")]
-position = Vector2(696, 61)
-
-[node name="Floor7" parent="." index="22" unique_id=1459251685 instance=ExtResource("2_03r3m")]
-position = Vector2(495, 61)
-
-[node name="Floor12" parent="." index="23" unique_id=2099449573 instance=ExtResource("2_03r3m")]
+[node name="Floor12" parent="." index="20" unique_id=2099449573 instance=ExtResource("2_03r3m")]
 position = Vector2(-936, 201)
 
-[node name="Floor14" parent="." index="24" unique_id=1109329490 instance=ExtResource("2_03r3m")]
+[node name="Floor14" parent="." index="21" unique_id=1109329490 instance=ExtResource("2_03r3m")]
 position = Vector2(-514, 284)
