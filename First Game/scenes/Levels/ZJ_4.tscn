@@ -11,10 +11,10 @@
 position = Vector2(-1208, 176)
 
 [node name="PastGoal" parent="." index="6" unique_id=1446956518]
-position = Vector2(31, 92)
+position = Vector2(34, 28)
 
 [node name="FutureGoal" parent="." index="7" unique_id=1426790453]
-position = Vector2(31, 93)
+position = Vector2(34, 29)
 
 [node name="PastSpawn" parent="." index="8" unique_id=309091987]
 position = Vector2(549, 397)
@@ -88,17 +88,31 @@ cycle_time = 7.0
 target_offset = Vector2(-1449.173, 0)
 crumble_time = 5.0
 
-[node name="PlatformV4" parent="." index="30" unique_id=1411382465 instance=ExtResource("3_x3rh6")]
+[node name="PlatformV7" parent="." index="30" unique_id=1733860117 instance=ExtResource("3_x3rh6")]
+position = Vector2(-737, 7)
+cycle_time = 7.0
+target_offset = Vector2(1456.775, 0)
+crumble_time = 5.0
+exists_in = 1
+
+[node name="PlatformV8" parent="." index="31" unique_id=579642790 instance=ExtResource("3_x3rh6")]
+position = Vector2(720, -305)
+cycle_time = 7.0
+target_offset = Vector2(-1449.173, 0)
+crumble_time = 5.0
+exists_in = 1
+
+[node name="PlatformV4" parent="." index="32" unique_id=1411382465 instance=ExtResource("3_x3rh6")]
 position = Vector2(-828, 407)
 cycle_time = 5.0
 target_offset = Vector2(0, -802.364)
 
-[node name="PlatformV5" parent="." index="31" unique_id=3266849 instance=ExtResource("3_x3rh6")]
+[node name="PlatformV5" parent="." index="33" unique_id=3266849 instance=ExtResource("3_x3rh6")]
 position = Vector2(729, 416)
 cycle_time = 5.0
 target_offset = Vector2(0, -802.364)
 
-[node name="PlatformV6" parent="." index="32" unique_id=1861045904 instance=ExtResource("3_x3rh6")]
+[node name="PlatformV6" parent="." index="34" unique_id=1861045904 instance=ExtResource("3_x3rh6")]
 position = Vector2(32, 207)
 cycle_time = 0.0
 target_offset = Vector2(0, 0)
